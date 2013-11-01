@@ -8,7 +8,7 @@ set :scm_verbose, true
 
 set :default_shell, '/bin/bash -l'
 
-set :repository,  "git@github.com:secretariat/sdtg.git"
+set :repository,  "git@github.com:secretariat/logophone.git"
 set :deploy_to, "/home/user/www/sites/logophone"
 set :branch, 'master'
 
