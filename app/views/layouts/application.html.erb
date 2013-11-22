@@ -7,8 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div> -->
+  <%= render 'shared/header' %>
+  <section class="container">
+    <section id="container" class="clearfix">
+      <%= yield %>
+    </section>
+  </section>
+  <%= render 'shared/footer' %>
 
-<%= yield %>
 
+  <script>
+    var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
+      animate: true, // Boolean: Use CSS3 transitions, true or false
+      transition: 400, // Integer: Speed of the transition, in milliseconds
+      label: "Menu", // String: Label for the navigation toggle
+      insert: "after", // String: Insert the toggle before or after the navigation
+      customToggle: "", // Selector: Specify the ID of a custom toggle
+      openPos: "relative", // String: Position of the opened nav, relative or static
+      jsClass: "js", // String: 'JS enabled' class which is added to <html> el
+      init: function(){}, // Function: Init callback
+      open: function(){}, // Function: Open callback
+      close: function(){} // Function: Close callback
+    });
+  </script>
 </body>
 </html>
