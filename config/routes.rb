@@ -1,6 +1,10 @@
 Logophone::Application.routes.draw do
   root :to => 'page#index'
   get "page/index"
+  get "page/elements"
+  get "page/login"
+  get "page/register"
+  get "page/download"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,5 +61,5 @@ Logophone::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  match ':controller(/:action(/:id))(.:format)'
 end
