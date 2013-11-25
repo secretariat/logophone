@@ -28,8 +28,8 @@ Credits: Design, Coding and Development by Jean P Johnson at Designova
 /* ===================================*/
 html  {
     overflow:  -moz-scrollbars-vertical;
-     overflow-y:  scroll;
-    background: #fefefe url('../images/bg.png') repeat;
+    overflow-y:  scroll;
+    background: #fefefe url('/assets/bg.png') repeat;
  }
 
 body  {
