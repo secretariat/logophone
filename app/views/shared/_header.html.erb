@@ -3,12 +3,12 @@
         <ul id="filters" class="option-set clearfix" data-option-key="filter">
             <li><%= link_to "Logophone", page_index_path, :class => "reveal-bg-one selected" %></li>
             <li><%= link_to "Elements", page_elements_path, :class =>"reveal-bg-two" %></li>
-            <li><%= link_to "Decoding Logo", "#", :class =>"reveal-bg-three", :style => "width: 145px;" %></li>
-            <li><%= link_to "Create My Logo", "#", :class =>"reveal-bg-seven", :style => "width: 150px;" %></li>
+            <li><%= link_to "Decoding Logo", page_decoder_path, :class =>"reveal-bg-three", :style => "width: 145px;" %></li>
+            <li><%= link_to "Create My Logo", page_creator_path, :class =>"reveal-bg-seven", :style => "width: 150px;" %></li>
             <li><%= link_to "Download", page_download_path, :class =>"reveal-bg-four" %></li>
             <li><%= link_to "Registration", page_register_path, :class =>"reveal-bg-six" %></li>
             <li><%= link_to "Log in", "#", :class =>"reveal-bg-five" %></li>
-            <li><%= link_to "Contact us", "#", :class =>"reveal-bg-eight" %></li>
+            <li><%= link_to "Contact us", page_contacts_path, :class =>"reveal-bg-eight" %></li>
         </ul>
     </div>
 </header>

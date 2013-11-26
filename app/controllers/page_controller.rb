@@ -13,4 +13,7 @@ class PageController < ApplicationController
 
   def elements
   end
+
+  def decoder
+  end
 end

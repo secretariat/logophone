@@ -1,0 +1,49 @@
+<article class="element clearfix two-third home">
+  <div class="one-third white-right2 reveal-bg-one">
+    <div class="thumb pad pad-bottom-minus">
+      <%= image_tag ("mail.png") %>
+    </div>
+    <h2 class="pad pad-top-minus pad-bottom-minus">Send Message</h2>
+    <div class="pad pad-top-minus">
+      <form name="myform" id="contactForm" action="sendcontact.php" enctype="multipart/form-data" method="post">
+            <div class="row-fluid">
+              <article>
+                <div id="fname"  class="alert alert-error error">
+                Name must not be empty
+                </div>
+                <div id="fmail" class="alert alert-error  error">
+                Please provide a valid email
+                </div>
+                <div id="fmsg" class="alert alert-error  error">
+                Message should not be empty
+                </div>
+        <input size="100" type="text" name="name" id="name" placeholder="Name">
+                <input type="text"  size="30" id="email" name="email" placeholder="email">
+                <textarea  id="msg" rows="3" cols="40" name="message" placeholder="Message">Message</textarea>
+                <button type="submit" name="submit" id="submit" class="btn btn-reveal add-top-half">Send Message</button>
+              </article>
+            </div>
+          </form>
+    </div>
+  </div>
+  <div class="one-third contact">
+    <div class="images">
+      <%= image_tag ("contacts/logo1.png") %>
+    </div>
+  </div>
+</article>
+
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("content/03.jpg") %>
+  </div>
+  <div class="content-bottom content-bottom-alt reveal-bg-two">
+    <div class="thumb pad pad-bottom-minus">
+      <%= image_tag ("tweets.png") %>
+    </div>
+    <h2 class="pad pad-top-minus pad-bottom-minus">@logophone</h2>
+    <div class="pad pad-top-minus">
+        <article id="ticker" class="query"></article>
+    </div>
+  </div>
+</article>
