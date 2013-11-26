@@ -363,7 +363,7 @@ font-size: 16px;
 
 
 .preloader  {
-     background: url(../images/ajax-loader.gif) center center no-repeat #ffffff;
+     background: url(/assets/ajax-loader.gif) center center no-repeat #ffffff;
  }
 
 #preloader  {
@@ -383,7 +383,7 @@ font-size: 16px;
      position: absolute;
      left: 50%;
      top: 50%;
-     background-image: url(../images/ajax-loader.gif);
+     background-image: url(/assets/ajax-loader.gif);
      background-repeat: no-repeat;
      background-position: center;
      margin: -100px 0 0 -100px;
