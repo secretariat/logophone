@@ -33,6 +33,7 @@ html  {
  }
 
 body  {
+    background: none  !important;
 	font-family:"Open_Sans_R";
 	font-size: 14px;
 	line-height: 21px;
