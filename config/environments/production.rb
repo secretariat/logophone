@@ -64,4 +64,16 @@ Logophone::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.action_mailer.default_url_options = { :host => 'logophone.org' }
+  config.action_mailer.delivery_method = :smtp
+  # Settings specified here will take precedence over those in config/application.rb
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.yandex.ru",
+    :port                 => 25,
+    :domain               => "yandex.ru",
+    :user_name            => 'admin@logophone.org',
+    :password             => 'dtg123!@#',
+    :authentication       => 'login',
+    :openssl_verify_mode  => 'none',
+  }
 end
