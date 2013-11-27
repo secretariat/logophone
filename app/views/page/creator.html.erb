@@ -1,7 +1,8 @@
 <article class="element clearfix home">
 	<%= image_tag  "contacts/logo1.png", :class => "img-polaroid", :size => "280x90"  %>
-	<div class="row-fluid show-grid">
-		<%= text_field :phone, :placeholder => "Enter phone number" %>
-	</div>
-	<input class="input-xlarge" type="text" placeholder=".input-xlarge">
+	<%= form_tag(page_create_logo_path, method: "get") do %>
+	  <%= label_tag(:phone, "Enter phone number:") %>
+	  <%= text_field_tag(:phone) %>
+	  <%= submit_tag("Create") %>
+	<% end %>
 </article>

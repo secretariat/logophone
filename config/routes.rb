@@ -7,6 +7,7 @@ Logophone::Application.routes.draw do
   get "page/download"
   get "page/decoder"
   get "page/creator"
+  get "page/create_logo"
   get "page/contacts"
 
   match ':controller(/:action(/:id))(.:format)'
