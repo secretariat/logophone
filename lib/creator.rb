@@ -1,3 +1,15 @@
+ELEMENTS= [
+			 [1,0,1,0,1,0,0,0,0,0],
+			 [0,1,0,0,0,0,0,0,0,0],
+			 [1,0,1,0,1,0,0,0,0,0],
+			 [0,0,0,1,0,0,0,0,0,0],
+			 [1,0,1,0,1,0,0,0,0,0],
+			 [0,0,0,0,0,1,0,0,0,0],
+			 [0,0,0,0,0,0,1,0,0,0],
+			 [0,0,0,0,0,0,0,1,1,0],
+			 [0,0,0,0,0,0,0,1,1,0],
+			 [0,0,0,0,0,0,0,0,0,1] ]
+
 class String
   def last(n)
     self[-n,n]
@@ -10,7 +22,25 @@ class Creator
 		@phone_array = @phone.scan(/\d/).map { |c| c.to_i }
 		puts @phone_array.insert(0,0)
 		@fblock = rand_fblock
-		check_logo
+		puts strictlogo?
+		puts need_glasses?
+	end
+
+	def strictlogo?
+		res = false
+		res = true if(	@phone_array[6] == @phone_array[8] ||
+										@phone_array[8] == @phone_array[10] ||
+										@phone_array[6] == @phone_array[10] ||
+										ELEMENTS[@phone_array[6]][@phone_array[8]] == 1 ||
+										ELEMENTS[@phone_array[8]][@phone_array[10]] == 1 ||
+										ELEMENTS[@phone_array[6]][@phone_array[10]] == 1 )
+		return res
+	end
+
+	def need_glasses?
+		res = false
+		res = true if( @phone_array[6] == @phone_array[10] || ELEMENTS[@phone_array[6]][@phone_array[10]] == 1 )
+		return res
 	end
 
 	def rand_fblock
@@ -23,10 +53,6 @@ class Creator
 			when 2 ; mono_figure
 			when 3 ; color_figure
 		end
-	end
-
-	def check_logo
-		if @phone_array[6] == @phone_array[8] && @phone_array[8] == @phone_array[10]
 	end
 
 	def flag
@@ -46,5 +72,5 @@ class Creator
 	end
 end
 
+Creator.new("380674615191")
 # Creator.new("380674685991")
-# Creator.new("380674615191")
