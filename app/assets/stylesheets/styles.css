@@ -1449,7 +1449,26 @@ fieldset h1
     .images > img{width: 100% !important;}
 }
 
+.minput
+{
+    margin-top: 5px;
+    width: 300px;
+    border: 1px solid #E56C19 !important;
+}
 
+.msubmit
+{
+    margin-top: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #fafafa;
+    background-color: #1ABC9C !important;
+    height: 35px;
+
+}
+.msubmit:hover
+{
+    border: 1px solid #555;
+}
 /*Bootstrap Resets*/
 
 .carousel-control {
