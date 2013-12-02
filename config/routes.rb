@@ -1,4 +1,8 @@
 Logophone::Application.routes.draw do
+  get "creator/new"
+
+  get "creator/show"
+
   root :to => 'page#index'
   get "page/index"
   get "page/elements"

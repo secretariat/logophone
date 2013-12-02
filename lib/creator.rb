@@ -20,25 +20,36 @@ class Creator
 	def initialize(phone)
 		puts @phone = phone.last(10)
 		@phone_array = @phone.scan(/\d/).map { |c| c.to_i }
-		puts @phone_array.insert(0,0)
+		@phone_array.insert(0,0)
 		@fblock = rand_fblock
-		@strickt = strictlogo?
+		@strict = strictlogo?
 		@glasses = need_glasses?
 		@overlap = overlap?
 		@logo = Hash.new()
 	end
 
-	def get_strict_logo
+	def logo
+		@logo
+	end
 
+	def get_strict_logo
+		if @glasses
+			@logo["five_pair"] = "/output/#{@phone_array[4]}все#{@phone_array[10]}#{overlap?}#{@phone_array[9]}000.png"
+			@logo["third_pair"] = "/output/#{@phone_array[4]}#{@phone_array[6]}#{overlap?}#{@phone_array[5]}000.png"
+		else
+			@logo["five_pair"] = "/output/#{@phone_array[4]}#{@phone_array[10]}#{overlap?}#{@phone_array[9]}000.png"
+			@logo["third_pair"] = "/output/#{@phone_array[4]}#{@phone_array[6]}#{overlap?}#{@phone_array[5]}000.png"
+		end
 	end
 
 	def get_nostrict_logo
-
+		@logo["five_pair"] = "/output/#{@phone_array[4]}#{@phone_array[10]}#{overlap?}#{@phone_array[9]}000.png"
+		@logo["third_pair"] = "/output/#{@phone_array[4]}#{@phone_array[6]}#{overlap?}#{@phone_array[5]}000.png"
 	end
 
-	def self.generate_logo
+	def generate_logo
 		character
-		if @strickt
+		if @strict
 			get_strict_logo
 		else
 			get_nostrict_logo
@@ -46,16 +57,12 @@ class Creator
 	end
 
 	def character
-		@logo['character'] = "/output/#{@phone_array[4]}.png"
-	end
-
-	def third_wear
-		
+		@logo["character"] = "/output/#{@phone_array[4]}.png"
 	end
 
 	def strictlogo?
-		res = false
-		res = true if(	@phone_array[6] == @phone_array[8] ||
+		res = true
+		res = false if(	@phone_array[6] == @phone_array[8] ||
 										@phone_array[8] == @phone_array[10] ||
 										@phone_array[6] == @phone_array[10] ||
 										ELEMENTS[@phone_array[6]][@phone_array[8]] == 1 ||
@@ -75,10 +82,10 @@ class Creator
 			if(@phone_array[6] > @phone_array[8]) then
 				return 1
 			else
-				return 2
+				return 0
 			end
 		end
-		return 0;
+		return 0
 	end
 
 
@@ -108,7 +115,7 @@ class Creator
 
 end
 
-Creator.new("380674615191")
-Creator.generate_logo
+p = Creator.new("380674615191")
+p.generate_logo
 
 # Creator.new("380674685991")

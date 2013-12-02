@@ -18,14 +18,4 @@ class PageController < ApplicationController
   def decoder
   end
 
-  def creator
-    # Creator.new(params[:phone])
-  end
-
-  def create_logo
-    c = Creator.new(params[:phone])
-    c.character
-    sleep(10)
-    redirect_to :back
-  end
 end
