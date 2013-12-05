@@ -42,6 +42,11 @@ class Creator
 		@glasses = need_glasses?
 		@overlap = overlap?
 		@logo = Hash.new()
+		@ar = Array.new()
+	end
+
+	def ar
+		@ar
 	end
 
 	def logo
@@ -50,25 +55,37 @@ class Creator
 
 	def get_strict_logo
 		if @glasses
-			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-			@logo["fourth_pair"] = "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
-			@logo["glasses"] = "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
+			@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+			@ar << "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
+			@ar << "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
 		else
-			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-			@logo["fourth_pair"] = "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
-			@logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+			if @pa[6] > @pa[10] then
+				@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+				@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+			else
+				@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+				@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+			end
+			@ar <<  "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
 		end
 	end
 
 	def get_nostrict_logo
 		if @glasses
-			@logo["glasses"] = "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
-			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-			@logo["fourth_pair"] = "/output/#{@pa[4]}#{@pa[8]}#{overlap?}#{@pa[7]}XXXX.png"
+			@ar << "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
+			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i ]
+			tmp_ar.sort!
+			tmp_ar.each do |t|
+				str = t.to_s
+				@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+			end
 		else
-			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-			@logo["fourth_pair"] = "/output/#{@pa[4]}#{@pa[8]}#{overlap?}#{@pa[7]}XXXX.png"
-			@logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i, "#{@pa[10]}#{@pa[9]}".to_i ]
+			tmp_ar.sort!
+			tmp_ar.each do |t|
+				str = t.to_s
+				@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+			end
 		end
 	end
 
@@ -86,7 +103,7 @@ class Creator
 	end
 
 	def character
-		@logo["character"] = "/output/#{@pa[4]}XXXXXXX.png"
+		@ar << "/output/#{@pa[4]}XXXXXXX.png"
 	end
 
 	def strictlogo?
@@ -129,19 +146,19 @@ class Creator
 	end
 
 	def flag
-		@logo['first_line'] = "/output/flag/0#{@pa[1]}.png"
-		@logo['second_line'] = "/output/flag/1#{@pa[2]}.png"
-		@logo['third_line'] = "/output/flag/2#{@pa[3]}.png"
+		@ar << "/output/flag/0#{@pa[1]}.png"
+		@ar << "/output/flag/1#{@pa[2]}.png"
+		@ar << "/output/flag/2#{@pa[3]}.png"
 	end
 
 	def mono_figure
-		@logo['bg'] = "/output/bg/#{@pa[1]}.png"
-		@logo['figure_out'] = "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
+		@ar << "/output/bg/#{@pa[1]}.png"
+		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
 	end
 
 	def color_figure
-		@logo['figure_in'] = "/output/figures/1#{@pa[3]}#{@pa[1]}.png"
-		@logo['figure_out'] = "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
+		@ar << "/output/figures/1#{@pa[3]}#{@pa[1]}.png"
+		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
 	end
 
 end

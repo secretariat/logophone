@@ -9,6 +9,7 @@ class CreatorController < ApplicationController
   	c = Creator.new(@phone)
   	c.generate_logo
   	@logo = c.logo
+  	@ar = c.ar
   end
 
 end
