@@ -50,8 +50,9 @@ class Creator
 
 	def get_strict_logo
 		if @glasses
-			@logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}000.png"
-			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}000.png"
+			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+			@logo["fourth_pair"] = "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
+			@logo["glasses"] = "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
 		else
 			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
 			@logo["fourth_pair"] = "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
@@ -60,8 +61,12 @@ class Creator
 	end
 
 	def get_nostrict_logo
-		puts @logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
-		puts @logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+		if @glasses
+		else
+			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+			@logo["fourth_pair"] = "/output/#{@pa[4]}#{@pa[8]}#{overlap?}#{@pa[7]}XXXX.png"
+			@logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+		end
 	end
 
 	def generate_logo
@@ -133,7 +138,7 @@ class Creator
 
 end
 
-p = Creator.new("380674615191")
-p.generate_logo
+# p = Creator.new("380674615191")
+# p.generate_logo
 
 # Creator.new("380674685991")

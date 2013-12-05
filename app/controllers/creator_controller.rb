@@ -1,4 +1,4 @@
-require "creator.rb"
+# require "creator.rb"
 class CreatorController < ApplicationController
   def new
   	# redirect_to creator_show_path
