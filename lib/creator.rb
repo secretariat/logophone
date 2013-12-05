@@ -62,6 +62,9 @@ class Creator
 
 	def get_nostrict_logo
 		if @glasses
+			@logo["glasses"] = "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
+			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+			@logo["fourth_pair"] = "/output/#{@pa[4]}#{@pa[8]}#{overlap?}#{@pa[7]}XXXX.png"
 		else
 			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
 			@logo["fourth_pair"] = "/output/#{@pa[4]}#{@pa[8]}#{overlap?}#{@pa[7]}XXXX.png"
@@ -71,12 +74,15 @@ class Creator
 
 	def generate_logo
 		puts "LOGO IS IS STRICT: #{@strict}"
+		puts "NEED GLASSES: #{@glasses}"
+		proc_fblock
 		character
 		if @strict
 			get_strict_logo
 		else
 			get_nostrict_logo
 		end
+		puts @logo
 	end
 
 	def character
@@ -95,9 +101,7 @@ class Creator
 	end
 
 	def need_glasses?
-		res = false
-		res = true if( @pa[6] == @pa[10] || ELEMENTS[@pa[6]][@pa[10]] == 1 )
-		return res
+		( @pa[6] == @pa[10] || ELEMENTS[@pa[6]][@pa[10]] == 1 ) ? true:false
 	end
 
 	def overlap?
@@ -117,7 +121,7 @@ class Creator
 	end
 
 	def proc_fblock
-		case @fblock
+		case rand_fblock
 			when 1 ; flag
 			when 2 ; mono_figure
 			when 3 ; color_figure
@@ -125,15 +129,19 @@ class Creator
 	end
 
 	def flag
-
+		@logo['first_line'] = "/output/flag/0#{@pa[1]}.png"
+		@logo['second_line'] = "/output/flag/1#{@pa[2]}.png"
+		@logo['third_line'] = "/output/flag/2#{@pa[3]}.png"
 	end
 
 	def mono_figure
-
+		@logo['bg'] = "/output/bg/#{@pa[1]}.png"
+		@logo['figure_out'] = "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
 	end
 
 	def color_figure
-
+		@logo['figure_in'] = "/output/figures/1#{@pa[3]}#{@pa[1]}.png"
+		@logo['figure_out'] = "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
 	end
 
 end
