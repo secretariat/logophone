@@ -1,14 +1,30 @@
 ELEMENTS= [
-			 [1,0,1,0,1,0,0,0,0,0],
-			 [0,1,0,1,0,2,2,0,0,0],
-			 [1,0,1,0,1,0,0,0,0,0],
-			 [0,1,0,1,0,2,2,0,0,0],
-			 [1,0,1,0,1,0,0,0,0,0],
-			 [0,2,0,2,0,1,2,0,0,0],
-			 [0,2,0,2,0,2,1,0,0,0],
-			 [0,0,0,0,0,0,0,1,1,0],
-			 [0,0,0,0,0,0,0,1,1,0],
-			 [0,0,0,0,0,0,0,0,0,1] ]
+			 [1,0,0,0,0,0,0,0,0,0],
+			 [0,1,0,1,0,1,0,0,0,0],
+			 [0,0,1,0,1,0,2,2,0,0],
+			 [0,1,0,1,0,1,0,0,0,0],
+			 [0,0,1,0,1,0,2,2,0,0],
+			 [0,1,0,1,0,1,0,0,0,0],
+			 [0,0,2,0,2,0,1,2,0,0],
+			 [0,0,2,0,2,0,2,1,0,0],
+			 [0,0,0,0,0,0,0,0,1,1],
+			 [0,0,0,0,0,0,0,0,1,1]]
+
+def color_folder(color_id)
+	case color_id.to_i
+	when 1; return "red"
+	when 2; return "orange"
+	when 3; return "yellow"
+	when 4; return "green"
+	when 5; return "lblue"
+	when 6; return "blue"
+	when 7; return "violet"
+	when 8; return "brown"
+	when 9; return "black"
+	when 0; return "white"
+	end
+end
+
 
 class String
   def last(n)
@@ -19,8 +35,8 @@ end
 class Creator
 	def initialize(phone)
 		puts @phone = phone.last(10)
-		@phone_array = @phone.scan(/\d/).map { |c| c.to_i }
-		@phone_array.insert(0,0)
+		@pa = @phone.scan(/\d/).map { |c| c.to_i }
+		@pa.insert(0,0)
 		@fblock = rand_fblock
 		@strict = strictlogo?
 		@glasses = need_glasses?
@@ -34,20 +50,22 @@ class Creator
 
 	def get_strict_logo
 		if @glasses
-			@logo["five_pair"] = "/output/#{@phone_array[4]}все#{@phone_array[10]}#{overlap?}#{@phone_array[9]}000.png"
-			@logo["third_pair"] = "/output/#{@phone_array[4]}#{@phone_array[6]}#{overlap?}#{@phone_array[5]}000.png"
+			@logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}000.png"
+			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}000.png"
 		else
-			@logo["five_pair"] = "/output/#{@phone_array[4]}#{@phone_array[10]}#{overlap?}#{@phone_array[9]}000.png"
-			@logo["third_pair"] = "/output/#{@phone_array[4]}#{@phone_array[6]}#{overlap?}#{@phone_array[5]}000.png"
+			@logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+			@logo["fourth_pair"] = "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
+			@logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
 		end
 	end
 
 	def get_nostrict_logo
-		@logo["five_pair"] = "/output/#{@phone_array[4]}#{@phone_array[10]}#{overlap?}#{@phone_array[9]}000.png"
-		@logo["third_pair"] = "/output/#{@phone_array[4]}#{@phone_array[6]}#{overlap?}#{@phone_array[5]}000.png"
+		puts @logo["five_pair"] = "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+		puts @logo["third_pair"] = "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
 	end
 
 	def generate_logo
+		puts "LOGO IS IS STRICT: #{@strict}"
 		character
 		if @strict
 			get_strict_logo
@@ -57,29 +75,29 @@ class Creator
 	end
 
 	def character
-		@logo["character"] = "/output/#{@phone_array[4]}.png"
+		@logo["character"] = "/output/#{@pa[4]}XXXXXXX.png"
 	end
 
 	def strictlogo?
-		res = true
-		res = false if(	@phone_array[6] == @phone_array[8] ||
-										@phone_array[8] == @phone_array[10] ||
-										@phone_array[6] == @phone_array[10] ||
-										ELEMENTS[@phone_array[6]][@phone_array[8]] == 1 ||
-										ELEMENTS[@phone_array[8]][@phone_array[10]] == 1 ||
-										ELEMENTS[@phone_array[6]][@phone_array[10]] == 1 )
+		res = false
+		res = true if(	@pa[6] == @pa[8] ||
+										@pa[8] == @pa[10] ||
+										@pa[6] == @pa[10] ||
+										ELEMENTS[@pa[6]][@pa[8]] == 1 ||
+										ELEMENTS[@pa[8]][@pa[10]] == 1 ||
+										ELEMENTS[@pa[6]][@pa[10]] == 1 )
 		return res
 	end
 
 	def need_glasses?
 		res = false
-		res = true if( @phone_array[6] == @phone_array[10] || ELEMENTS[@phone_array[6]][@phone_array[10]] == 1 )
+		res = true if( @pa[6] == @pa[10] || ELEMENTS[@pa[6]][@pa[10]] == 1 )
 		return res
 	end
 
 	def overlap?
-		if( ELEMENTS[@phone_array[6]][@phone_array[8]] == 2) then
-			if(@phone_array[6] > @phone_array[8]) then
+		if( ELEMENTS[@pa[6]][@pa[8]] == 2) then
+			if(@pa[6] > @pa[8]) then
 				return 1
 			else
 				return 0
