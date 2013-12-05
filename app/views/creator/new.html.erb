@@ -1,38 +1,16 @@
-<article class="element clearfix home">
+<article class="element clearfix home pp" style="position:relative !important;">
   	<div class="row"><div class="span4 offset4"><h1>Creator</h1></div></div>
-	<div class="row">
-		<div class="span2 offset4">
-			<a href="#"><img src="/assets/left.png" alt="proxim" title="proxim"></a>
-			<a href="#"><img src="/assets/right.png" alt="proxim" title="proxim"></a>
+	<div class="mcenter">
+		<div class="layers">
+			<!-- напихивать таким -->
+			<!-- <%= image_tag  "layers/1.png", :class => "myimage", :width => "400"  %> -->
 		</div>
 	</div>
-	<div class="row">
-		<div class="span4 offset3">
-			<%= image_tag  "contacts/logo1.png", :class => "myimage", :size => "280x90"  %>
-		</div>
-	</div>
-	<div class="row">
-		<div class="span2 offset4">
-			<a href="#"><img src="/assets/left.png" alt="proxim" title="proxim"></a>
-			<a href="#"><img src="/assets/right.png" alt="proxim" title="proxim"></a>
-		</div>
-	</div>
-	<div class="row">
+	
+	<div class="mcenter">
 		<%= form_tag( creator_show_path, :method => "get") do %>
-			<div class="span5 offset3">
 				<%= text_field_tag :phone, params[:phone], :class => "minput" %>
 				<%= submit_tag("Create!", :class => "msubmit") %>
-				<!-- <button class="msubmit" name="submit" type="submit">Create!</button> -->
-			</div>
 		<% end %>
 	</div>
 </article>
-<!-- <article class="element clearfix home">
-	<%#= image_tag  "contacts/logo1.png", :class => "img-polaroid", :size => "280x90"  %>
-	<%#= form_tag(page_create_logo_path, method: "get") do %>
-	  <%#= label_tag(:phone, "Enter phone number:") %>
-	  <%#= text_field_tag(:phone) %>
-	  <%#= submit_tag("Create") %>
-	<%# end %>
-</article>
- -->
