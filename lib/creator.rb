@@ -85,7 +85,11 @@ class Creator
 			tmp_ar.sort!
 			tmp_ar.each do |t|
 				str = t.to_s
-				@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+				if tmp_ar.last == t then
+					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+				else
+					@ar << "/output/#{@pa[4]}#{str[0]}#{!overlap?}#{str[1]}XXXX.png"
+				end
 			end
 		end
 	end
