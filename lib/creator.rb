@@ -57,22 +57,23 @@ class Creator
 		if @glasses
 			@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
 			@ar << "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
-			@ar << "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
+			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 		else
-			if @pa[6] > @pa[10] then
+			if @pa[6] < @pa[10]
 				@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+				@ar <<  "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
 				@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
 			else
 				@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
 				@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
+				@ar <<  "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
 			end
-			@ar <<  "/output/#{color_folder(@pa[7])}/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
 		end
 	end
 
 	def get_nostrict_logo
 		if @glasses
-			@ar << "/output/XXXXXX#{@pa[10]}#{@pa[9]}.png"
+			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i ]
 			tmp_ar.sort!
 			tmp_ar.each do |t|
