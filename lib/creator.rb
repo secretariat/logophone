@@ -34,7 +34,7 @@ end
 
 class Creator
 	def initialize(phone)
-		puts @phone = phone.last(10)
+		puts @phone = phone.gsub(/[- ]/, "").last(10)
 		@pa = @phone.scan(/\d/).map { |c| c.to_i }
 		@pa.insert(0,0)
 		@fblock = rand_fblock
@@ -43,6 +43,7 @@ class Creator
 		@overlap = overlap?
 		@logo = Hash.new()
 		@ar = Array.new()
+		@overlaped_closes = [0,1,2,3,4,5]
 	end
 
 	def ar
@@ -85,10 +86,12 @@ class Creator
 			tmp_ar.sort!
 			tmp_ar.each do |t|
 				str = t.to_s
-				if tmp_ar.last == t then
-					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
+				sleep(10)
+				if @overlaped_closes.include?(str[0].to_i)
+					puts @ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
-					@ar << "/output/#{@pa[4]}#{str[0]}#{!overlap?}#{str[1]}XXXX.png"
+					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
 				end
 			end
 		end
@@ -166,6 +169,9 @@ class Creator
 		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
 	end
 
+	def revert_overlap( overlap )
+		overlap == 1 ? 0:1
+	end
 end
 
 # p = Creator.new("380674615191")
