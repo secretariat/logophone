@@ -85,9 +85,9 @@ class Creator
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i, "#{@pa[10]}#{@pa[9]}".to_i ]
 			tmp_ar.sort!
 			tmp_ar.each do |t|
-				str = t.to_s
+				str = sprintf('%02d', t).to_s
 				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
-				sleep(10)
+				sleep(2)
 				if @overlaped_closes.include?(str[0].to_i)
 					puts @ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
