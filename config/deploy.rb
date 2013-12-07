@@ -32,7 +32,8 @@ set :stages, ["staging", "production"]
 set :default_stage, "production"
 
 after "deploy","deploy:bundle"
-after "deploy:bundle", "deploy:assets"
+after "deploy:bundle", "deploy:symlink_shared"
+after "deploy:symlink_shared", "deploy:assets"
 after "deploy:assets", "deploy:migrations"
 after "deploy:migrations", "deploy:restart"
 after "deploy:create_symlink", "deploy:cleanup"
