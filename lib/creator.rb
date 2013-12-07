@@ -87,7 +87,7 @@ class Creator
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
 				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
-				sleep(2)
+				# sleep(2)
 				if @overlaped_closes.include?(str[0].to_i)
 					puts @ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
