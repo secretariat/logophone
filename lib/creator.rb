@@ -43,7 +43,7 @@ class Creator
 		@overlap = overlap?
 		@logo = Hash.new()
 		@ar = Array.new()
-		@overlaped_closes = [0,1,2,3,4,5]
+		@overlaped_closes = [0,1,2,3,4,5,8,9]
 	end
 
 	def ar
@@ -87,9 +87,9 @@ class Creator
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
 				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
-				# sleep(2)
+				# sleep(5)
 				if @overlaped_closes.include?(str[0].to_i)
-					puts @ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
+					@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
 					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
 				end
