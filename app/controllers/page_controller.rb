@@ -18,4 +18,10 @@ class PageController < ApplicationController
   def decoder
   end
 
+  def feedback
+    @msg = params[:msg]
+    Feedback.feedback_mail( params[:uname], params[:email] ).deliver
+    redirect_to(:controller => 'page', :action => 'contacts')
+  end
+
 end

@@ -10,26 +10,26 @@
     </div>
     <h2 class="pad pad-top-minus pad-bottom-minus">Send Message</h2>
     <div class="pad pad-top-minus">
-      <form name="myform" id="contactForm" action="sendcontact.php" enctype="multipart/form-data" method="post">
-            <div class="row-fluid">
-              <article>
-                <div id="fname"  class="alert alert-error error">
-                Name must not be empty
-                </div>
-                <div id="fmail" class="alert alert-error  error">
-                Please provide a valid email
-                </div>
-                <div id="fmsg" class="alert alert-error  error">
-                Message should not be empty
-                </div>
-        <input size="100" type="text" name="name" id="name" placeholder="Name">
-                <input type="text"  size="30" id="email" name="email" placeholder="email">
-                <textarea  id="msg" rows="3" cols="40" name="message" placeholder="Message">Message</textarea>
-                <button type="submit" name="submit" id="submit" class="btn btn-reveal add-top-half">Send Message</button>
-              </article>
+      <%= form_tag( page_feedback_path, :method => "get") do %>
+        <div class="row-fluid">
+          <article>
+            <div id="fname"  class="alert alert-error error">
+            Name must not be empty
             </div>
-          </form>
-    </div>
+            <div id="fmail" class="alert alert-error  error">
+            Please provide a valid email
+            </div>
+            <div id="fmsg" class="alert alert-error  error">
+            Message should not be empty
+            </div>
+            <%= text_field_tag :uname, params[:uname], :size=>"30", :placeholder=>"Name"%>
+            <%= text_field_tag :email, params[:email], :size=>"30", :placeholder=>"Email"%>
+            <%= text_area_tag :msg, params[:msg], :size=>"3x40", :placeholder=>"Message" %>
+            <%= button_tag("Send Message", :class => "btn btn-reveal add-top-half") %>
+          </article>
+        </div>
+      <% end %>
+        </div>
   </div>
   <div class="one-third contact">
     <div class="images">

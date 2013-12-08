@@ -13,6 +13,7 @@ Logophone::Application.routes.draw do
   get "page/creator"
   get "page/create_logo"
   get "page/contacts"
+  get "page/feedback"
 
   match ':controller(/:action(/:id))(.:format)'
 end
