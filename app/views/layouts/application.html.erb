@@ -11,6 +11,16 @@
   <div id="preloader">
     <div id="status">&nbsp;</div>
   </div>
+  <% flash.each do |name, msg| %>
+    <div class="alert-<%=name%>" >
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <center>
+        <br/>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <br/>
+      </center>
+    </div>
+  <% end %>
   <%= render 'shared/header' %>
   <section class="container">
     <section id="container" class="clearfix">

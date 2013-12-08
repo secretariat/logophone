@@ -1,7 +1,8 @@
 class Feedback < ActionMailer::Base
-  default from: "noreply@lgophone.org"
+  default to: "info@citrusdev.com.ua"
 
-  def feedback_mail( uname, email )
-    mail(:to => email, :subject => "New Feedback Message from #{uname}")
+  def feedback_mail( uname, email, msg )
+  	@msg = msg
+    mail(:from => email, :subject => "New Feedback Message from #{uname}")
   end
 end
