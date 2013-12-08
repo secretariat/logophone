@@ -71,8 +71,8 @@ Logophone::Application.configure do
     :address              => "smtp.yandex.ru",
     :port                 => 25,
     :domain               => "yandex.ru",
-    :user_name            => 'admin@logophone.org',
-    :password             => 'dtg123!@#',
+    :user_name            => 'noreply@logophone.org',
+    :password             => 'NoRePly6((',
     :authentication       => 'login',
     :openssl_verify_mode  => 'none',
   }
