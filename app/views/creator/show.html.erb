@@ -1,21 +1,25 @@
-<article class="element fx-slide-up home clearfix one-full about isotope-item">
-  <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Your logo</h2></center>
-  </div>
-</article>
-<article class="element clearfix home pp">
-  	<div class="row"><div class="span4 offset4"><h1>Creator</h1></div></div>
-	<div class="mcenter">
-		<div class="layers">
-			<% @ar.each do |a| %>
-				<%= image_tag a, :class => "myimage", :width => "400", :alt => ""  %>
-			<% end %>
-		</div>
-	</div>
-		<div class="row">
-		<div class="span2 offset4">
-			<a href="#"><img src="/assets/left.png" alt="proxim" title="proxim"></a>
-			<a href="#"><img src="/assets/right.png" alt="proxim" title="proxim"></a>
-		</div>
-	</div>
-</article>
+<section class="container">
+  <section id="container" class="clearfix">
+		<article class="element fx-slide-up home clearfix one-full about isotope-item">
+		  <div class="reveal-bg-nine">
+		    <center><h2 class="pad pad-top-minus pad-bottom-minus">Your logo</h2></center>
+		  </div>
+		</article>
+		<article class="element clearfix home pp">
+		  	<div class="row"><div class="span4 offset4"><h1>Creator</h1></div></div>
+			<div class="mcenter">
+				<div class="layers">
+					<% @ar.each do |a| %>
+						<%= image_tag a, :class => "myimage", :width => "400", :alt => ""  %>
+					<% end %>
+				</div>
+			</div>
+				<div class="row">
+				<div class="span2 offset4">
+					<a href="#"><img src="/assets/left.png" alt="proxim" title="proxim"></a>
+					<a href="#"><img src="/assets/right.png" alt="proxim" title="proxim"></a>
+				</div>
+			</div>
+		</article>
+	</section>
+</section>
