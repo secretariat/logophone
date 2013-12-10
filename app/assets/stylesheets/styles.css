@@ -1449,7 +1449,44 @@ fieldset h1
     .images > img{width: 100% !important;}
 }
 
+.minput
+{
+    margin-top: 5px;
+    width: 320px;
+    border: 1px solid #E56C19 !important;
+    float: left;
+}
 
+input.msubmit
+{
+    margin-top: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #fafafa !important;;
+    background-color: #1ABC9C !important;
+    height: 35px;
+    float: right;
+
+}
+.msubmit:hover
+{
+    border: 1px solid #555 !important;
+}
+
+.mcenter {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.layers
+{
+    height: 700px;
+    display: block;
+}
+
+.layers img
+{
+    position: absolute;
+}
 /*Bootstrap Resets*/
 
 .carousel-control {
@@ -1468,4 +1505,8 @@ fieldset h1
     text-align: center;
     top: 50%;
     width: 40px;
+}
+
+.pp {
+    position:relative !important;
 }
