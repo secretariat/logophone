@@ -1,15 +1,30 @@
 # require "creator.rb"
 class CreatorController < ApplicationController
-  def new
-  	# redirect_to creator_show_path
-  end
 
   def show
   	@phone = params[:phone]
   	c = Creator.new(@phone)
   	c.generate_logo
-  	@logo = c.logo
-  	@ar = c.ar
+    @ar = c.ar
+  	session[:logo] = c.ar.join(',')
+    @logo = Logo.new( params[:logo] )
+  end
+
+  def create
+    @logo = Logo.new( params[:logo] )
+    # @logo.user_id = current_user.id
+    @logo.user_id = 1
+    @logo.logo_files = session[:logo]
+    # sleep(10)
+    if @logo.save
+      flash[:success] = "Logotype succefully saved"
+      session[:logo] = nil
+      redirect_to creator_new_path
+    else
+      flash[:error] = "Error creating logotype. Please? try again."
+      session[:logo] = nil
+      redirect_to creator_new_path
+    end
   end
 
 end

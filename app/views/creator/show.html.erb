@@ -13,6 +13,14 @@
 						<%= image_tag a, :class => "myimage", :width => "400", :alt => ""  %>
 					<% end %>
 				</div>
+				<%if !user_signed_in? %>
+					<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
+						<%= f.text_field :phone, :value => params[:phone],  :class => "minput" %>
+						<%= f.text_field :first_name, :class => "minput" %>
+						<%= f.text_field :last_name,:class => "minput" %>
+						<%= submit_tag("Create!", :class => "msubmit") %>
+					<% end %>
+				<% end %>
 			</div>
 				<div class="row">
 				<div class="span2 offset4">

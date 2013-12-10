@@ -50,10 +50,6 @@ class Creator
 		@ar
 	end
 
-	def logo
-		@logo
-	end
-
 	def get_strict_logo
 		if @glasses
 			@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
@@ -107,7 +103,6 @@ class Creator
 		else
 			get_nostrict_logo
 		end
-		puts @logo
 	end
 
 	def character
