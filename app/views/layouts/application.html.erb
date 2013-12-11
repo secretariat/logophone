@@ -12,10 +12,12 @@
     <div id="status">&nbsp;</div>
   </div>
   <%= render 'shared/header' %>
-
+  <section class="container">
+    <section id="container" class="clearfix">
       <%= yield %>
-
-  <%#= render 'shared/footer' %>
+    </section>
+  </section>
+   <%#= render 'shared/footer' %>
 
   <script>
     var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper

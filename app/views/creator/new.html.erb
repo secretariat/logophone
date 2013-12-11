@@ -1,17 +1,13 @@
-<section class="container">
-  <section id="container" class="clearfix">
-		<article class="element fx-slide-up home clearfix one-full about isotope-item">
-		  <div class="reveal-bg-nine">
-		    <center><h2 class="pad pad-top-minus pad-bottom-minus">Create new logo</h2></center>
-		  </div>
-		</article>
-		<article class="element clearfix home pp">
-			<div class="mcenter">
-				<%= form_tag( creator_show_path, :method => "get") do %>
-						<%= text_field_tag :phone, params[:phone], :class => "minput" %>
-						<%= submit_tag("Create!", :class => "msubmit") %>
-				<% end %>
-			</div>
-		</article>
-	</section>
-</section>
+<article class="element fx-slide-up home clearfix one-full about isotope-item">
+  <div class="reveal-bg-nine">
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Create new logo</h2></center>
+  </div>
+</article>
+<article class="element clearfix home pp">
+	<div class="mcenter">
+		<%= form_tag( creator_show_path, :method => "get") do %>
+				<%= text_field_tag :phone, params[:phone], :class => "minput" %>
+				<%= submit_tag("Create!", :class => "msubmit") %>
+		<% end %>
+	</div>
+</article>

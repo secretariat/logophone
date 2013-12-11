@@ -83,7 +83,7 @@ a:hover  {
 
 h2  {
 	color: #fff;
-	font-family:"Open_Sans_L";
+	font-family:"Open_Sans_R";
      font-size: 32px;
      font-weight: normal;
      line-height: 39px;
@@ -470,12 +470,12 @@ font-size: 16px;
 
 #options li a, #options li a:active  {
      color: #fff;
-    font-family:"Open_Sans_L";
+    font-family:"Open_Sans_R";
      font-size: 18px;
      font-weight: normal;
      text-decoration: none;
      display: inline-block;
-     padding: 10px 20px;
+     padding: 10px 10px;
       margin: 0px;
     -webkit-transition:  all 0.8s ease 0s;
      -moz-transition:  all 0.8s ease 0s;
@@ -1451,25 +1451,28 @@ fieldset h1
 
 .minput
 {
-    margin-top: 5px;
+    margin: 0;
     width: 320px;
     border: 1px solid #E56C19 !important;
     float: left;
+    color: #000 я!important;
 }
 
 input.msubmit
 {
-    margin-top: 5px;
-    margin-bottom: 12px;
-    border: 1px solid #fafafa !important;;
-    background-color: #1ABC9C !important;
-    height: 35px;
+    margin: 0;
+    padding: 0 15px !important;
+    border: 1px solid #000 !important;;
+    background-color: #fff !important;
+    height: 40px;
     float: right;
+    color: #000 !important;
 
 }
-.msubmit:hover
+input.msubmit:hover
 {
-    border: 1px solid #555 !important;
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
 .mcenter {
