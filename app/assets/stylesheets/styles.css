@@ -475,8 +475,8 @@ font-size: 16px;
      font-weight: normal;
      text-decoration: none;
      display: inline-block;
-     padding: 10px 10px;
-      margin: 0px;
+     padding: 10px 5px;
+   
     -webkit-transition:  all 0.8s ease 0s;
      -moz-transition:  all 0.8s ease 0s;
      -o-transition:  all 0.8s ease 0s;
@@ -486,9 +486,9 @@ font-size: 16px;
 
 #options li a:hover{
     color: #fff !important;
-     font-size: 18px !important;
-     padding: 20px 40px !important;
-     text-align: left !important;
+    font-size: 18px !important;
+    padding: 20px 30px !important;
+    text-align: left !important;
 }
 
 .activated{
