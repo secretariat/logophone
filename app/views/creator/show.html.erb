@@ -15,12 +15,12 @@
 						<% end %>
 					</div>
 						<%if user_signed_in? %>
-							<div class="saveasblock reveal-bg-eight">
+							<div class="saveasblock reveal-bg-seven">
 								<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>  
 									<div style="width:70%; float: left;">   
 				                  	<%= f.text_field :phone, :value => params[:phone], :readonly => true%>
-									<%= f.text_field :first_name  %>
-									<%= f.text_field :last_name %>
+									<%= f.text_field :first_name, :placeholder=>"First name"  %>
+									<%= f.text_field :last_name, :placeholder=>"Last name"%>
 									</div>
 									<%= submit_tag("Create!", :class => "msubmit") %>		
 								<% end %>
