@@ -1,9 +1,10 @@
 Logophone::Application.routes.draw do
-  get "creator/new"
+  root :to => 'page#index'
+  devise_for :users
 
+  get "creator/new"
   get "creator/show"
 
-  root :to => 'page#index'
   get "page/index"
   get "page/elements"
   get "page/login"
