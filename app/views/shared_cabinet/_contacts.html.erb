@@ -1,19 +1,19 @@
 <% i = 0 %>
 <% @logos.each do |logo| %>
-  <article class="element fx-slide-out clearfix one-third home overflow">
+  <article class="element fx-slide-out clearfix one-third home overflow" style="height:450px;">
     <!-- <a href="images/content/01.jpg" title="" class="popup"> -->
     <div class="images">
-      <div class="mcenter">
+      <div class="mcenter100">
         <div class="layers">
           <% logo.logo_files.split(',').each do |file| %>
-            <%= image_tag file, :class => "myimage", :width => "250", :alt => ""  %>
+            <%= image_tag file, :heigth => "402", :alt => ""  %>
           <% end %>
         </div>
       </div>
     </div>
     <div class="inner-panel reveal-bg-<%= @colors[i] %>">
-      <div class="thumb pad pad-bottom-minus"><!-- <img alt="reveal" title="reveal" src="images/image.png"/> --></div>
-      <h2 class="pad pad-top-minus"><%= logo.first_name %> <%= logo.last_name %></h2>
+      <div class="thumb pad pad-bottom-minus" style="padding:0;"></div>
+      <center><h2 class="pad pad-top-minus" style="padding:0; font-size:24px;"><%= logo.first_name %> <%= logo.last_name %></h2></center>
     </div>
     </a>
   </article>

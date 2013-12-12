@@ -1500,6 +1500,10 @@ input.msubmit:hover
     width: 50%;
     margin: 0 auto;
 }
+.mcenter100 {
+    width: 100%;
+    margin: 0 auto;
+}
 
 .layersw
 {
@@ -1507,7 +1511,7 @@ input.msubmit:hover
 }
 .layers
 {
-    height: 400px;
+    height: 566px;
     display: block;
 }
 .layers img
@@ -1562,6 +1566,11 @@ input.msubmit:hover
 {
     background: #fff !important;
     color: #000 !important;
+}
+.myimage {
+    border: 1px solid #fff !important;
+    width: 400px;
+    height: 556px;
 }
 
 #user_nav
