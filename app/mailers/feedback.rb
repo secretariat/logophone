@@ -1,5 +1,6 @@
 class Feedback < ActionMailer::Base
-  default to: "info@citrusdev.com.ua"
+  # default to: "info@citrusdev.com.ua"
+  default to: "victorstechenko@gmail.com"
 
   def feedback_mail( uname, email, msg )
   	@msg = msg
