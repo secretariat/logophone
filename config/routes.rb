@@ -10,9 +10,9 @@ Logophone::Application.routes.draw do
   get "cabinet/table"
   get "cabinet/test"
 
-  # get "creator/new"
-  # get "creator/show"
-  resources :creator, only: [ :index, :new, :create, :show]
+  get "creator/new"
+  get "creator/show"
+  # resources :creator, only: [ :index, :new, :create, :show]
 
   get "page/index"
   get "page/elements"

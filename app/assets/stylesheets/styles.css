@@ -1501,12 +1501,15 @@ input.msubmit:hover
     margin: 0 auto;
 }
 
-.layers
+.layersw
 {
     height: 700px;
+}
+.layers
+{
+    height: 400px;
     display: block;
 }
-
 .layers img
 {
     position: absolute;
@@ -1533,4 +1536,47 @@ input.msubmit:hover
 
 .pp {
     position:relative !important;
+}
+
+.saveasblock {
+    width: 400px !important;
+    height: 120px !important;
+    display: block;
+    padding: 10px 20px;
+    overflow: visible;
+    position: relative;
+    margin-top: 30px;
+}
+
+.mbutton
+{
+    width: 100px !important;
+    height: 90px  !important;
+    display: block;
+    border: 2px solid #fff !important;
+    color: #fff;
+    margin: 10px 20px;
+}
+
+.mbutton:hover
+{
+    background: #fff !important;
+    color: #000 !important;
+}
+
+#user_nav
+{
+    width: 100%;
+    padding-top: 3px;
+    height: 25px;
+    background: #999999;
+    color: #fff;
+    text-align: right;
+}
+#user_nav a {
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+#user_nav a:hover {
+    text-decoration: underline;
 }

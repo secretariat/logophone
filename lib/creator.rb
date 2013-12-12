@@ -33,6 +33,15 @@ class String
 end
 
 class Creator
+
+	include ActiveModel::Validations
+  include ActiveModel::Conversion
+  extend ActiveModel::Naming
+
+  attr_accessor :phone
+
+  # validates_format_of :phone, :with => /^[0-9]+$/
+
 	def initialize(phone)
 		puts @phone = phone.gsub(/[- ]/, "").last(10)
 		@pa = @phone.scan(/\d/).map { |c| c.to_i }
