@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logophone</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
+  <div id="user_nav">
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>.
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% end %>
+  </div>
+
+<!--   <p class="notice"><%#= notice %></p>
+  <p class="alert"><%#= alert %></p> -->
+  <% flash.each do |name, msg| %>
+    <div class="alert-<%=name%>" >
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <center>
+        <br/>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <br/>
+      </center>
+    </div>
+  <% end %>
+  <%= render 'shared_cabinet/cabinet' %>
+  <%= yield %>
+  <%#= render 'shared/footer' %>
+
+  <script>
+    var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
+      animate: true, // Boolean: Use CSS3 transitions, true or false
+      transition: 400, // Integer: Speed of the transition, in milliseconds
+      label: "Menu", // String: Label for the navigation toggle
+      insert: "after", // String: Insert the toggle before or after the navigation
+      customToggle: "", // Selector: Specify the ID of a custom toggle
+      openPos: "relative", // String: Position of the opened nav, relative or static
+      jsClass: "js", // String: 'JS enabled' class which is added to <html> el
+      init: function(){}, // Function: Init callback
+      open: function(){}, // Function: Open callback
+      close: function(){} // Function: Close callback
+    });
+  </script>
+</body>
+</html>
