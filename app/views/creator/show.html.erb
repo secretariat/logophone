@@ -8,26 +8,37 @@
 		<article class="element clearfix home pp">
 		  	<div class="row"><div class="span4 offset4"><h1>Creator</h1></div></div>
 			<div class="mcenter">
-				<div class="layers">
-					<% @ar.each do |a| %>
-						<%= image_tag a, :class => "myimage", :width => "400", :alt => ""  %>
-					<% end %>
-				</div>
-				<%if !user_signed_in? %>
-					<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
-						<%= f.text_field :phone, :value => params[:phone],  :class => "minput" %>
-						<%= f.text_field :first_name, :class => "minput" %>
-						<%= f.text_field :last_name,:class => "minput" %>
-						<%= submit_tag("Create!", :class => "msubmit") %>
-					<% end %>
-				<% end %>
-			</div>
-				<div class="row">
-				<div class="span2 offset4">
-					<a href="#"><img src="/assets/left.png" alt="proxim" title="proxim"></a>
-					<a href="#"><img src="/assets/right.png" alt="proxim" title="proxim"></a>
+				<div class="layersw">
+					<div class="layers">
+						<% @ar.each do |a| %>
+							<%= image_tag a, :class => "myimage", :width => "400", :alt => ""  %>
+						<% end %>
+					</div>
+						<%if user_signed_in? %>
+							<div class="saveasblock reveal-bg-eight">
+								<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>  
+									<div style="width:70%; float: left;">   
+				                  	<%= f.text_field :phone, :value => params[:phone], :readonly => true%>
+									<%= f.text_field :first_name  %>
+									<%= f.text_field :last_name %>
+									</div>
+									<%= submit_tag("Create!", :class => "msubmit") %>		
+								<% end %>
+							</div>
+						<% end %>
 				</div>
 			</div>
 		</article>
+<!-- 					<div class="saveasblock reveal-bg-seven">
+							<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
+								<%= f.text_field :phone, :value => params[:phone],  :class => "minput", :readonly => true%>
+								<%= f.text_field :first_name, :class => "minput" %>
+								<%= f.text_field :last_name,:class => "minput" %>
+								<%= submit_tag("Create!", :class => "msubmit") %>
+							<% end %>
+					</div> -->
+
+			
+
 	</section>
 </section>
