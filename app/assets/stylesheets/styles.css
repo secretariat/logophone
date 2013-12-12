@@ -1572,6 +1572,7 @@ input.msubmit:hover
     background: #999999;
     color: #fff;
     text-align: right;
+    padding-right: 5px;
 }
 #user_nav a {
     color: #fff !important;
