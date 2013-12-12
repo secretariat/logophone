@@ -1526,10 +1526,10 @@ input.msubmit
 
 .mbutton
 {
-    width: 80px !important;
-    height: 100px  !important;
+    width: 100px !important;
+    height: 90px  !important;
     display: block;
-    border: 1px solid #fff !important;
+    border: 2px solid #fff !important;
     color: #fff;
     margin: 10px 20px;
 }
@@ -1538,4 +1538,21 @@ input.msubmit
 {
     background: #fff !important;
     color: #000 !important;
+}
+
+#user_nav
+{
+    width: 100%;
+    padding-top: 3px;
+    height: 25px;
+    background: #999999;
+    color: #fff;
+    text-align: right;
+}
+#user_nav a {
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+#user_nav a:hover {
+    text-decoration: underline;
 }

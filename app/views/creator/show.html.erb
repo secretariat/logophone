@@ -6,7 +6,6 @@
 		  </div>
 		</article>
 		<article class="element clearfix home pp">
-		  	<div class="row"><div class="span4 offset4"><h1>Creator</h1></div></div>
 			<div class="mcenter">
 				<div class="layersw">
 					<div class="layers">
@@ -22,7 +21,9 @@
 									<%= f.text_field :first_name, :placeholder=>"First name"  %>
 									<%= f.text_field :last_name, :placeholder=>"Last name"%>
 									</div>
-									<%= submit_tag("Save", :class => "mbutton") %>
+									<div style="width:30%; float: right; padding-top: 20px;">   
+										<%= submit_tag("Save logo", :class => "mbutton") %>
+									</div>
 								<% end %>
 							</div>
 						<% end %>
