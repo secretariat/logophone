@@ -1,58 +1,44 @@
-<section class="container">
-  <section id="container" class="clearfix">
-    <article class="element fx-slide-up home clearfix one-full about isotope-item">
-      <div class="reveal-bg-nine">
-        <center><h2 class="pad pad-top-minus pad-bottom-minus">Contacts</h2></center>
-      </div>
-    </article>
-    <article class="element clearfix two-third home">
-      <div class="one-third white-right2 reveal-bg-one">
-        <div class="thumb pad pad-bottom-minus">
-          <%= image_tag ("mail.png") %>
-        </div>
-        <h2 class="pad pad-top-minus pad-bottom-minus">Send Message</h2>
-        <div class="pad pad-top-minus">
-          <%= form_tag( page_feedback_path, :method => "get") do %>
-            <div class="row-fluid">
-              <article>
-                <div id="fname"  class="alert alert-error error">
-                Name must not be empty
-                </div>
-                <div id="fmail" class="alert alert-error  error">
-                Please provide a valid email
-                </div>
-                <div id="fmsg" class="alert alert-error  error">
-                Message should not be empty
-                </div>
-                <%= text_field_tag :uname, params[:uname], :size=>"30", :placeholder=>"Name"%>
-                <%= text_field_tag :email, params[:email], :size=>"30", :placeholder=>"Email"%>
-                <%= text_area_tag :msg, params[:msg], :size=>"3x40", :placeholder=>"Message" %>
-                <%= button_tag("Send Message", :class => "btn btn-reveal add-top-half") %>
-              </article>
+<article class="element fx-slide-up home clearfix one-full about isotope-item">
+  <div class="reveal-bg-nine">
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Contact us</h2></center>
+  </div>
+</article>
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("contacts/cont_1.jpg") %>
+  </div>
+</article>
+<article class="element clearfix one-third home">
+  <div class="one-third white-right2 reveal-bg-one">
+    <div class="thumb pad pad-bottom-minus">
+      <%= image_tag ("mail.png") %>
+    </div>
+    <h2 class="pad pad-top-minus pad-bottom-minus">Send Message</h2>
+    <div class="pad pad-top-minus">
+      <%= form_tag( page_feedback_path, :method => "get") do %>
+        <div class="row-fluid">
+          <article>
+            <div id="fname" class="alert alert-error error">
+            Name must not be empty
             </div>
-          <% end %>
+            <div id="fmail" class="alert alert-error error">
+            Please provide a valid email
             </div>
-      </div>
-      <div class="one-third contact">
-        <div class="images">
-          <%= image_tag  "contacts/logo1.png", :class => "myimage", :size => "280x90"  %>
+            <div id="fmsg" class="alert alert-error error">
+            Message should not be empty
+            </div>
+            <%= text_field_tag :uname, params[:uname], :size=>"30", :placeholder=>"Name"%>
+            <%= text_field_tag :email, params[:email], :size=>"30", :placeholder=>"Email"%>
+            <%= text_area_tag :msg, params[:msg], :size=>"3x40", :placeholder=>"Message", :style => "height:100px;"%>
+            <%= button_tag("Send Message", :class => "btn btn-reveal add-top-half", :style => "width: 240px;padding: 2px 10px;margin: 0 !important;") %>
+          </article>
         </div>
-      </div>
-    </article>
-
-    <article class="element fx-slide-up clearfix one-third home contact">
-      <div class="images">
-        <%= image_tag ("content/03.jpg") %>
-      </div>
-      <div class="content-bottom content-bottom-alt reveal-bg-two">
-        <div class="thumb pad pad-bottom-minus">
-          <%= image_tag ("tweets.png") %>
-        </div>
-        <h2 class="pad pad-top-minus pad-bottom-minus">@logophone</h2>
-        <div class="pad pad-top-minus">
-            <article id="ticker" class="query"></article>
-        </div>
-      </div>
-    </article>
-  </section>
-</section>
+  <% end %>
+    </div>
+  </div>
+</article>
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("contacts/cont_2.jpg") %>
+  </div>
+</article>

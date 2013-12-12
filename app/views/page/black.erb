@@ -1,10 +1,12 @@
-<section class="container" style="background: #0A0A0A !important;">
-	<section id="container" class="clearfix">
-		<%= render 'shared/main_sliderb' %>
-		<%= render 'shared/main_welcometext' %>
-		<%= render 'shared/slider1b' %>
-		<%= render 'shared/slider2b' %>
-		<%= render 'shared/slider3b' %>
-		<%= render 'shared/slider4b' %>
-	</section>
-</section>
+<%= render 'shared/main_sliderb' %>
+<%= render 'shared/main_welcometext' %>
+<%= render 'shared/slider1b' %>
+<%= render 'shared/slider2b' %>
+<%= render 'shared/slider3b' %>
+<%= render 'shared/slider4b' %>
+<script>
+	var htmlEl = document.getElementsByTagName("html")[0];
+	htmlEl.style.background = "#000";
+	var sectEl = document.getElementsByTagName("section")[0];
+	sectEl.style.background = "#000";
+</script>

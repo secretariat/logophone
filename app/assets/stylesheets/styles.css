@@ -83,7 +83,7 @@ a:hover  {
 
 h2  {
 	color: #fff;
-	font-family:"Open_Sans_L";
+	font-family:"Open_Sans_R";
      font-size: 32px;
      font-weight: normal;
      line-height: 39px;
@@ -470,13 +470,13 @@ font-size: 16px;
 
 #options li a, #options li a:active  {
      color: #fff;
-    font-family:"Open_Sans_L";
+    font-family:"Open_Sans_R";
      font-size: 18px;
      font-weight: normal;
      text-decoration: none;
      display: inline-block;
-     padding: 10px 20px;
-      margin: 0px;
+     padding: 10px 5px;
+   
     -webkit-transition:  all 0.8s ease 0s;
      -moz-transition:  all 0.8s ease 0s;
      -o-transition:  all 0.8s ease 0s;
@@ -486,9 +486,9 @@ font-size: 16px;
 
 #options li a:hover{
     color: #fff !important;
-     font-size: 18px !important;
-     padding: 20px 40px !important;
-     text-align: left !important;
+    font-size: 18px !important;
+    padding: 20px 30px !important;
+    text-align: left !important;
 }
 
 .activated{
@@ -668,6 +668,27 @@ input:focus, textarea:focus
 {
     color:#000 !important;
     background: #fff !important;
+}
+
+input.signup
+{
+    width: 240px;
+    padding: 2px 10px;
+    margin: 0 !important;
+    border: 1px solid #fff !important;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: "Open_Sans_L" !important;
+    font-size: 16px !important;
+    line-height: 25px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    margin-top: 30px !important;
+}
+input.signup:hover
+{
+    background: #fff !important;
+    color: #000 !important;
 }
 
 textarea
@@ -1451,25 +1472,28 @@ fieldset h1
 
 .minput
 {
-    margin-top: 5px;
+    margin: 0;
     width: 320px;
     border: 1px solid #E56C19 !important;
     float: left;
+    color: #000 я!important;
 }
 
 input.msubmit
 {
-    margin-top: 5px;
-    margin-bottom: 12px;
-    border: 1px solid #fafafa !important;;
-    background-color: #1ABC9C !important;
-    height: 35px;
+    margin: 0;
+    padding: 0 15px !important;
+    border: 1px solid #000 !important;;
+    background-color: #fff !important;
+    height: 40px;
     float: right;
+    color: #000 !important;
 
 }
-.msubmit:hover
+input.msubmit:hover
 {
-    border: 1px solid #555 !important;
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
 .mcenter {

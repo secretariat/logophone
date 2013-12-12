@@ -1,20 +1,41 @@
-<article class="element clearfix home">
-
-	<h2>Sign in</h2>
-
-	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	  <div><%= f.label :email %><br />
-	  <%= f.email_field :email, :autofocus => true %></div>
-
-	  <div><%= f.label :password %><br />
-	  <%= f.password_field :password %></div>
-
-	  <% if devise_mapping.rememberable? -%>
-	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-	  <% end -%>
-
-	  <div><%= f.submit "Sign in" %></div>
-	<% end %>
-
-	<%= render "devise/shared/links" %>
+<article class="element fx-slide-up home clearfix one-full about isotope-item">
+  <div class="reveal-bg-nine">
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Log in</h2></center>
+  </div>
 </article>
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("login/login_1.png") %>
+  </div>
+</article>
+<article class="element clearfix one-third home">
+  <div class="one-third white-right2 reveal-bg-five">
+    <div class="thumb pad pad-bottom-minus">
+      <%= image_tag ("login.png") %>
+    </div>
+    <br>
+    <br>
+    <div class="pad pad-top-minus">
+    	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	 			<%= devise_error_messages! %>
+	        <div class="row-fluid">
+	          <article>
+							<%= f.email_field :email, :autofocus => true, :size=>"30", :placeholder => "Email"%><br>
+							<%= f.password_field :password, :size=>"30", :placeholder => "Password"%><br>
+							<% if devise_mapping.rememberable? -%>
+								<div><%= f.check_box :remember_me %><%= f.label :remember_me %></div>
+							<% end -%>
+							<%= submit_tag "Log in", :class => "signup"%>
+							<%#= render "devise/shared/links" %>
+	          </article>
+	        </div>
+  		<% end %>
+    </div>
+  </div>
+</article>
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("login/login_2.png") %>
+  </div>
+</article>
+<%#= render "devise/shared/links" %>
