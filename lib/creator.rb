@@ -94,7 +94,7 @@ class Creator
 				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
 				# sleep(2)
 				if @overlaped_closes.include?(str[0].to_i)
-					puts @ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
+					@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
 					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
 				end
@@ -103,9 +103,9 @@ class Creator
 	end
 
 	def generate_logo
-		puts "LOGO IS IS STRICT: #{@strict}"
-		puts "NEED GLASSES: #{@glasses}"
-		proc_fblock
+		# puts "LOGO IS IS STRICT: #{@strict}"
+		# puts "NEED GLASSES: #{@glasses}"
+		# proc_fblock
 		character
 		if @strict
 			get_strict_logo
