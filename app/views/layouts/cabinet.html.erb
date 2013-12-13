@@ -30,8 +30,12 @@
       </center>
     </div>
   <% end %>
-  <%= render 'shared_cabinet/cabinet' %>
-  <%= yield %>
+  <section class="container">
+    <section id="container" class="clearfix">
+    <%= render 'shared_cabinet/cabinet' %>
+    <%= yield %>
+    </section>
+  </section>
   <%#= render 'shared/footer' %>
 
   <script>
