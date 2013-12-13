@@ -29,7 +29,7 @@
           <% end %>
           
           <% logo.logo_files.split(',').each do |file| %>
-              <%= image_tag file, :width => width %>
+              <%= image_tag file, :width => width, :alt => "logophone"%>
           <% end %>
         </div>
     </div>
