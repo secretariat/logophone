@@ -11,13 +11,12 @@
   <div id="preloader">
     <div id="status">&nbsp;</div>
   </div>
-
-  <div id="user_nav">
-    <% if user_signed_in? %>
-       Signed in as <%= current_user.email %>. |
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <% end %>
-  </div>
+  
+  <% if user_signed_in? %>
+    <div id="user_nav">
+        <div class="text">Signed in as <%= current_user.email %> | <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>
+    </div>
+  <% end %>
 
 <!--   <p class="notice"><%#= notice %></p>
   <p class="alert"><%#= alert %></p> -->
