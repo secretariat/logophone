@@ -1509,6 +1509,11 @@ input.msubmit:hover
 {
     height: 750px;
 }
+.layerscab
+{
+    height: 424px;
+    display: block;
+}
 .layers
 {
     height: 566px;
@@ -1517,7 +1522,10 @@ input.msubmit:hover
 .layers img
 {
     position: absolute;
+    margin: auto auto;
+    border: 0;
 }
+
 /*Bootstrap Resets*/
 
 .carousel-control {
@@ -1574,7 +1582,7 @@ input.msubmit:hover
     height: 556px;
 }
 .m1m1 {
-    height: 556px;
+    max-height: 400px;
 }
 
 .mh2

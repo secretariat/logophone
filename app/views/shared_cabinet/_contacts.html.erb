@@ -8,13 +8,25 @@
   <article class="element fx-slide-out clearfix one-third home overflow" style="height:450px;">
     <!-- <a href="images/content/01.jpg" title="" class="popup"> -->
     <div class="images">
-      <div class="mcenter100">
         <div class="layers">
+          <% mouse = 0 %>
           <% logo.logo_files.split(',').each do |file| %>
-            <%= image_tag file, :heigth => "402", :alt => ""  %>
+            <% if file =~ /1\w{7}\.png/ %>
+              <% mouse = 1 %>
+            <% end %>
           <% end %>
+
+          <% if mouse == 1 %>
+            <% width = 225 %>
+            <% height = 402 %>
+          <% else %>
+            <% width = 300 %>
+            <% height = 450 %>
+          <% end %>
+            <% logo.logo_files.split(',').each do |file| %>
+                <%= image_tag file, :width => width, :height => height %>
+            <% end %>
         </div>
-      </div>
     </div>
     <div class="inner-panel reveal-bg-<%= @colors[i] %>">
       <div class="thumb pad pad-bottom-minus" style="padding:0;"></div>

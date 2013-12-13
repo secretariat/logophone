@@ -7,9 +7,11 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
+				<center>
 				<% @ar.each do |a| %>
 					<%= image_tag a, :class => "m1m1", :alt => ""  %>
 				<% end %>
+				</center>
 			</div>
 				<%if user_signed_in? %>
 					<div class="saveasblock reveal-bg-two">
