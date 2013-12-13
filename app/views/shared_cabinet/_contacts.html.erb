@@ -1,6 +1,6 @@
 <article class="element fx-slide-up home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Saved logos</h2></center>
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Saved contacts</h2></center>
   </div>
 </article>
 <% i = 0 %>
@@ -18,7 +18,14 @@
     </div>
     <div class="inner-panel reveal-bg-<%= @colors[i] %>">
       <div class="thumb pad pad-bottom-minus" style="padding:0;"></div>
-      <center><h2 class="pad pad-top-minus" style="padding:0; font-size:24px;"><%= logo.first_name %> <%= logo.last_name %></h2></center>
+      <center>
+        <% if logo.first_name != "" && logo.first_name != ""%>
+          <h2 class="pad pad-top-minus mh2"><%= logo.first_name %> <%= logo.last_name %></h2>
+          <h5 class="mp0"><%=logo.phone %></h5>
+        <% else  %>
+          <h2 class="pad pad-top-minus mh2"><%=logo.phone %></h2><h5 class="mp0">&nbsp</h5>
+        <% end %>
+      </h2></center>
     </div>
     </a>
   </article>

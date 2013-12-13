@@ -1476,23 +1476,23 @@ fieldset h1
     width: 320px;
     border: 1px solid #E56C19 !important;
     float: left;
-    color: #000 я!important;
+    color: #000 !important;
+    margin-right: 20px;
 }
 
 input.msubmit
 {
     margin: 0;
     padding: 0 15px !important;
-    border: 1px solid #000 !important;;
-    background-color: #fff !important;
-    height: 40px;
-    float: right;
-    color: #000 !important;
+    border: 2px solid rgb(142, 68, 173) !important;;
+    background-color: rgb(230, 113, 181) !important;
+    height: 32px !important;
+    color: #fff !important;
 
 }
 input.msubmit:hover
 {
-    background-color: #000 !important;
+    background-color: rgb(142, 68, 173) !important;
     color: #fff !important;
 }
 
@@ -1577,6 +1577,23 @@ input.msubmit:hover
     height: 556px;
 }
 
+.mh2
+{
+    padding:0 !important;
+    font-size:24px !important;
+    margin:0 !important;
+}
+
+.mh5
+{
+    padding:0 !important;
+    font-size:24px !important;
+    margin:0 !important;
+}
+
+.mp0 {
+    margin:0;padding:0;
+}
 
 #user_nav
 {
