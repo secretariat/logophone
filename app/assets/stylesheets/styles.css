@@ -1507,7 +1507,7 @@ input.msubmit:hover
 
 .layersw
 {
-    height: 700px;
+    height: 750px;
 }
 .layers
 {
@@ -1569,19 +1569,30 @@ input.msubmit:hover
 }
 .myimage {
     border: 1px solid #fff !important;
+    background-clip: none;
     width: 400px;
     height: 556px;
 }
+.m1m1 {
+    height: 556px;
+}
+
 
 #user_nav
 {
     width: 100%;
     padding-top: 3px;
     height: 25px;
-    background: #999999;
+    background: rgb(31, 47, 63);
     color: #fff;
-    text-align: right;
-    padding-right: 5px;
+    padding-right: 10px;
+
+}
+#user_nav .text
+{
+    float: right;
+    position: relative;
+    padding-right: 15px;
 }
 #user_nav a {
     color: #fff !important;
