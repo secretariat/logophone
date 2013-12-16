@@ -1511,9 +1511,8 @@ input.msubmit:hover
 }
 .layerscab
 {
-    height: 424px;
+    height: 426px;
     display: block;
-    width: 100%;
 }
 .layers
 {
@@ -1522,6 +1521,12 @@ input.msubmit:hover
     display: block;
     padding: 0px 50px;
 }
+.layerscab img
+{
+    position: absolute;
+    z-index: 10;
+}
+
 .layers img
 {
     position: absolute;
@@ -1587,6 +1592,14 @@ input.msubmit:hover
     height: 556px;
     width: 386px;
     border: 3px solid #34495E;
+}
+
+.m1m2 {
+    padding-left: 40px !important;
+}
+
+.m1m3 {
+    padding-left: 20px !important;
 }
 
 .mh2

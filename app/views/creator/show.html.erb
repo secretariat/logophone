@@ -7,6 +7,20 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
+				<% pers = 0 %>
+				<% @ar.each do |a| %>
+					<% pers = 1 if a =~ /1\w{7}\.png/%>
+            		<% pers = 5 if a =~ /5\w{7}\.png/%>
+ 				<% end %>
+
+				<% case pers %>
+					<% when 1%>
+					  <% iclass = "m1m1" %>
+					<% when 5%>
+					  <% iclass = "m1m1" %>
+					<% else %>
+					  <% iclass = "m1m1" %>
+				<% end %>
 				<% @ar.each do |a| %>
 					<%= image_tag a, :class => "m1m1", :alt => ""  %>
 				<% end %>

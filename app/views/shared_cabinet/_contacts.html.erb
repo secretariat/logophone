@@ -8,23 +8,15 @@
   <article class="element fx-slide-out clearfix one-third home overflow" style="height:450px;">
     <!-- <a href="images/content/01.jpg" title="" class="popup"> -->
     <div class="images">
-        <div class="layers">
-          <% pers = 0 %>
+        <div class="layerscab">
           <% logo.logo_files.split(',').each do |file| %>
-            <% pers = 1 if file =~ /1\w{7}\.png/%>
-            <% pers = 5 if file =~ /5\w{7}\.png/%>
-          <% end %>
-
-          <% case pers %>
-            <% when 1%>
-              <% width = 225 %>
-            <% when 5%>
-              <% width = 270 %>
-            <% else %>
-              <% width = 300 %>
-          <% end %>
-          <% logo.logo_files.split(',').each do |file| %>
-              <%= image_tag file, :width => width, :alt => "logophone"%>
+              <% if file =~ /1\w{7}\.png/%>
+                <%= image_tag file, :class => "m1m2", :width => "225", :alt => "logophone"%>
+              <% elsif file =~ /5\w{7}\.png/ %>
+                <%= image_tag file, :class => "m1m3", :width => "270", :alt => "logophone"%>
+              <% else %>
+                <%= image_tag file, :width => "300", :alt => "logophone"%>
+              <% end %>
           <% end %>
         </div>
     </div>
