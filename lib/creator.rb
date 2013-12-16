@@ -105,7 +105,7 @@ class Creator
 	def generate_logo
 		# puts "LOGO IS IS STRICT: #{@strict}"
 		# puts "NEED GLASSES: #{@glasses}"
-		# proc_fblock
+		proc_fblock
 		character
 		if @strict
 			get_strict_logo
@@ -158,19 +158,21 @@ class Creator
 	end
 
 	def flag
-		@ar << "/output/flag/0#{@pa[1]}.png"
-		@ar << "/output/flag/1#{@pa[2]}.png"
-		@ar << "/output/flag/2#{@pa[3]}.png"
+		@ar << "/output/flag/1#{@pa[1]}.png"
+		@ar << "/output/flag/2#{@pa[2]}.png"
+		@ar << "/output/flag/3#{@pa[3]}.png"
 	end
 
 	def mono_figure
-		@ar << "/output/bg/#{@pa[1]}.png"
-		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
+		@ar << "/output/flag/1#{@pa[1]}.png"
+		@ar << "/output/flag/2#{@pa[1]}.png"
+		@ar << "/output/flag/3#{@pa[1]}.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 	end
 
 	def color_figure
-		@ar << "/output/figures/1#{@pa[3]}#{@pa[1]}.png"
-		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[1]}1.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}0.png"
 	end
 
 	def revert_overlap( overlap )
