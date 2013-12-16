@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'therubyracer'
 gem 'thin'
 gem 'hirb'
+gem 'devise'
 
 
 group :assets do

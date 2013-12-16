@@ -18,4 +18,4 @@
 /public/*.rar
 /public/output
 
-#/config/database.yml
+/config/database.yml

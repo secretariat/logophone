@@ -11,6 +11,21 @@
   <div id="preloader">
     <div id="status">&nbsp;</div>
   </div>
+  <% if user_signed_in? %>
+    <div id="user_nav">
+        <div class="text">Signed in as <%= current_user.email %> | <%= link_to "Log out", destroy_user_session_path, :method => :delete %></div>
+    </div>
+  <% end %>
+  <% flash.each do |name, msg| %>
+    <div class="alert-<%=name%>" >
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <center>
+        <br/>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <br/>
+      </center>
+    </div>
+  <% end %>
   <%= render 'shared/header' %>
   <section class="container">
     <section id="container" class="clearfix">
@@ -18,7 +33,6 @@
     </section>
   </section>
   <%#= render 'shared/footer' %>
-
   <script>
     var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
       animate: true, // Boolean: Use CSS3 transitions, true or false

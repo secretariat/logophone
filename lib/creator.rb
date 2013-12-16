@@ -33,6 +33,15 @@ class String
 end
 
 class Creator
+
+	include ActiveModel::Validations
+  include ActiveModel::Conversion
+  extend ActiveModel::Naming
+
+  attr_accessor :phone
+
+  # validates_format_of :phone, :with => /^[0-9]+$/
+
 	def initialize(phone)
 		puts @phone = phone.gsub(/[- ]/, "").last(10)
 		@pa = @phone.scan(/\d/).map { |c| c.to_i }
@@ -48,10 +57,6 @@ class Creator
 
 	def ar
 		@ar
-	end
-
-	def logo
-		@logo
 	end
 
 	def get_strict_logo
@@ -98,16 +103,15 @@ class Creator
 	end
 
 	def generate_logo
-		puts "LOGO IS IS STRICT: #{@strict}"
-		puts "NEED GLASSES: #{@glasses}"
-		proc_fblock
+		# puts "LOGO IS IS STRICT: #{@strict}"
+		# puts "NEED GLASSES: #{@glasses}"
+		# proc_fblock
 		character
 		if @strict
 			get_strict_logo
 		else
 			get_nostrict_logo
 		end
-		puts @logo
 	end
 
 	def character

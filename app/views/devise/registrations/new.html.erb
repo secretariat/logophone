@@ -1,0 +1,39 @@
+<%#= render "devise/shared/links" %>
+<article class="element fx-slide-up home clearfix one-full about isotope-item">
+  <div class="reveal-bg-nine">
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Registration</h2></center>
+  </div>
+</article>
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("register/register_1.png") %>
+  </div>
+</article>
+<article class="element clearfix one-third home">
+  <div class="one-third white-right2 reveal-bg-two">
+    <div class="thumb pad pad-bottom-minus">
+      <%= image_tag ("login.png") %>
+    </div>
+    <br>
+    <br>
+    <div class="pad pad-top-minus">
+      	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	 		<%= devise_error_messages! %>
+	        <div class="row-fluid">
+	          <article>
+				<%= f.email_field :email, :autofocus => true, :size=>"30", :placeholder => "Email"%><br>
+				<%= f.password_field :password, :size=>"30", :placeholder => "Password"%><br>
+				<%= f.password_field :password_confirmation, :size=>"30", :placeholder => "Confirm"%><br>
+				<%= submit_tag "Register", :class => "signup"%>
+	          </article>
+	        </div>
+  		<% end %>
+    </div>
+  </div>
+</article>
+<article class="element fx-slide-up clearfix one-third home contact">
+  <div class="images">
+    <%= image_tag ("register/register_2.png") %>
+  </div>
+</article>
+

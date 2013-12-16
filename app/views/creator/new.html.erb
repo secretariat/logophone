@@ -1,13 +1,13 @@
-<article class="element fx-slide-up home clearfix one-full about isotope-item">
+<article class="element home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Create new logo</h2></center>
+    <h2 class="pad pad-top-minus pad-bottom-minus"><center>Create new logo</center></h2>
   </div>
 </article>
-<article class="element clearfix home pp">
-	<div class="mcenter">
-		<%= form_tag( creator_show_path, :method => "get") do %>
-				<%= text_field_tag :phone, params[:phone], :class => "minput" %>
+<article class="element clearfix home pp one-full">
+		<h3 style="float:left; padding-right:20px;">Enter phone number:</h3>
+		<%= form_tag( creator_show_path, :method => "get", :style =>"margin:15px 20px;") do %>
+				<%= text_field_tag :phone, params[:phone], :class => "minput"%>
 				<%= submit_tag("Create!", :class => "msubmit") %>
 		<% end %>
-	</div>
 </article>
+
