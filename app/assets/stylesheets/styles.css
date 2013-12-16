@@ -1518,11 +1518,14 @@ input.msubmit:hover
 .layers
 {
     height: 566px;
+    width: 486px;
     display: block;
+    padding: 0px 50px;
 }
 .layers img
 {
     position: absolute;
+    z-index: 10;
 }
 /*Bootstrap Resets*/
 
@@ -1549,13 +1552,14 @@ input.msubmit:hover
 }
 
 .saveasblock {
-    width: 400px !important;
+    width: 352px !important;
     height: 120px !important;
     display: block;
     padding: 10px 20px;
     overflow: visible;
     position: relative;
     margin-top: 30px;
+    margin-left: 49px;
 }
 
 .mbutton
@@ -1581,6 +1585,8 @@ input.msubmit:hover
 }
 .m1m1 {
     height: 556px;
+    width: 386px;
+    border: 3px solid #34495E;
 }
 
 .mh2
@@ -1630,3 +1636,4 @@ input.msubmit:hover
 #user_nav a:hover {
     text-decoration: underline;
 }
+
