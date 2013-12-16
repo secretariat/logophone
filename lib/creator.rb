@@ -147,6 +147,7 @@ class Creator
 
 	def rand_fblock
 		rand(1..3)
+		# return 3
 	end
 
 	def proc_fblock
@@ -171,8 +172,8 @@ class Creator
 	end
 
 	def color_figure
-		@ar << "/output/figure/#{@pa[3]}#{@pa[1]}1.png"
-		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}0.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
 	end
 
 	def revert_overlap( overlap )
