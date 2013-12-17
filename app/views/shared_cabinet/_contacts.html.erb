@@ -4,12 +4,12 @@
   </div>
 </article>
 <% i = 0 %>
-<% layer = 1 %>
 <% @logos.each do |logo| %>
   <article class="element fx-slide-out clearfix one-third home overflow" style="height:450px;">
     <!-- <a href="images/content/01.jpg" title="" class="popup"> -->
     <div class="images">
         <div class="layerscab">
+          <% layer = 1 %>
           <% logo.logo_files.split(',').each do |file| %>
               <% if file =~ /1\w{7}\.png/%>
                 <%= image_tag file, :class => "m1m2 imgl"+layer.to_s, :width => "225", :alt => "logophone"%>
@@ -38,5 +38,5 @@
     </a>
   </article>
   <% i += 1 %>
-  <% i = 1 if i > 8 %>
+  <% i = 1 if i == 8 %>
 <% end %>
