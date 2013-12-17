@@ -7,8 +7,10 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
+				<% layer = 1 %>
 				<% @ar.each do |a| %>
-					<%= image_tag a, :class => "m1m1", :alt => ""  %>
+					<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
+					<% layer += 1 %>
 				<% end %>
 			</div>
 				<%if user_signed_in? %>

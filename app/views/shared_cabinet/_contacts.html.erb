@@ -4,32 +4,23 @@
   </div>
 </article>
 <% i = 0 %>
+<% layer = 1 %>
 <% @logos.each do |logo| %>
   <article class="element fx-slide-out clearfix one-third home overflow" style="height:450px;">
     <!-- <a href="images/content/01.jpg" title="" class="popup"> -->
     <div class="images">
-        <div class="layers">
-          <% pers = 0 %>
+        <div class="layerscab">
           <% logo.logo_files.split(',').each do |file| %>
-            <% if file =~ /1\w{7}\.png/%>
-              <% pers = 1 %>
-            <% end %>
-            <%if file =~ /5\w{7}\.png/%>
-              <% pers = 5 %>
-            <% end %>
-          <% end %>
-          
-          <% case pers %>
-          <% when 1%>
-            <% width = 225 %>
-          <% when 5%>
-            <% width = 270 %>
-          <% else %>
-            <% width = 300 %>
-          <% end %>
-          
-          <% logo.logo_files.split(',').each do |file| %>
-              <%= image_tag file, :width => width, :alt => "logophone"%>
+              <% if file =~ /1\w{7}\.png/%>
+                <%= image_tag file, :class => "m1m2 imgl"+layer.to_s, :width => "225", :alt => "logophone"%>
+              <% elsif file =~ /5\w{7}\.png/ %>
+                <%= image_tag file, :class => "m1m3 imgl"+layer.to_s, :width => "270", :alt => "logophone"%>
+              <% elsif file =~ /flag/ %>
+                <%= image_tag file, :class => "m1mf imgl"+layer.to_s, :alt => "logophone"%>
+              <% else %>
+                <%= image_tag file, :width => "300", :class => "imgl"+layer.to_s, :alt => "logophone"%>
+              <% end %>
+            <% layer +=1 %>  
           <% end %>
         </div>
     </div>

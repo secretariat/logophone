@@ -52,7 +52,7 @@ class Creator
 		@overlap = overlap?
 		@logo = Hash.new()
 		@ar = Array.new()
-		@overlaped_closes = [0,1,2,3,4,5]
+		@overlaped_closes = [0,1,2,3,4,5,8,9]
 	end
 
 	def ar
@@ -92,9 +92,9 @@ class Creator
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
 				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
-				# sleep(2)
+				# sleep(5)
 				if @overlaped_closes.include?(str[0].to_i)
-					puts @ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
+					@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
 					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
 				end
@@ -105,7 +105,7 @@ class Creator
 	def generate_logo
 		puts "LOGO IS IS STRICT: #{@strict}"
 		puts "NEED GLASSES: #{@glasses}"
-		# proc_fblock
+		proc_fblock
 		character
 		if @strict
 			get_strict_logo
@@ -147,6 +147,7 @@ class Creator
 
 	def rand_fblock
 		rand(1..3)
+		# return 3
 	end
 
 	def proc_fblock
@@ -158,19 +159,21 @@ class Creator
 	end
 
 	def flag
-		@ar << "/output/flag/0#{@pa[1]}.png"
-		@ar << "/output/flag/1#{@pa[2]}.png"
-		@ar << "/output/flag/2#{@pa[3]}.png"
+		@ar << "/output/flag/1#{@pa[1]}.png"
+		@ar << "/output/flag/2#{@pa[2]}.png"
+		@ar << "/output/flag/3#{@pa[3]}.png"
 	end
 
 	def mono_figure
-		@ar << "/output/bg/#{@pa[1]}.png"
-		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
+		@ar << "/output/flag/1#{@pa[1]}.png"
+		@ar << "/output/flag/2#{@pa[1]}.png"
+		@ar << "/output/flag/3#{@pa[1]}.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 	end
 
 	def color_figure
-		@ar << "/output/figures/1#{@pa[3]}#{@pa[1]}.png"
-		@ar << "/output/figures/0#{@pa[3]}#{@pa[2]}.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+		@ar << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
 	end
 
 	def revert_overlap( overlap )

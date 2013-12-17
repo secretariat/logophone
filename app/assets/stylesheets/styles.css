@@ -1511,9 +1511,8 @@ input.msubmit:hover
 }
 .layerscab
 {
-    height: 424px;
+    height: 426px;
     display: block;
-    width: 100%;
 }
 .layers
 {
@@ -1522,6 +1521,11 @@ input.msubmit:hover
     display: block;
     padding: 0px 50px;
 }
+.layerscab img
+{
+    position: absolute;
+}
+
 .layers img
 {
     position: absolute;
@@ -1588,6 +1592,30 @@ input.msubmit:hover
     width: 386px;
     border: 3px solid #34495E;
 }
+
+.m1m2 {
+    padding-left: 40px !important;
+}
+
+.m1m3 {
+    padding-left: 20px !important;
+}
+.m1mf {
+    width: 300px;
+    height: 426px;
+}
+
+.imgl1{z-index: 1;}
+.imgl2{z-index: 2;}
+.imgl3{z-index: 3;}
+.imgl4{z-index: 4;}
+.imgl5{z-index: 5;}
+.imgl6{z-index: 6;}
+.imgl7{z-index: 7;}
+.imgl8{z-index: 8;}
+.imgl9{z-index: 9;}
+.imgl10{z-index: 10;}
+.imgl11{z-index: 11;}
 
 .mh2
 {
