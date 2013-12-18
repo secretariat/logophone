@@ -159,21 +159,28 @@ class Creator
 	end
 
 	def flag
-		@ar << "/output/flag/1#{@pa[1]}.png"
-		@ar << "/output/flag/2#{@pa[2]}.png"
-		@ar << "/output/flag/3#{@pa[3]}.png"
+		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
+			@ar << "/output/flag/4#{@pa[1]}.png"
+		else	
+			@ar << "/output/flag/4#{@pa[1]}.png"
+			@ar << "/output/flag/1#{@pa[1]}.png"
+			@ar << "/output/flag/2#{@pa[2]}.png"
+			@ar << "/output/flag/3#{@pa[3]}.png"
+		end
 	end
 
 	def mono_figure
-		@ar << "/output/flag/1#{@pa[1]}.png"
-		@ar << "/output/flag/2#{@pa[1]}.png"
-		@ar << "/output/flag/3#{@pa[1]}.png"
+		@ar << "/output/flag/4#{@pa[1]}.png"
 		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 	end
 
 	def color_figure
-		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
-		@ar << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
+		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
+			@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+		else
+			@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+			@ar << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
+		end
 	end
 
 	def revert_overlap( overlap )
