@@ -161,7 +161,7 @@ class Creator
 	def flag
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
 			@ar << "/output/flag/4#{@pa[1]}.png"
-		else	
+		else
 			@ar << "/output/flag/4#{@pa[1]}.png"
 			@ar << "/output/flag/1#{@pa[1]}.png"
 			@ar << "/output/flag/2#{@pa[2]}.png"
