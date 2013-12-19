@@ -1,39 +1,11 @@
-<article class="element fx-slide-out clearfix one-third home overflow">
-  <!-- Carousel starts -->
-  <div id="carousel-07" class="carousel remove-bottom slide point-left">
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="active item">
-        <a href="images/content/04.jpg" title="" class="popup">
-          <%= image_tag("content/04.jpg")%>
-        </a>
-      </div>
-      <div class="item">
-        <a href="images/content/06.jpg" title="" class="popup">
-          <%= image_tag("content/06.jpg")%>
-        </a>
-      </div>
-      <div class="item">
-        <a href="images/content/09.jpg" title="" class="popup">
-          <%= image_tag("content/09.jpg")%>
-        </a>
-      </div>
+<article class="element fx-slide-up clearfix one-third home isotope-item">
+  <div class="images"><%= image_tag("decoder/glasses_main.jpg", :alt => "")%></div>
+  <div class="content-bottom content-bottom-alt reveal-bg-seven">
+    <h2 class="pad pad-top-minus pad-bottom-minus">Glasses</h2>
+    <p class="pad pad-top-minus"  style="height: 190px;overflow:hidden;">Glasses are deciphered as follows: the first digit indicates the color of glasses, the second digit means the form of glasses.
+    </p>
+    <div class="pad pad-top-minus">
+      <%= link_to "Read Full Story", decoder_sunglasses_path, :class => "btn btn-reveal" %>
     </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" href="#carousel-07" data-slide="prev">
-      <%= image_tag("left.png")%>
-    </a>
-    <a class="carousel-control right" href="#carousel-07" data-slide="next">
-      <%= image_tag("right.png")%>
-    </a>
-  </div>
-  <!-- Carousel ends -->
-
-  <div class="inner-panel reveal-bg-eight">
-    <h2 class="pad pad-top-minus mp20">
-      <center>
-        Sunglasses
-      </center>
-    </h2>
   </div>
 </article>
