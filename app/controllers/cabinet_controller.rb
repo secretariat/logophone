@@ -8,4 +8,14 @@ class CabinetController < ApplicationController
   	@logos = Logo.where( :user_id => current_user.id )
   	# @logos = Logo.all
   end
+
+  def intro
+  end
+
+  def intro_show
+  	a = Intro.new(params[:quantity])
+		a.generate_logo
+		@logo = a.logo
+		@number = a.number
+  end
 end

@@ -1480,6 +1480,17 @@ fieldset h1
     margin-right: 20px;
 }
 
+.minput_small
+{
+    margin: 0;
+    width: 20px;
+    border: 1px solid #E56C19 !important;
+    float: left;
+    color: #000 !important;
+    margin-right: 20px;
+}
+
+
 input.msubmit
 {
     margin: 0;

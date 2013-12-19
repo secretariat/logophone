@@ -1,0 +1,30 @@
+<article class="element fx-slide-up home clearfix one-full about isotope-item">
+  <div class="reveal-bg-nine">
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Intro show</h2></center>
+  </div>
+</article>
+<article class="element clearfix home pp one-full">
+		<%= text_field_tag :phone, @number[1], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[2], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[3], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[4], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[5], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[6], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[7], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[8], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[9], :class => "minput_small", :maxlenght => "1" %>
+		<%= text_field_tag :phone, @number[10], :class => "minput_small", :maxlenght => "1" %>
+		<%= button_to "Refresh", "", { :onclick => "history.go(0)" , :class => "msubmit"} %>
+
+		<div class="mcenter">
+			<div class="layersw">
+				<div class="layers">
+					<% layer = 1 %>
+					<% @logo.each do |a| %>
+						<%= image_tag a, :class => "m1m1 "+layer.to_s, :alt => ""  %>
+						<% layer += 1 %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+</article>
