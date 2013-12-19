@@ -1670,3 +1670,10 @@ input.msubmit:hover
     width: 270px !important;
     height: 97px !important;
 }
+
+#user_remember_me
+{
+    background: #1ABC9C;
+    width: 13px !important;
+    height: 13px !important;
+}
