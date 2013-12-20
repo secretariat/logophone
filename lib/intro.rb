@@ -1,10 +1,16 @@
+load "funcs.rb"
+
 BOOL = [true,false]
 
-def mrand
-	rand(0..9)
+def fwrite( str )
+	fd = File.new( Rails.root.join('lib','log.txt'), "a+")
+	fd.puts str
+	fd.close
 end
 
 class Intro
+
+	include Common
 
 	def initialize( elements_quantity )
 		@elements_quantity = elements_quantity
@@ -16,14 +22,14 @@ class Intro
 		case @elements_quantity.to_i
 			when 1 ; one
 			when 2 ; two
-			when 3 ; one
-			when 4 ; one
-			when 5 ; one
-			when 6 ; one
-			when 7 ; one
-			when 8 ; one
-			when 9 ; one
-			when 10 ; one
+			when 3 ; three
+			when 4 ; four
+			when 5 ; five
+			when 6 ; six
+			when 7 ; seven
+			when 8 ; eight
+			when 9 ; nine
+			when 10 ; ten
 			# else
 		end
 	end
@@ -42,31 +48,87 @@ class Intro
 			@number[4] = charachter
 			@logo << "/output/#{charachter}XXXXXXX.png"
 		else
-			bg = mrand
-			@number[1] = bg
-			@logo << "/output/flag/4#{bg}.png"
-			@logo << "/output/flag/1#{bg}.png"
-			@logo << "/output/flag/2#{bg}.png"
-			@logo << "/output/flag/3#{bg}.png"
+			bg
 		end
 	end
 
 	def two
 		figure_type = mrand
-		color_in = mrand
-		color_out = mrand
-		#EXCLUDE color_in == color_out
-		@number[2] = color_in
-		@number[3] = color_out
-		@logo << "/output/figure/#{figure_type}#{color_out}1.png"
-		@logo << "/output/figure/#{figure_type}#{color_in}0.png"
+		@number[2] = mrand
+		@number[3] = mrand
+		@logo << "/output/figure/#{figure_type}#{@number[3]}1.png"
+		@logo << "/output/figure/#{figure_type}#{@number[2]}0.png"
 	end
 
 	def three
-		
+		send( [:mono_figure, :color_figure, :flag, :character_in_one_close ].sample )
+	end
+
+	def four
+		bg
+		character_in_one_close
+	end
+
+	def five
+		character_in_one_close
+		@number[7] = mrand
+		@number[8] = mrand
+		@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+	end
+
+	def six
+		@number[1] = mrand
+		@number[4] = mrand
+		@number[5] = mrand
+		@number[6] = mrand
+		@number[7] = mrand
+		@number[8] = mrand
+		@logo << "/output/flag/4#{@number[1]}.png"
+		@logo << "/output/#{@number[4]}XXXXXXX.png"
+		@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+		@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+	end
+
+	def seven
+		@number[4] = mrand
+		@number[5] = mrand
+		@number[6] = mrand
+		@number[7] = mrand
+		@number[8] = mrand
+		@number[9] = mrand
+		@number[10] = mrand
+		@logo << "/output/#{@number[4]}XXXXXXX.png"
+		@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png" if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
+		if @number[6] > @number[10]
+			@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+		else
+			@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[10])}#{@number[5]}XXXX.png"
+			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+			@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+		end
+	end
+
+	def eight
+		@number[1] = mrand
+		@logo << "/output/flag/4#{@number[1]}.png"
+		seven
+	end
+
+	def nine
+		seven
+	end
+
+	def clear
+		@logo = nil
+		@number = nil
 	end
 end
 
-a = Intro.new(1)
+a = Intro.new(3)
 a.generate_logo
 puts a.logo
+
+# y = ar.sample
+# send(y)

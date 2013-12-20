@@ -17,5 +17,6 @@ class CabinetController < ApplicationController
 		a.generate_logo
 		@logo = a.logo
 		@number = a.number
+    a.clear
   end
 end
