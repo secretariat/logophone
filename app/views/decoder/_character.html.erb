@@ -1,54 +1,11 @@
-<article class="element fx-slide-out clearfix one-third home overflow">
-  <!-- Carousel starts -->
-  <div id="carousel-05" class="carousel remove-bottom slide point-left">
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-     <div class="active item">
-        <%= link_to(image_tag('pers/m0.png'), '/assets/pers/0.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-        <%= link_to(image_tag('pers/m1.png'), '/assets/pers/1.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-        <%= link_to(image_tag('pers/m2.png'), '/assets/pers/2.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m3.png'), '/assets/pers/3.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m4.png'), '/assets/pers/4.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m5.png'), '/assets/pers/5.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m6.png'), '/assets/pers/6.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m7.png'), '/assets/pers/7.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m8.png'), '/assets/pers/8.png', {:class => "popup"})%>
-      </div>
-      <div class="item">
-          <%= link_to(image_tag('pers/m9.png'), '/assets/pers/9.png', {:class => "popup"})%>
-      </div>
+<article class="element fx-slide-up clearfix one-third home isotope-item">
+  <div class="images"><%= image_tag("decoder/pers_main.png", :alt => "")%></div>
+  <div class="content-bottom content-bottom-alt reveal-bg-five">
+    <h2 class="pad pad-top-minus pad-bottom-minus">Character</h2>
+    <p class="pad pad-top-minus"  style="height: 190px;overflow:hidden;">Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order. 
+    </p>
+    <div class="pad pad-top-minus">
+      <%= link_to "Read Full Story", decoder_character_path, :class => "btn btn-reveal" %>
     </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" href="#carousel-05" data-slide="prev">
-      <%= image_tag("left.png")%>
-    </a>
-    <a class="carousel-control right" href="#carousel-05" data-slide="next">
-      <%= image_tag("right.png")%>
-    </a>
-  </div>
-  <!-- Carousel ends -->
-
-  <div class="inner-panel reveal-bg-nine">
-    <h2 class="pad pad-top-minus mp20">
-      <center>
-        Character
-      </center>
-    </h2>
   </div>
 </article>
