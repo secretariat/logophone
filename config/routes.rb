@@ -24,7 +24,7 @@ Logophone::Application.routes.draw do
   get "page/feedback"
   get "page/how"
   get "page/like"
-  get "page/aboutlp"
+  get "page/aboutl"
   get "decoder/background"
   get "decoder/character"
   get "decoder/sunglasses"
