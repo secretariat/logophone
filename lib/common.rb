@@ -18,6 +18,12 @@ module Common
 		@logo << "/output/flag/3#{@number[3]}.png"
 	end
 
+	def white_bg_mono_figure
+		@number[2] = mrand
+		@number[3] = mrand
+		@logo << "/output/figure/#{@number[3]}#{@number[2]}1.png"
+	end
+
 	def mono_figure
 		@number[1] = mrand #background color
 		@number[2] = mrand #figure color

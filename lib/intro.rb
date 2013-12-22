@@ -40,6 +40,7 @@ class Intro
 
 	def number
 		@number
+		# fwrite @number.to_s
 	end
 
 	def one
@@ -55,11 +56,7 @@ class Intro
 
 	def two
 		fwrite "two"
-		figure_type = mrand
-		@number[2] = mrand
-		@number[3] = mrand
-		@logo << "/output/figure/#{figure_type}#{@number[3]}1.png"
-		@logo << "/output/figure/#{figure_type}#{@number[2]}0.png"
+		white_bg_mono_figure
 	end
 
 	def three
@@ -97,18 +94,22 @@ class Intro
 		@number[9] = mrand
 		@number[10] = mrand
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
-		@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png" if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
-		if @number[6] > @number[10] && @number[10] != 0
-			fwrite "+++++++++++++++++++++"
-			@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+		if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
+			@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png"
 			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 		else
-			fwrite "-------------------------"
-			fwrite "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-			@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+			if @number[6] > @number[10] && @number[10] != 0
+				fwrite "+++++++++++++++++++++"
+				@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+				@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+				@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+			else
+				fwrite "-------------------------"
+				@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+				@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+			end
 		end
 	end
 
@@ -121,7 +122,7 @@ class Intro
 
 	def nine
 		fwrite "nine"
-		color_figure #need to resolve question about 2 & 3 numbers
+		white_bg_mono_figure
 		seven
 	end
 
