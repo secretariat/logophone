@@ -3,3 +3,10 @@
     <center><h2 class="pad pad-top-minus pad-bottom-minus">Training</h2></center>
   </div>
 </article>
+<article class="element clearfix home pp one-full">
+		<h3 style="float:left; padding-right:20px;">Select number of elements</h3>
+		<%= form_tag( cabinet_training_show_path, :method => "get", :style =>"margin:15px 20px;") do %>
+			<%= select_tag "quantity", options_for_select((1..10).step(1)) %>
+			<%= submit_tag("Create!", :class => "msubmit") %>
+		<% end %>
+</article>

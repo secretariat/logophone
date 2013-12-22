@@ -10,6 +10,8 @@ Logophone::Application.routes.draw do
   get "cabinet/table"
   get "cabinet/test"
   get "cabinet/intro_show"
+  get "cabinet/training_show"
+  get "cabinet/tester"
 
   get "creator/new"
   get "creator/show"
