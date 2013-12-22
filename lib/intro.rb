@@ -89,21 +89,38 @@ class Intro
 
 	def seven
 		fwrite "seven"
-		@number[4] = mrand
-		@number[5] = mrand
-		@number[6] = 8
-		@number[7] = mrand
-		@number[8] = mrand
+		# @number[4] = mrand
+		# @number[5] = mrand
+		# @number[6] = mrand
+		# @number[7] = mrand
+		# @number[8] = mrand
 		@number[9] = mrand
-		@number[10] = 8
+		# @number[10] = mrand
+		# @number[4] = mrand
+		# @number[5] = 3
+		# @number[6] = 1
+		# @number[7] = 5
+		# @number[8] = 1
+		# @number[9] = 5
+		# @number[10] = 7
+		@number[4] = mrand
+		@number[5] = 5
+		@number[6] = 0
+		@number[7] = 0
+		@number[8] = 8
+		# @number[9] = 7
+		@number[10] = 0
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
 		@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png" if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
-		if @number[6] > @number[10]
+		if @number[6] > @number[10] && @number[10] != 0
+			fwrite "+++++++++++++++++++++"
 			@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
 			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 		else
-			@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[10])}#{@number[5]}XXXX.png"
+			fwrite "-------------------------"
+			fwrite "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 			@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
 		end
