@@ -23,6 +23,12 @@ Logophone::Application.routes.draw do
   get "page/decoder"
   get "page/contacts"
   get "page/feedback"
+  get "page/how"
+  get "page/like"
+  get "page/aboutl"
+  get "decoder/background"
+  get "decoder/character"
+  get "decoder/sunglasses"
 
   match ':controller(/:action(/:id))(.:format)'
 end
