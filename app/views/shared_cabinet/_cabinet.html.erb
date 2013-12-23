@@ -2,13 +2,13 @@
     <div id="options" class="clearfix visible-desktop">
         <ul id="filters" class="option-set clearfix" data-option-key="filter">
             <li><%= link_to "Logophone", page_index_path, :class => "reveal-bg-one selected" %></li>
-            <li><%= link_to "Contacts", cabinet_index_path, :class => "reveal-bg-two" %></li>
-            <li><%= link_to "Information", cabinet_info_path, :class =>"reveal-bg-three" %></li>
+            <li><%= link_to "Information", cabinet_info_path, :class =>"reveal-bg-two" %></li>
             <li><%= link_to "Table", cabinet_table_path, :class =>"reveal-bg-seven" %></li>
             <li><%= link_to "Introduction", cabinet_intro_path, :class =>"reveal-bg-four"%></li>
             <li><%= link_to "Training", cabinet_training_path, :class =>"reveal-bg-six" %></li>
             <li><%= link_to "Test", new_user_registration_path, :class =>"reveal-bg-five" %></li>
-            <li><%= link_to "Log out", destroy_user_session_path, :class =>"reveal-bg-eight" %></li>
+            <li><%= link_to "Contact us", page_contacts_path, :class =>"reveal-bg-eight" %></li>
+            <li><%= link_to "Log out", destroy_user_session_path, :method => :delete, :class =>"reveal-bg-three" %></li>
         </ul>
     </div>
 </header>
