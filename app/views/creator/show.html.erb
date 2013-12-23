@@ -7,26 +7,40 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
-			<% layer = 1 %>
+				<% layer = 1 %>
+				<% flag_width = 386 %>
 				<% @ar.each do |a| %>
-					<%= image_tag a, :class => "m1m1 "+layer.to_s, :alt => ""  %>
+					<% if a =~ /1\w{7}\.png/%>
+						<% flag_width = 365 %>
+					<% end %>
+				<% end %>
+				<% @ar.each do |a| %>
+					<% if a =~ /1\w{7}\.png/%>
+						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :width => "365", :alt => ""  %>
+					<% elsif a =~ /flag/ %>
+	            		<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :width =>flag_width, :alt => ""%>
+					<% else %>
+						<%= image_tag a, :class => "imgl"+layer.to_s, :width => "386", :alt => ""  %>
+					<% end %>
 					<% layer += 1 %>
 				<% end %>
 			</div>
-				<%if user_signed_in? %>
-					<div class="saveasblock reveal-bg-two">
-						<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
-							<div style="width:70%; float: left;">
-              	<%= f.text_field :phone, :value => params[:phone], :readonly => true%>
-								<%= f.text_field :first_name, :placeholder=>"First name"  %>
-								<%= f.text_field :last_name, :placeholder=>"Last name"%>
-							</div>
-							<div style="width:30%; float: right; padding-top: 20px;">
-								<%= submit_tag("Save logo", :class => "mbutton") %>
-							</div>
-						<% end %>
-					</div>
-				<% end %>
+			<%if user_signed_in? %>
+				<div class="saveasblock reveal-bg-two">
+					<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
+						<div style="width:70%; float: left;">
+	                  	<%= f.text_field :phone, :value => params[:phone], :readonly => true%>
+						<%= f.text_field :first_name, :placeholder=>"First name"  %>
+						<%= f.text_field :last_name, :placeholder=>"Last name"%>
+						</div>
+						<div style="width:30%; float: right; padding-top: 20px;">
+							<%= submit_tag("Save logo", :class => "mbutton") %>
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+				<center><h3><u><%= link_to "Login", new_user_session_path%></u> to save the logo</h3></center>
+			<% end %>
 		</div>
 	</div>
 </article>

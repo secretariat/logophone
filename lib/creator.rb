@@ -1,14 +1,4 @@
-ELEMENTS= [
-			 [1,0,0,0,0,0,0,0,0,0],
-			 [0,1,0,1,0,1,0,0,0,0],
-			 [0,0,1,0,1,0,2,2,0,0],
-			 [0,1,0,1,0,1,0,0,0,0],
-			 [0,0,1,0,1,0,2,2,0,0],
-			 [0,1,0,1,0,1,0,0,0,0],
-			 [0,0,2,0,2,0,1,2,0,0],
-			 [0,0,2,0,2,0,2,1,0,0],
-			 [0,0,0,0,0,0,0,0,1,1],
-			 [0,0,0,0,0,0,0,0,1,1]]
+load "funcs.rb"
 
 def color_folder(color_id)
 	case color_id.to_i
@@ -161,8 +151,7 @@ class Creator
 	def flag
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
 			@ar << "/output/flag/4#{@pa[1]}.png"
-		else	
-			@ar << "/output/flag/4#{@pa[1]}.png"
+		else
 			@ar << "/output/flag/1#{@pa[1]}.png"
 			@ar << "/output/flag/2#{@pa[2]}.png"
 			@ar << "/output/flag/3#{@pa[3]}.png"

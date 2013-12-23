@@ -1480,9 +1480,31 @@ fieldset h1
     margin-right: 20px;
 }
 
-input.msubmit
+.minput_small
 {
     margin: 0;
+    width: 20px !important;
+    text-align: center !important;
+    border: 3px solid #E56C19 !important;
+    border-radius: 3px !important;
+    background-color: #f2f5ff !important;
+    float: left;
+    color: #000 !important;
+    font-size: 16px !important;
+    margin-right: 20px;
+}
+.minput_small:first-child
+{
+    margin-left: 0px;
+}
+.minput_small:last-child
+{
+    margin-right: 0px !important;
+}
+
+
+input.msubmit
+{
     padding: 0 15px !important;
     border: 2px solid rgb(142, 68, 173) !important;;
     background-color: rgb(230, 113, 181) !important;
@@ -1589,7 +1611,6 @@ input.msubmit:hover
 }
 .m1m1 {
     height: 556px;
-    width: 386px;
     border: 3px solid #34495E;
 }
 
@@ -1676,4 +1697,12 @@ input.msubmit:hover
     background: #1ABC9C;
     width: 13px !important;
     height: 13px !important;
+}
+
+select {
+    width: 60px !important;
+    height: 30px !important;
+}
+form {
+    margin: 0px;
 }
