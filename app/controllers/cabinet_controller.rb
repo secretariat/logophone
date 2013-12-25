@@ -29,23 +29,27 @@ class CabinetController < ApplicationController
     @quantity = params[:quantity]
     intro = Intro.new(params[:quantity])
     puts intro.full_number.empty?
-    if intro.full_number.size != 0
+    if !intro.full_number.empty?
       puts intro.full_number.to_s
       puts get_input_values.to_s
       if check_train_results( intro.full_number, get_input_values) == 0
         intro.generate_logo
-        # flash.now[:success] = "Logotype succefully decoded"
+        @number = intro.number
+        @logo = intro.logo
+        @res = "Success"
+        # flash[:success] = "Logotype succefully decoded"
       else
-        # flash.now[:error] = "Error decodeing logotype. Please? try again."
-        # return true
-        head :ok
+        # flash[:error] = "Error decodeing logotype. Please? try again."
+        @number = intro.full_number
+        @logo = intro.check_logo
+        @res = "Error"
+        # head :ok
       end
     else
       intro.generate_logo
+      @number = intro.number
+      @logo = intro.logo
     end
-    @logo = intro.logo
-    @number = intro.number
-    intro.clear
   end
 
   def get_input_values

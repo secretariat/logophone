@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$(document).ready(function(){
+   $('.flash_message').delay(300).animate({'top': 0}, 500).delay(2000).fadeOut(500);
+});
