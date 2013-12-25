@@ -12,6 +12,8 @@ class Intro
 
 	include Common
 
+	@@number = Array.new(10)
+
 	def initialize( elements_quantity )
 		@elements_quantity = elements_quantity
 		@logo = Array.new()
@@ -32,15 +34,25 @@ class Intro
 			when 10 ; ten
 			# else
 		end
+		@@number = @number
 	end
 
 	def logo
 		@logo
 	end
 
+	def clear_full_number
+		puts "clearing"
+		@@number.clear
+		puts "number  "+@@number.to_s
+	end
+
+	def full_number
+		@@number
+	end
+
 	def number
 		@number
-		# fwrite @number.to_s
 	end
 
 	def one
@@ -138,9 +150,9 @@ class Intro
 	end
 end
 
-a = Intro.new(3)
-a.generate_logo
-puts a.logo
+# a = Intro.new(3)
+# a.generate_logo
+# puts a.logo
 
 # y = ar.sample
 # send(y)
