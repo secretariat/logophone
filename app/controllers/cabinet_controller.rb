@@ -9,6 +9,7 @@ class CabinetController < ApplicationController
   end
 
   def intro
+
   end
 
   def intro_show
@@ -19,16 +20,24 @@ class CabinetController < ApplicationController
     a.clear
   end
 
+  def training
+    intro = Intro.new(1)
+    intro.clear_full_number
+  end
+
   def training_show
     @quantity = params[:quantity]
     intro = Intro.new(params[:quantity])
+    puts intro.full_number.empty?
     if intro.full_number.size != 0
       puts intro.full_number.to_s
       puts get_input_values.to_s
       if check_train_results( intro.full_number, get_input_values) == 0
         intro.generate_logo
-        puts "SUCESSSSS"
+        # flash.now[:success] = "Logotype succefully decoded"
       else
+        # flash.now[:error] = "Error decodeing logotype. Please? try again."
+        # return true
         head :ok
       end
     else
@@ -59,4 +68,5 @@ class CabinetController < ApplicationController
   def check_train_results( number, results )
     number <=> results
   end
+
 end

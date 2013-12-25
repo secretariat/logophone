@@ -41,6 +41,12 @@ class Intro
 		@logo
 	end
 
+	def clear_full_number
+		puts "clearing"
+		@@number.clear
+		puts "number  "+@@number.to_s
+	end
+
 	def full_number
 		@@number
 	end

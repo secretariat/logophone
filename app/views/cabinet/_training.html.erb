@@ -1,3 +1,6 @@
+<div class="noticesWrapper">
+	<%= render 'shared/flash_notices' %>
+</div>
 <%= form_tag cabinet_training_show_path(:quantity => @quantity), :method => :get, :remote => true do %>
 	<%= text_field_tag :number1, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[1]) %>
 	<%= text_field_tag :number2, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[2]) %>
@@ -9,10 +12,10 @@
 	<%= text_field_tag :number8, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[8]) %>
 	<%= text_field_tag :number9, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[9]) %>
 	<%= text_field_tag :number10, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[10]) %>
-  <%= submit_tag "Next", :name => nil, :class => "msubmit" %>
+  <center><%= submit_tag "Next", :name => nil, :class => "msubmit" %></center>
 <% end %>
 
-<div class="mcenter">
+<!-- <div class="mcenter"> -->
 	<div class="layersw">
 		<div class="layers">
 			<% layer = 1 %>
@@ -22,6 +25,6 @@
 			<% end %>
 		</div>
 	</div>
-</div>
+<!-- </div> -->
 
 
