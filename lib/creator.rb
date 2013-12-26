@@ -93,8 +93,8 @@ class Creator
 	end
 
 	def generate_logo
-		# puts "LOGO IS IS STRICT: #{@strict}"
-		# puts "NEED GLASSES: #{@glasses}"
+		puts "LOGO IS IS STRICT: #{@strict}"
+		puts "NEED GLASSES: #{@glasses}"
 		proc_fblock
 		character
 		if @strict

@@ -25,7 +25,6 @@
 					<% layer += 1 %>
 				<% end %>
 			</div>
-		
 			<%if user_signed_in? %>
 				<div class="saveasblock reveal-bg-two">
 					<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
