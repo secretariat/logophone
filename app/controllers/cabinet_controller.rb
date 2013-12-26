@@ -13,6 +13,7 @@ class CabinetController < ApplicationController
   end
 
   def intro_show
+    @quantity = params[:quantity]
   	a = Intro.new( params[:quantity] )
 		a.generate_logo
 		@logo = a.logo
