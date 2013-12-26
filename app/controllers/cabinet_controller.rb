@@ -68,6 +68,41 @@ class CabinetController < ApplicationController
     return arr
   end
 
+  def test
+    test = Intro.new(1)
+    @quantity = test.stage
+  end
+
+  def test_show
+    @quantity = params[:quantity]
+    intro = Intro.new(params[:quantity])
+    puts intro.full_number.empty?
+    if !intro.full_number.empty?
+      puts intro.full_number.to_s
+      puts get_input_values.to_s
+      if check_train_results( intro.full_number, get_input_values) == 0
+        intro.generate_logo
+        @number = intro.number
+        @logo = intro.logo
+        intro.increase_stage
+        puts intro.stage
+        @res = "Success"
+        # flash[:success] = "Logotype succefully decoded"
+      else
+        # flash[:error] = "Error decodeing logotype. Please? try again."
+        @number = intro.full_number
+        @logo = intro.check_logo
+        @res = "Error"
+        # head :ok
+      end
+    else
+      intro.generate_logo
+      @number = intro.number
+      @logo = intro.logo
+    end
+  end
+
+
   private
 
   def check_train_results( number, results )

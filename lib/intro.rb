@@ -14,6 +14,7 @@ class Intro
 
 	@@number = Array.new(10)
 	@@logo = []
+	@@stage = 1
 
 	def initialize( elements_quantity )
 		@elements_quantity = elements_quantity
@@ -45,6 +46,14 @@ class Intro
 
 	def check_logo
 		@@logo
+	end
+
+	def stage
+		@@stage
+	end
+
+	def increase_stage
+		@@stage += 1
 	end
 
 	def clear_full_number
