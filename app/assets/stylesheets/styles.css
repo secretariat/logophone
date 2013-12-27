@@ -1487,7 +1487,7 @@ fieldset h1
     text-align: center !important;
     border: 3px solid #E56C19 !important;
     border-radius: 3px !important;
-    background-color: #f2f5ff !important;
+    background-color: #fff !important;
     float: left;
     color: #000 !important;
     font-size: 16px !important;
@@ -1501,15 +1501,28 @@ fieldset h1
 {
     margin-right: 0px !important;
 }
-
+input[type="text"][disabled] {
+   background-color: #ddd !important;
+}
 
 input.msubmit
 {
-    padding: 0 15px !important;
-    border: 2px solid rgb(142, 68, 173) !important;;
+    content: "";
+    border: 2px solid rgb(142, 68, 173) !important;
     background-color: rgb(230, 113, 181) !important;
-    height: 32px !important;
     color: #fff !important;
+
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    margin: 0px 20px 10px 20px !important;
+    font-size: 12pt !important;
+    line-height: 12px;
+    bottom: 5px;
+    padding: 0px 15px !important;
+    vertical-align: baseline;
+    white-space: nowrap;
 
 }
 input.msubmit:hover
@@ -1551,7 +1564,7 @@ input.msubmit:hover
 .layers img
 {
     position: absolute;
-    z-index: 10;
+/*    z-index: 10;*/
 }
 /*Bootstrap Resets*/
 
@@ -1610,8 +1623,9 @@ input.msubmit:hover
     height: 556px;
 }
 .m1m1 {
-    height: 556px;
-    border: 3px solid #34495E;
+/*    height: 556px;*/
+    width: 392px;
+    /*border: 3px solid #34495E;*/
 }
 
 .m1m2 {
@@ -1626,17 +1640,17 @@ input.msubmit:hover
     height: 426px;
 }
 
-.imgl1{z-index: 1;}
-.imgl2{z-index: 2;}
-.imgl3{z-index: 3;}
-.imgl4{z-index: 4;}
-.imgl5{z-index: 5;}
-.imgl6{z-index: 6;}
-.imgl7{z-index: 7;}
-.imgl8{z-index: 8;}
-.imgl9{z-index: 9;}
-.imgl10{z-index: 10;}
-.imgl11{z-index: 11;}
+.imgl1{z-index: 1 !important;}
+.imgl2{z-index: 2 !important;}
+.imgl3{z-index: 3 !important;}
+.imgl4{z-index: 4 !important;}
+.imgl5{z-index: 5 !important;}
+.imgl6{z-index: 6 !important;}
+.imgl7{z-index: 7 !important;}
+.imgl8{z-index: 8 !important;}
+.imgl9{z-index: 9 !important;}
+.imgl10{z-index: 10 !important;}
+.imgl11{z-index: 11 !important;}
 
 .mh2
 {
@@ -1705,4 +1719,24 @@ select {
 }
 form {
     margin: 0px;
+}
+
+.cls {clear: both;}
+
+.label1 {
+  border-radius: 4px;
+}
+
+.label1 {
+  position: relative;
+  background-color: #999999;
+  color: #FFFFFF;
+  display: inline-block;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  margin: 0px 0px 10px 0px;
+  font-size: 12pt !important;
+  line-height: 12px;
+  padding: 12px 30px;
+  vertical-align: baseline;
+  white-space: nowrap;
 }

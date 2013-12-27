@@ -1,14 +1,26 @@
-<article class="element fx-slide-up home clearfix one-third about">
+<article class="element fx-slide-up home clearfix one-third index index3">
   <div class="images">
-    <%= image_tag("index/main_3.jpg") %>
+    <%= image_tag("index/main_3.png") %>
   </div>
   <div class="content-bottom content-bottom-alt reveal-bg-three">
     <div class="thumb pad pad-bottom-minus">
     </div>
     <h2 class="pad pad-top-minus pad-bottom-minus" style="height:80px;">About Logophone</h2>
-    <p class="pad pad-top-minus">By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application.</p>
+    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;">By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application.</p>
     <div class="pad pad-top-minus">
-      <span class="btn btn-reveal">Read Full Story</span>
+      <%= link_to "Read Full Story", "#filter=.index%3Anot(.index3),+.post3", :class => "btn btn-reveal" %>
     </div>
   </div>
+</article>
+
+<article class="element  clearfix two-third post3">
+  <div class="images"><%= image_tag("index/index3b.jpg") %>
+    <a href="#filter=.index">
+    x
+    </a>
+  </div>
+  <div class="content-bottom reveal-bg-three">
+    <h2 class="pad pad-bottom-minus">About Logophone</h2>
+    <p class="pad pad-top-minus pad-bottom-minus">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur molestie accumsan arcu, a ultricies ligula gravida non. Pellentesque rutrum quis nisi a adipiscing. Maecenas pretium laoreet gravida. Curabitur eu sapien non quam tempor cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum sed libero eu diam convallis venenatis a viverra massa.</p>
+   </div>  
 </article>
