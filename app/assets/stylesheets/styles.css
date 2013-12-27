@@ -1507,11 +1507,22 @@ input[type="text"][disabled] {
 
 input.msubmit
 {
-    padding: 0 15px !important;
-    border: 2px solid rgb(142, 68, 173) !important;;
+    content: "";
+    border: 2px solid rgb(142, 68, 173) !important;
     background-color: rgb(230, 113, 181) !important;
-    height: 32px !important;
     color: #fff !important;
+
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    margin: 0px 20px 10px 20px !important;
+    font-size: 12pt !important;
+    line-height: 12px;
+    bottom: 5px;
+    padding: 0px 15px !important;
+    vertical-align: baseline;
+    white-space: nowrap;
 
 }
 input.msubmit:hover
@@ -1711,3 +1722,21 @@ form {
 }
 
 .cls {clear: both;}
+
+.label1 {
+  border-radius: 4px;
+}
+
+.label1 {
+  position: relative;
+  background-color: #999999;
+  color: #FFFFFF;
+  display: inline-block;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  margin: 0px 0px 10px 0px;
+  font-size: 12pt !important;
+  line-height: 12px;
+  padding: 12px 30px;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
