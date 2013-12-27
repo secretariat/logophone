@@ -16,16 +16,9 @@
         <div class="text">Signed in as <%= current_user.email %> | <%= link_to "Log out", destroy_user_session_path, :method => :delete %></div>
     </div>
   <% end %>
-  <% flash.each do |name, msg| %>
-    <div class="alert-<%=name%>" >
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <center>
-        <br/>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <br/>
-      </center>
-    </div>
-  <% end %>
+  <% flash.each do |key, value| %>
+    <div class="flash_message <%= key%>"><%=value%></div>
+  <%end%>
   <%= render 'shared/header' %>
   <section class="container">
     <section id="container" class="clearfix">

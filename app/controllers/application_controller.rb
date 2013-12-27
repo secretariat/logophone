@@ -1,18 +1,27 @@
 class ApplicationController < ActionController::Base
-	after_filter :add_flash_to_header
   protect_from_forgery
 
-  def add_flash_to_header
-    # only run this in case it's an Ajax request.
-    return unless request.xhr?
+  after_filter :flash_to_headers
 
-    # add different flashes to header
-    response.headers['X-Flash-Error'] = flash[:error] unless flash[:error].blank?
-    response.headers['X-Flash-Warning'] = flash[:warning] unless flash[:warning].blank?
-    response.headers['X-Flash-Notice'] = flash[:success] unless flash[:success].blank?
-    response.headers['X-Flash-Message'] = flash[:message] unless flash[:message].blank?
+    def flash_to_headers
+        return unless request.xhr?
+        response.headers['X-Message'] = flash_message
+        response.headers["X-Message-Type"] = flash_type.to_s
 
-    # make sure flash does not appear on the next page
-    flash.discard
-  end
+        flash.discard # don't want the flash to appear when you reload page
+    end
+
+    private
+
+    def flash_message
+        [:error, :warning, :success, :notice].each do |type|
+            return flash[type] unless flash[type].blank?
+        end
+    end
+
+    def flash_type
+        [:error, :warning, :success, :notice].each do |type|
+            return type unless flash[type].blank?
+        end
+    end
 end

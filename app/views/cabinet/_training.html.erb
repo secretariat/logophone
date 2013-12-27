@@ -1,6 +1,4 @@
-<div class="noticesWrapper">
-	<%= render 'shared/flash_notices' %>
-</div>
+<%= @res %>
 <%= form_tag cabinet_training_show_path(:quantity => @quantity), :method => :get, :remote => true do %>
 	<%= text_field_tag :number1, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[1]) %>
 	<%= text_field_tag :number2, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[2]) %>

@@ -13,6 +13,7 @@ class Intro
 	include Common
 
 	@@number = Array.new(10)
+	@@logo = []
 
 	def initialize( elements_quantity )
 		@elements_quantity = elements_quantity
@@ -35,10 +36,15 @@ class Intro
 			# else
 		end
 		@@number = @number
+		@@logo = @logo
 	end
 
 	def logo
 		@logo
+	end
+
+	def check_logo
+		@@logo
 	end
 
 	def clear_full_number
