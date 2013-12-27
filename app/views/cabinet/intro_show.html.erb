@@ -1,9 +1,10 @@
 <article class="element fx-slide-up home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Intro show</h2></center>
+    <center><h2 class="pad pad-top-minus pad-bottom-minus">Introduction mode</h2></center>
   </div>
 </article>
 <article class="element clearfix home pp one-full">
+	<h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
 	<div class="mcenter">
 		<%= text_field_tag :phone, @number[1], :class => "minput_small", :maxlenght => "1", :readonly => true %>
 		<%= text_field_tag :phone, @number[2], :class => "minput_small", :maxlenght => "1", :readonly => true %>
@@ -15,13 +16,15 @@
 		<%= text_field_tag :phone, @number[8], :class => "minput_small", :maxlenght => "1", :readonly => true %>
 		<%= text_field_tag :phone, @number[9], :class => "minput_small", :maxlenght => "1", :readonly => true %>
 		<%= text_field_tag :phone, @number[10], :class => "minput_small", :maxlenght => "1", :readonly => true %>
-		<center><%= button_to "Next", "", { :onclick => "history.go(0)" , :class => "msubmit"} %></center>
-
+	</div>
+		<%= button_to "Next", "", { :onclick => "history.go(0)" , :class => "msubmit", :style => "margin: 2px 0 0 30px;top:3px;"} %>
+	<div class="mcenter">
+		<div class="cls"></div>
 		<div class="layersw">
 			<div class="layers">
 				<% layer = 1 %>
 				<% @logo.each do |a| %>
-					<%= image_tag a, :class => "m1m1 "+layer.to_s, :alt => ""  %>
+					<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :width =>"398", :height =>"570", :alt => ""  %>
 					<% layer += 1 %>
 				<% end %>
 			</div>

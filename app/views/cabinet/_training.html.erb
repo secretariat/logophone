@@ -1,19 +1,31 @@
-<%= @res %>
-<%= form_tag cabinet_training_show_path(:quantity => @quantity), :method => :get, :remote => true do %>
-	<%= text_field_tag :number1, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[1]) %>
-	<%= text_field_tag :number2, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[2]) %>
-	<%= text_field_tag :number3, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[3]) %>
-	<%= text_field_tag :number4, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[4]) %>
-	<%= text_field_tag :number5, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[5]) %>
-	<%= text_field_tag :number6, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[6]) %>
-	<%= text_field_tag :number7, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[7]) %>
-	<%= text_field_tag :number8, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[8]) %>
-	<%= text_field_tag :number9, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[9]) %>
-	<%= text_field_tag :number10, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[10]) %>
-  <center><%= submit_tag "Next", :name => nil, :class => "msubmit" %></center>
-<% end %>
+<h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
+	<%= form_tag cabinet_training_show_path(:quantity => @quantity), :method => :get, :remote => true do %>
+		<%= text_field_tag :number1, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[1]) %>
+		<%= text_field_tag :number2, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[2]) %>
+		<%= text_field_tag :number3, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[3]) %>
+		<%= text_field_tag :number4, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[4]) %>
+		<%= text_field_tag :number5, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[5]) %>
+		<%= text_field_tag :number6, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[6]) %>
+		<%= text_field_tag :number7, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[7]) %>
+		<%= text_field_tag :number8, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[8]) %>
+		<%= text_field_tag :number9, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[9]) %>
+		<%= text_field_tag :number10, nil, :class => "minput_small", :maxlenght => "1", :disabled => disabled?(@number[10]) %>
 
-<!-- <div class="mcenter"> -->
+		<%= submit_tag "Check answer", :name => nil, :class => "msubmit", :style => "margin: 2px 0 0 30px;top:3px;"%>
+	<% end %>
+</div>
+
+	
+<div class="cls"></div>
+<center>
+		<% if @res == 1 %>
+		<div class="label1 reveal-bg-ten">Correct!</div>
+		<% end %>
+		<% if @res == 2%>
+			<div class="label1 reveal-bg-one">Incorrect!</div>
+		<% end %>
+</center>
+<div class="mcenter">
 	<div class="layersw">
 		<div class="layers">
 			<% layer = 1 %>
@@ -23,6 +35,6 @@
 			<% end %>
 		</div>
 	</div>
-<!-- </div> -->
+</div>
 
 
