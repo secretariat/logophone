@@ -69,37 +69,33 @@ class CabinetController < ApplicationController
   end
 
   def test
-    test = Intro.new(1)
-    @quantity = test.stage
+    test = TestMode.new
+    @time = test.stage
+    test.reset_stage
+    test.clear_full_number
   end
 
   def test_show
-    @quantity = params[:quantity]
-    intro = Intro.new(1)
-    puts intro.full_number.empty?
-    if !intro.full_number.empty?
-      puts intro.full_number.to_s
+    @time = params[:time]
+    test_mode = TestMode.new
+    @ggg = test_mode.number
+    if !test_mode.full_number.empty?
+      puts test_mode.full_number.to_s
       puts get_input_values.to_s
-      if check_train_results( intro.full_number, get_input_values) == 0
-        intro.generate_logo
-        @number = intro.number
-        @logo = intro.logo
-        intro.increase_stage
-        puts intro.stage
-        @res = "Success"
-        # flash[:success] = "Logotype succefully decoded"
+      if check_train_results( test_mode.full_number, get_input_values) == 0
+        @number = test_mode.number
+        test_mode.increase_stage
+        puts test_mode.stage
+        @res = 1
       else
-        # flash[:error] = "Error decodeing logotype. Please? try again."
-        @number = intro.full_number
-        @logo = intro.check_logo
-        @res = "Error"
-        # head :ok
+        test_mode.reset_stage
+        @number = test_mode.full_number
+        @res = 2
       end
-    else
-      intro.generate_logo
-      @number = intro.number
-      @logo = intro.logo
     end
+    test_mode.generate_logo
+    @number = test_mode.number
+    @logo = test_mode.logo
   end
 
 

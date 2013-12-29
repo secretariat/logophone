@@ -2,27 +2,22 @@ load "funcs.rb"
 
 BOOL = [true,false]
 
-def fwrite( str )
-	fd = File.new( Rails.root.join('lib','log.txt'), "a+")
-	fd.puts str
-	fd.close
-end
-
-class Intro
+class TestMode
 
 	include Common
 
 	@@number = Array.new(10)
 	@@logo = []
+	@@stage = 1
+	@@round = 1
 
-	def initialize( elements_quantity )
-		@elements_quantity = elements_quantity
+	def initialize
 		@logo = Array.new()
 		@number = Array.new(10)
 	end
 
 	def generate_logo
-		case @elements_quantity.to_i
+		case @@stage.to_i
 			when 1 ; one
 			when 2 ; two
 			when 3 ; three
@@ -45,6 +40,25 @@ class Intro
 
 	def check_logo
 		@@logo
+	end
+
+	def stage
+		@@stage
+	end
+
+	def increase_stage
+		@@stage += 1
+		next_round if @@stage >= 11
+	end
+
+	def reset_stage
+		@@stage = 1
+		@@round = 1
+	end
+
+	def next_round
+		@@stage = 1
+		@@round += 1
 	end
 
 	def clear_full_number
@@ -155,10 +169,3 @@ class Intro
 		@number = nil
 	end
 end
-
-# a = Intro.new(3)
-# a.generate_logo
-# puts a.logo
-
-# y = ar.sample
-# send(y)

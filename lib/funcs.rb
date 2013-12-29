@@ -30,3 +30,9 @@ def color_folder(color_id)
 	when 0; return "white"
 	end
 end
+
+def fwrite( str )
+	fd = File.new( Rails.root.join('lib','log.txt'), "a+")
+	fd.puts str
+	fd.close
+end
