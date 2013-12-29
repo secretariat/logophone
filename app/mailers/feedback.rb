@@ -4,6 +4,6 @@ class Feedback < ActionMailer::Base
 
   def feedback_mail( uname, email, msg )
   	@msg = msg
-    mail(:from => email, :subject => "New Feedback Message from #{uname}")
+    mail(:from => "noreply@logophone.org", :subject => "New Feedback Message from #{uname}")
   end
 end

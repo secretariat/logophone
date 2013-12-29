@@ -37,13 +37,13 @@ class CabinetController < ApplicationController
         intro.generate_logo
         @number = intro.number
         @logo = intro.logo
-        @res = "Success"
+        @res = 1
         # flash[:success] = "Logotype succefully decoded"
       else
         # flash[:error] = "Error decodeing logotype. Please? try again."
         @number = intro.full_number
         @logo = intro.check_logo
-        @res = "Error"
+        @res = 2
         # head :ok
       end
     else
