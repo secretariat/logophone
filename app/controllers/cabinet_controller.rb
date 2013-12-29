@@ -75,7 +75,7 @@ class CabinetController < ApplicationController
 
   def test_show
     @quantity = params[:quantity]
-    intro = Intro.new(params[:quantity])
+    intro = Intro.new(1)
     puts intro.full_number.empty?
     if !intro.full_number.empty?
       puts intro.full_number.to_s
