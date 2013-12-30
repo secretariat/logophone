@@ -7,7 +7,7 @@
 		<h3 style="float:left; padding-right:20px;">Enter phone number:</h3>
 		<%= form_tag( creator_show_path, :method => "get", :style =>"margin:15px 20px;") do %>
 				<%= text_field_tag :phone, params[:phone], :class => "minput", :maxlenght => "10"%>
-				<%= submit_tag("Create!", :class => "msubmit") %>
+				<%= submit_tag("Create!", :class => "msubmit", :style =>"bottom:0px !important;") %>
 		<% end %>
 </article>
 
