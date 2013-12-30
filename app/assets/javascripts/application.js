@@ -20,10 +20,14 @@ $(document).ready(function(){
    $('.flash_message').delay(300).animate({'top': 0}, 500).delay(2000).fadeOut(500);
 });
 
-$(document).ready(function(){
-    $('input').keyup(function(){
-        if($(this).val().length==$(this).attr("maxlength")){
-          $(this).next().focus();
-        }
-    });
+jQuery(function() {
+  return $('#testo').delay(gon.time).fadeOut('slow');
 });
+
+// $(document).ready(function(){
+//     $('input').keyup(function(){
+//         if($(this).val().length==$(this).attr("maxlength")){
+//           $(this).next().focus();
+//         }
+//     });
+// });

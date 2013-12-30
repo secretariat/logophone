@@ -1,4 +1,4 @@
-<%= @ggg %>
+<%#= @ggg %>
 <h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
 	<%= form_tag cabinet_test_show_path(:time => @time), :method => :get, :remote => true do %>
 		<%= text_field_tag :number1, nil, :class => "minput_small", :maxlength => 1, :disabled => disabled?(@number[1]) %>
