@@ -9,6 +9,7 @@ Logophone::Application.routes.draw do
   get "cabinet/training"
   get "cabinet/table"
   get "cabinet/test"
+  get "cabinet/test_show"
   get "cabinet/intro_show"
   get "cabinet/training_show"
   get "cabinet/tester"

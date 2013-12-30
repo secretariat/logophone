@@ -55,6 +55,9 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (2.0.2)
+    gon (4.1.1)
+      actionpack (>= 2.3.0)
+      json
     highline (1.6.19)
     hike (1.2.3)
     hirb (0.7.1)
@@ -149,6 +152,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   devise
+  gon (~> 4.1.0)
   hirb
   jquery-rails
   mysql2
