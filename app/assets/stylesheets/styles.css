@@ -597,27 +597,25 @@ font-family:"Open_Sans_L";
  #mastfoot{
     margin-bottom: 20px;
     padding-bottom: 10px;
-    background: #0A0A0A;
-    -moz-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
-    -webkit-box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
-    box-shadow: -1px 1px 3px rgba(0,0,0,0.3);
  }
 #footlogo{
-    margin-top: 10px;
+    margin-top: 37px;
+    margin-bottom: 25px;
 
 }
  .slogan{
-    padding: 0 20px;
+    padding: 0px;
     font-size: 16px;
     line-height: 23px;
-    color: #555;
+    color: #fff;
  }
  .copyright{
     padding: 20px;
     padding-top: 0px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 19px;
     color: #555;
+    float:right;
  }
 
 #foot-icons{
