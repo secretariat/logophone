@@ -8,7 +8,7 @@ class TestMode
 
 	@@number = Array.new(10)
 	@@logo = []
-	@@stage = 9
+	@@stage = 1
 	@@round = 1
 
 	def initialize
