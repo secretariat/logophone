@@ -76,7 +76,9 @@ class CabinetController < ApplicationController
   end
 
   def test_show
-    @time = params[:time]
+    puts @time = params[:time]
+    puts @tmp_time = @time.to_f*1000
+    puts gon.time = @tmp_time.to_i
     test_mode = TestMode.new
     @ggg = test_mode.number
     if !test_mode.full_number.empty?
@@ -85,7 +87,6 @@ class CabinetController < ApplicationController
       if check_train_results( test_mode.full_number, get_input_values) == 0
         @number = test_mode.number
         test_mode.increase_stage
-        puts test_mode.stage
         @res = 1
       else
         test_mode.reset_stage

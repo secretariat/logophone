@@ -6,6 +6,7 @@ gem 'therubyracer'
 gem 'thin'
 gem 'hirb'
 gem 'devise'
+gem 'gon', '~>4.1.0'
 
 
 group :assets do

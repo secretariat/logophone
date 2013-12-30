@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-	$('#testo').delay(1000).fadeOut('slow');
+	$('#testo').delay(gon.time).fadeOut('slow');
