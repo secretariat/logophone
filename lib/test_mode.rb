@@ -4,16 +4,29 @@ BOOL = [true,false]
 
 class TestMode
 
+	attr_accessor :logo
+	attr_accessor :number
+	cattr_accessor :stage
+	cattr_accessor :round
+	cattr_accessor :current_round
+
 	include Common
 
 	@@number = Array.new(10)
 	@@logo = []
-	@@stage = 1
+	@@stage = 10
 	@@round = 1
+	@@current_round = 1
 
 	def initialize
 		@logo = Array.new()
 		@number = Array.new(10)
+	end
+
+	def generate_full_logo
+		ten
+		@@number = @number
+		@@logo = @logo
 	end
 
 	def generate_logo
@@ -34,16 +47,8 @@ class TestMode
 		@@logo = @logo
 	end
 
-	def logo
-		@logo
-	end
-
 	def check_logo
 		@@logo
-	end
-
-	def stage
-		@@stage
 	end
 
 	def increase_stage
@@ -53,6 +58,9 @@ class TestMode
 
 	def reset_stage
 		@@stage = 1
+	end
+
+	def reset_round
 		@@round = 1
 	end
 
@@ -64,15 +72,11 @@ class TestMode
 	def clear_full_number
 		puts "clearing"
 		@@number.clear
-		puts "number  "+@@number.to_s
+		puts "number  " + @@number.to_s
 	end
 
 	def full_number
 		@@number
-	end
-
-	def number
-		@number
 	end
 
 	def one

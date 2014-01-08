@@ -1,4 +1,4 @@
-class CabinetController < ApplicationController
+  class CabinetController < ApplicationController
 
   before_filter :authenticate_user!
 	layout 'cabinet'
@@ -70,15 +70,15 @@ class CabinetController < ApplicationController
 
   def test
     test = TestMode.new
-    @time = test.stage
-    test.reset_stage
+    # @time = test.stage
+    # test.reset_stage
     test.clear_full_number
   end
 
   def test_show
-    puts @time = params[:time]
-    puts @tmp_time = @time.to_f*1000
-    puts gon.time = @tmp_time.to_i
+    @time = params[:time]
+    @tmp_time = @time.to_f*1000
+    gon.time = @tmp_time.to_i
     test_mode = TestMode.new
     @ggg = test_mode.number
     if !test_mode.full_number.empty?
@@ -94,7 +94,8 @@ class CabinetController < ApplicationController
         @res = 2
       end
     end
-    test_mode.generate_logo
+    # test_mode.generate_logo
+    (test_mode.current_round == test_mode.round) ? test_mode.generate_logo : test_mode.generate_full_logo
     @number = test_mode.number
     @logo = test_mode.logo
   end
