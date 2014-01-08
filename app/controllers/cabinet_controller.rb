@@ -72,6 +72,7 @@
     test = TestMode.new
     # @time = test.stage
     test.reset_stage
+    test.reset_round
     test.clear_full_number
   end
 
