@@ -9,15 +9,17 @@
 	<%= text_field_tag :phone, @number[8], :class => "minput_small", :maxlength => 1, :readonly => true %>
 	<%= text_field_tag :phone, @number[9], :class => "minput_small", :maxlength => 1, :readonly => true %>
 	<%= text_field_tag :phone, @number[10], :class => "minput_small", :maxlength=> 1, :readonly => true %>
-	<center><%= submit_tag "Next", :name => nil, :class => "msubmit" %></center>
+	<%= submit_tag "Next", :name => nil, :class => "msubmit", :style =>"top: 3px;" %>
 <% end %>
-
-<div class="layersw">
-	<div class="layers">
-		<% layer = 1 %>
-		<% @logo.each do |a| %>
-			<%= image_tag a, :class => "m1m1 "+layer.to_s, :alt => ""  %>
-			<% layer += 1 %>
-		<% end %>
+<div class="cls"></div>
+<div class="mcenter">
+	<div class="layersw">
+		<div class="layers">
+			<% layer = 1 %>
+			<% @logo.each do |a| %>
+				<%= image_tag a, :class => "m1m1 "+layer.to_s, :alt => ""  %>
+				<% layer += 1 %>
+			<% end %>
+		</div>
 	</div>
 </div>

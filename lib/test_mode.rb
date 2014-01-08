@@ -107,7 +107,7 @@ class TestMode
 		character_in_one_close
 		@number[7] = mrand
 		@number[8] = mrand
-		@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+		@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 	end
 
 	def six

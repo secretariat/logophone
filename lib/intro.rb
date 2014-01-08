@@ -93,7 +93,7 @@ class Intro
 		character_in_one_close
 		@number[7] = mrand
 		@number[8] = mrand
-		@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+		@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 	end
 
 	def six
@@ -115,17 +115,17 @@ class Intro
 		if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
 			@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png"
 			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+			@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 		else
 			if @number[6] > @number[10] && @number[10] != 0
 				fwrite "+++++++++++++++++++++"
 				@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
 				@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-				@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+				@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 			else
 				fwrite "-------------------------"
 				@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-				@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 				@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
 			end
 		end

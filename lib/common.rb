@@ -57,6 +57,6 @@ module Common
 		@number[8] = mrand
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
 		@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-		@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+		@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 	end
 end
