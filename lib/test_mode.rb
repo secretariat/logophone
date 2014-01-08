@@ -9,12 +9,13 @@ class TestMode
 	cattr_accessor :stage
 	cattr_accessor :round
 	cattr_accessor :current_round
+	cattr_accessor :full
 
 	include Common
 
 	@@number = Array.new(10)
 	@@logo = []
-	@@stage = 10
+	@@stage = 1
 	@@round = 1
 	@@current_round = 1
 
@@ -27,6 +28,7 @@ class TestMode
 		ten
 		@@number = @number
 		@@logo = @logo
+		@@full = false
 	end
 
 	def generate_logo
@@ -45,6 +47,7 @@ class TestMode
 		end
 		@@number = @number
 		@@logo = @logo
+		@@full = true
 	end
 
 	def check_logo
@@ -80,7 +83,6 @@ class TestMode
 	end
 
 	def one
-		fwrite "one"
 		if BOOL.sample
 			charachter = mrand
 			@number[4] = charachter
@@ -91,23 +93,19 @@ class TestMode
 	end
 
 	def two
-		fwrite "two"
 		white_bg_mono_figure
 	end
 
 	def three
-		fwrite "three"
 		send( [:mono_figure, :color_figure, :flag, :character_in_one_close ].sample )
 	end
 
 	def four
-		fwrite "four"
 		bg
 		character_in_one_close
 	end
 
 	def five
-		fwrite "five"
 		character_in_one_close
 		@number[7] = mrand
 		@number[8] = mrand
@@ -115,13 +113,11 @@ class TestMode
 	end
 
 	def six
-		fwrite "six"
 		bg
 		character_in_one_close_with_pattern
 	end
 
 	def seven
-		fwrite "seven"
 		@number[4] = mrand
 		@number[5] = mrand
 		@number[6] = mrand
@@ -150,20 +146,17 @@ class TestMode
 	end
 
 	def eight
-		fwrite "eight"
 		@number[1] = mrand
 		@logo << "/output/flag/4#{@number[1]}.png"
 		seven
 	end
 
 	def nine
-		fwrite "nine"
 		white_bg_mono_figure
 		seven
 	end
 
 	def ten
-		fwrite "ten"
 		send( [:flag, :color_figure, :mono_figure].sample )
 		seven
 	end

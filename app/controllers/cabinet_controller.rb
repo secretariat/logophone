@@ -71,7 +71,7 @@
   def test
     test = TestMode.new
     # @time = test.stage
-    # test.reset_stage
+    test.reset_stage
     test.clear_full_number
   end
 
@@ -86,16 +86,27 @@
       puts get_input_values.to_s
       if check_train_results( test_mode.full_number, get_input_values) == 0
         @number = test_mode.number
-        test_mode.increase_stage
+        test_mode.increase_stage if test_mode.full
         @res = 1
       else
         test_mode.reset_stage
+        test_mode.reset_round
         @number = test_mode.full_number
         @res = 2
       end
     end
     # test_mode.generate_logo
-    (test_mode.current_round == test_mode.round) ? test_mode.generate_logo : test_mode.generate_full_logo
+    puts "in controller: #{test_mode.current_round} ? #{test_mode.round}"
+    if (test_mode.current_round < test_mode.round) then
+      test_mode.full ? test_mode.generate_full_logo : test_mode.generate_logo
+    else
+      test_mode.generate_logo
+    end
+    @stage = test_mode.stage
+    @round = test_mode.round
+    @cur_round = test_mode.current_round
+    @full = test_mode.full
+
     @number = test_mode.number
     @logo = test_mode.logo
   end

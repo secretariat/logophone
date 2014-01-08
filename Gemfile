@@ -9,6 +9,10 @@ gem 'devise'
 gem 'gon', '~>4.1.0'
 
 
+group :development do
+	gem "letter_opener"
+end
+
 group :assets do
 	gem 'twitter-bootstrap-rails'
   gem 'sass-rails',   '~> 3.2.3'
