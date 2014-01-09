@@ -11,19 +11,16 @@
         <div class="layerscab">
           <% layer = 1 %>
           <% logo.logo_files.split(',').each do |file| %>
-             <%# if file =~ /1\w{7}\.png/%>
-                <%#= image_tag file, :class => "m1m2 imgl"+layer.to_s, :width => "225", :alt => "logophone"%>
-              <%# elsif file =~ /5\w{7}\.png/ %>
-                <%#= image_tag file, :class => "m1m3 imgl"+layer.to_s, :width => "270", :alt => "logophone"%>
-              <%# elsif file =~ /flag/ %>
-                <%#= image_tag file, :class => "m1mf imgl"+layer.to_s, :alt => "logophone"%>
-              <%# else %>
                 <%= image_tag file, :class => "m1m0 imgl"+layer.to_s,:alt => "logophone"%>
-              <%# end %>
             <% layer +=1 %>  
           <% end %>
         </div>
     </div>
+
+    <center>
+      <%= link_to( "Delete", creator_destroy_path(:id => logo.id), :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены, что хотите удалить #{logo.first_name} #{logo.last_name}?") %>
+    </center>
+
     <div class="inner-panel reveal-bg-<%= @colors[i] %>">
       <div class="thumb pad pad-bottom-minus" style="padding:0;"></div>
       <center>
