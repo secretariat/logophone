@@ -63,7 +63,6 @@ class Intro
 	end
 
 	def one
-		fwrite "one"
 		if BOOL.sample
 			charachter = mrand
 			@number[4] = charachter
@@ -74,23 +73,19 @@ class Intro
 	end
 
 	def two
-		fwrite "two"
 		white_bg_mono_figure
 	end
 
 	def three
-		fwrite "three"
 		send( [:mono_figure, :color_figure, :flag, :character_in_one_close ].sample )
 	end
 
 	def four
-		fwrite "four"
 		bg
 		character_in_one_close
 	end
 
 	def five
-		fwrite "five"
 		character_in_one_close
 		@number[7] = mrand
 		@number[8] = mrand
@@ -98,16 +93,15 @@ class Intro
 	end
 
 	def six
-		fwrite "six"
 		bg
 		character_in_one_close_with_pattern
 	end
 
 	def seven
-		fwrite "seven"
 		@number[4] = mrand
 		@number[5] = mrand
 		@number[6] = mrand
+		@number[7] = mrand
 		@number[7] = mrand
 		@number[8] = mrand
 		@number[9] = mrand
@@ -143,20 +137,17 @@ class Intro
 	end
 
 	def eight
-		fwrite "eight"
 		@number[1] = mrand
 		@logo << "/output/flag/4#{@number[1]}.png"
 		seven
 	end
 
 	def nine
-		fwrite "nine"
 		white_bg_mono_figure
 		seven
 	end
 
 	def ten
-		fwrite "ten"
 		send( [:flag, :color_figure, :mono_figure].sample )
 		seven
 	end
@@ -166,10 +157,3 @@ class Intro
 		@number = nil
 	end
 end
-
-# a = Intro.new(3)
-# a.generate_logo
-# puts a.logo
-
-# y = ar.sample
-# send(y)
