@@ -75,6 +75,7 @@ class Creator
 
 	def get_nostrict_logo
 		if @glasses
+			fwrite "----1----"
 			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i ]
 			tmp_ar.sort!
@@ -85,10 +86,17 @@ class Creator
 		else
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i, "#{@pa[10]}#{@pa[9]}".to_i ]
 			tmp_ar.sort!
+			# if tmp_ar[0] < 10 then
+			# 	tie = tmp_ar[0]
+			# 	tmp_ar.delete_at(0)
+			# 	if tmp_ar[0].to_s[0].to_i > 6 || tmp_ar[1].to_s[0].to_i <= 9
+			# 		tmp_ar.insert(1, tie)
+			# 	else
+			# 		tmp_ar.push(tie)
+			# 	end
+			# end
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
-				puts "STR1 = #{str[0]}\nSTR2 = #{str[1]} "
-				# sleep(5)
 				if @overlaped_closes.include?(str[0].to_i)
 					@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
