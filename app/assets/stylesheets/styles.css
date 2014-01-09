@@ -192,7 +192,6 @@ h4  {
 .content-bottom  {
     background: #fff;
      position: relative;
-     height: 256px;
      margin-top: -10px !important;
      -webkit-transition:  all 0.3s ease 0s;
      -moz-transition:  all 0.3s ease 0s;
@@ -1621,9 +1620,13 @@ input.msubmit:hover
     height: 556px;
 }
 .m1m1 {
-/*    height: 556px;*/
     width: 392px;
     border: 3px solid #34495E;
+}
+.m1m0 {
+    width: 297px !important;
+    padding:0px !important;
+    border: 2px solid #ddd;
 }
 
 .m1m2 {

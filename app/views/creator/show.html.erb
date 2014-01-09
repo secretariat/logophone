@@ -8,20 +8,8 @@
 		<div class="layersw">
 			<div class="layers">
 				<% layer = 1 %>
-				<% flag_width = 386 %>
 				<% @ar.each do |a| %>
-					<% if a =~ /1\w{7}\.png/%>
-						<% flag_width = 365 %>
-					<% end %>
-				<% end %>
-				<% @ar.each do |a| %>
-					<% if a =~ /1\w{7}\.png/%>
-						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :width => "365", :alt => ""  %>
-					<% elsif a =~ /flag/ %>
-	            		<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :width =>flag_width, :alt => ""%>
-					<% else %>
-						<%= image_tag a, :class => "imgl"+layer.to_s, :width => "386", :alt => ""  %>
-					<% end %>
+						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
 					<% layer += 1 %>
 				<% end %>
 			</div>
