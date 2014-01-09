@@ -16,6 +16,7 @@ Logophone::Application.routes.draw do
 
   get "creator/new"
   get "creator/show"
+  get "creator/destroy"
   # resources :creator, only: [ :index, :new, :create, :show]
 
   get "page/index"
