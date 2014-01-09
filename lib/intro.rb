@@ -63,7 +63,6 @@ class Intro
 	end
 
 	def one
-		fwrite "one"
 		if BOOL.sample
 			charachter = mrand
 			@number[4] = charachter
@@ -74,23 +73,19 @@ class Intro
 	end
 
 	def two
-		fwrite "two"
 		white_bg_mono_figure
 	end
 
 	def three
-		fwrite "three"
 		send( [:mono_figure, :color_figure, :flag, :character_in_one_close ].sample )
 	end
 
 	def four
-		fwrite "four"
 		bg
 		character_in_one_close
 	end
 
 	def five
-		fwrite "five"
 		character_in_one_close
 		@number[7] = mrand
 		@number[8] = mrand
@@ -98,13 +93,11 @@ class Intro
 	end
 
 	def six
-		fwrite "six"
 		bg
 		character_in_one_close_with_pattern
 	end
 
 	def seven
-		fwrite "seven"
 		@number[4] = mrand
 		@number[5] = mrand
 		@number[6] = mrand
@@ -119,59 +112,41 @@ class Intro
 			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 			@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 		else
-<<<<<<< HEAD
-			if @number[6] > @number[10] && @number[10] != 0
-				fwrite "+++++++++++++++++++++"
-				@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-				@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-				@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-=======
 			if @number[6] > @number[10] then
 				if @number[10] == 0 && (@number[6] != 2 || @number[6] != 4 || @number[6] != 6) && ( over_close(@number[6]) == 0 )   then
 					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
 				else
 					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
 					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 				end
-<<<<<<< HEAD
->>>>>>> aa1041f32f1e151b746ba74b47fa84d67c0ff50f
-			else
-				@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-				@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-				@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
-=======
 			elsif @number[6] == 0 then
 					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
 					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 				else
 					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
 				# end
->>>>>>> test
 			end
 		end
 	end
 
 	def eight
-		fwrite "eight"
 		@number[1] = mrand
 		@logo << "/output/flag/4#{@number[1]}.png"
 		seven
 	end
 
 	def nine
-		fwrite "nine"
 		white_bg_mono_figure
 		seven
 	end
 
 	def ten
-		fwrite "ten"
 		send( [:flag, :color_figure, :mono_figure].sample )
 		seven
 	end
@@ -181,10 +156,3 @@ class Intro
 		@number = nil
 	end
 end
-
-# a = Intro.new(3)
-# a.generate_logo
-# puts a.logo
-
-# y = ar.sample
-# send(y)
