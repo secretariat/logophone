@@ -102,6 +102,7 @@ class Intro
 		@number[5] = mrand
 		@number[6] = mrand
 		@number[7] = mrand
+		@number[7] = mrand
 		@number[8] = mrand
 		@number[9] = mrand
 		@number[10] = mrand
