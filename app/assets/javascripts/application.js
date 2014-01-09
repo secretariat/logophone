@@ -24,10 +24,10 @@ jQuery(function() {
   return $('#testo').delay(gon.time).fadeOut('slow');
 });
 
-// $(document).ready(function(){
-//     $('input').keyup(function(){
-//         if($(this).val().length==$(this).attr("maxlength")){
-//           $(this).next().focus();
-//         }
-//     });
-// });
+$(document).ready(function(){
+    $('input').keyup(function(){
+        if($(this).val().length==$(this).attr("maxlength")){
+          $(this).next().focus();
+        }
+    });
+});

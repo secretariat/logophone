@@ -1,4 +1,4 @@
-class CabinetController < ApplicationController
+  class CabinetController < ApplicationController
 
   before_filter :authenticate_user!
 	layout 'cabinet'
@@ -70,15 +70,16 @@ class CabinetController < ApplicationController
 
   def test
     test = TestMode.new
-    @time = test.stage
+    # @time = test.stage
     test.reset_stage
+    test.reset_round
     test.clear_full_number
   end
 
   def test_show
-    puts @time = params[:time]
-    puts @tmp_time = @time.to_f*1000
-    puts gon.time = @tmp_time.to_i
+    @time = params[:time]
+    @tmp_time = @time.to_f*1000
+    gon.time = @tmp_time.to_i
     test_mode = TestMode.new
     @ggg = test_mode.number
     if !test_mode.full_number.empty?
@@ -86,15 +87,27 @@ class CabinetController < ApplicationController
       puts get_input_values.to_s
       if check_train_results( test_mode.full_number, get_input_values) == 0
         @number = test_mode.number
-        test_mode.increase_stage
+        test_mode.increase_stage if test_mode.full
         @res = 1
       else
         test_mode.reset_stage
+        test_mode.reset_round
         @number = test_mode.full_number
         @res = 2
       end
     end
-    test_mode.generate_logo
+    # test_mode.generate_logo
+    puts "in controller: #{test_mode.current_round} ? #{test_mode.round}"
+    if (test_mode.current_round < test_mode.round) then
+      test_mode.full ? test_mode.generate_full_logo : test_mode.generate_logo
+    else
+      test_mode.generate_logo
+    end
+    @stage = test_mode.stage
+    @round = test_mode.round
+    @cur_round = test_mode.current_round
+    @full = test_mode.full
+
     @number = test_mode.number
     @logo = test_mode.logo
   end
