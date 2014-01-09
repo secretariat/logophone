@@ -97,7 +97,7 @@
       end
     end
     # test_mode.generate_logo
-    puts "in controller: #{test_mode.current_round} ? #{test_mode.round}"
+    # puts "in controller: #{test_mode.current_round} ? #{test_mode.round}"
     if (test_mode.current_round < test_mode.round) then
       test_mode.full ? test_mode.generate_full_logo : test_mode.generate_logo
     else

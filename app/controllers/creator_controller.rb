@@ -3,7 +3,9 @@ class CreatorController < ApplicationController
 
   def show
   	@phone = params[:phone]
-  	c = Creator.new(@phone)
+    c = Creator.new(@phone)
+    # c = Creator.new("6023603326")
+  	# c = Creator.new(rand(1000000000..9999999999).to_s)
     # if c.valid?
     	c.generate_logo
       @ar = c.ar

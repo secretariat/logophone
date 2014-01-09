@@ -118,6 +118,7 @@ class TestMode
 	end
 
 	def seven
+		fwrite "seven"
 		@number[4] = mrand
 		@number[5] = mrand
 		@number[6] = mrand
@@ -125,22 +126,32 @@ class TestMode
 		@number[8] = mrand
 		@number[9] = mrand
 		@number[10] = mrand
+
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
 		if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
 			@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png"
 			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 			@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 		else
-			if @number[6] > @number[10] && @number[10] != 0
-				fwrite "+++++++++++++++++++++"
-				@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-				@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-				@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-			else
-				fwrite "-------------------------"
-				@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-				@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-				@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+			if @number[6] > @number[10] then
+				if @number[10] == 0 && (@number[6] != 2 || @number[6] != 4 || @number[6] != 6) && ( over_close(@number[6]) == 0 )   then
+					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+				else
+					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+				end
+			elsif @number[6] == 0 then
+					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				else
+					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+					@logo << "/output/#{color_folder(@number[7])}/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+				# end
 			end
 		end
 	end
