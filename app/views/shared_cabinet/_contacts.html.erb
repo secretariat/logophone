@@ -5,7 +5,7 @@
 </article>
 <% i = 0 %>
 <% @logos.each do |logo| %>
-  <article class="element fx-slide-out clearfix one-third home overflow" style="height:450px;">
+  <article class="element fx-slide-out clearfix one-third home overflow" style="height:470px;">
     <!-- <a href="images/content/01.jpg" title="" class="popup"> -->
     <div class="images">
         <div class="layerscab">
@@ -18,7 +18,7 @@
     </div>
 
     <center>
-      <%= link_to( "Delete", creator_destroy_path(:id => logo.id), :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены, что хотите удалить #{logo.first_name} #{logo.last_name}?") %>
+      <%= link_to( "Delete logo", creator_destroy_path(:id => logo.id), :method => :delete,  :class => "btn-delete", :confirm => "Are yo sure?") %>
     </center>
 
     <div class="inner-panel reveal-bg-<%= @colors[i] %>">

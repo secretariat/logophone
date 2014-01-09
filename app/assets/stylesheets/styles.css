@@ -225,6 +225,7 @@ h4  {
 .images  {
      display: block;
      position: relative;
+     margin-bottom: 15px;
  }
 
 
@@ -1613,6 +1614,24 @@ input.msubmit:hover
     background: #fff !important;
     color: #000 !important;
 }
+
+.btn-delete
+{
+    height: 20px  !important;
+    border-radius: 5px;
+    border: 1px solid #E74C3C;
+    background: #E74C3C;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.btn-delete:hover
+{
+    border: 1px solid #000 !important;
+    background: #E74C3F;
+    color: #fff !important;
+}
+
 .myimage {
     border: 1px solid #fff !important;
     background-clip: none;
