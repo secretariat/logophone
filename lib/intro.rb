@@ -123,14 +123,17 @@ class Intro
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 				end
 			elsif @number[6] == 0 then
-					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+					if @number[10] == 6 || @number[10] == 7
+						@logo << "/output/#{@number[4]}#{@number[10]}1#{@number[9]}XXXX.png"
+					else
+						@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+					end
 					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 				else
 					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
-				# end
 			end
 		end
 	end

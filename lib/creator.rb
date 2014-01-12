@@ -145,9 +145,8 @@ class Creator
 			rule_for_underwear = [0,1,2,3,4,5,8,9]
 			rule_for_under_coat = [6,7]
 			top_wear_under_shirt = [2,4]
-			fwrite "++++++++++++++++++++++++++++"
 			if rule_for_under_coat.include?(num)
-				fwrite "has wear under coat #{num}"
+				return 0 if num == 7 && underwear.include?(6)
 				bret = false
 				underwear.each do |wear|
 					bret = true if top_wear_under_shirt.include?(wear)
