@@ -39,7 +39,7 @@ class Creator
 		@fblock = rand_fblock
 		@strict = strictlogo?
 		@glasses = need_glasses?
-		@overlap = overlap?
+		# @overlap = overlap?
 		@logo = Hash.new()
 		@ar = Array.new()
 		@overlaped_closes = [0,1,2,3,4,5,8,9]
@@ -51,56 +51,55 @@ class Creator
 
 	def get_strict_logo
 		if @glasses
-			@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-			@ar << "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
+			@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+			@ar << "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
 			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 		else
 			if @pa[6] < @pa[10]
 				if @pa[6] == 0
-					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
-					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
+					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
+					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
 				else
-					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
-					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
+					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
 				end
 			else
-				@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?}#{@pa[5]}XXXX.png"
-				@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?}X#{@pa[8]}#{@pa[7]}XX.png"
-				@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?}#{@pa[9]}XXXX.png"
+				@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
+				@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+				@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
 			end
 		end
 	end
 
 	def get_nostrict_logo
 		if @glasses
-			fwrite "----1----"
 			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i ]
 			tmp_ar.sort!
 			tmp_ar.each do |t|
 				str = t.to_s
-				@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+				@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?(str[0].to_i)}#{str[1]}XXXX.png"
 			end
 		else
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i, "#{@pa[10]}#{@pa[9]}".to_i ]
 			tmp_ar.sort!
-			# if tmp_ar[0] < 10 then
-			# 	tie = tmp_ar[0]
-			# 	tmp_ar.delete_at(0)
-			# 	if tmp_ar[0].to_s[0].to_i > 6 || tmp_ar[1].to_s[0].to_i <= 9
-			# 		tmp_ar.insert(1, tie)
-			# 	else
-			# 		tmp_ar.push(tie)
-			# 	end
-			# end
+			if tmp_ar[0] < 10 then
+				tie = tmp_ar[0]
+				tmp_ar.delete_at(0)
+				if tmp_ar[0].to_s[0].to_i > 6 || tmp_ar[1].to_s[0].to_i <= 9
+					tmp_ar.insert(1, tie)
+				else
+					tmp_ar.push(tie)
+				end
+			end
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
 				if @overlaped_closes.include?(str[0].to_i)
 					@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
-					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?}#{str[1]}XXXX.png"
+					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?(str[0].to_i)}#{str[1]}XXXX.png"
 				end
 			end
 		end
@@ -137,12 +136,28 @@ class Creator
 		( @pa[6] == @pa[10] || ELEMENTS[@pa[6]][@pa[10]] == 1 ) ? true:false
 	end
 
-	def overlap?
-		if( ELEMENTS[@pa[6]][@pa[8]] == 2) then
-			if(@pa[6] > @pa[8]) then
-				return 1
+	def overlap?( num )
+		if( ELEMENTS[@pa[6]][@pa[8]] == 2 ||
+				ELEMENTS[@pa[6]][@pa[10]] == 2 ||
+				ELEMENTS[@pa[8]][@pa[10]] == 2 ) then
+			underwear = [ @pa[6], @pa[8], @pa[10] ]
+			# underwear.sort!
+			rule_for_underwear = [0,1,2,3,4,5,8,9]
+			rule_for_under_coat = [6,7]
+			top_wear_under_shirt = [2,4]
+			if rule_for_under_coat.include?(num)
+				return 0 if num == 7 && underwear.include?(6)
+				bret = false
+				underwear.each do |wear|
+					bret = true if top_wear_under_shirt.include?(wear)
+				end
+				return bret ? 0:1
 			else
-				return 0
+				if rule_for_underwear.include?(num)
+					return 0
+				else
+					return 1
+				end
 			end
 		end
 		return 0

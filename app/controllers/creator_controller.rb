@@ -4,7 +4,19 @@ class CreatorController < ApplicationController
   def show
   	@phone = params[:phone]
     c = Creator.new(@phone)
-    # c = Creator.new("6023603326")
+    # c = Creator.new("2183995682") # mayka, rybashkam palto
+    # c = Creator.new("9094369400") # victors comments
+    # c = Creator.new("8896987934")
+    # c = Creator.new("8374999646") # solved
+    # c = Creator.new("3254070306") # solved
+    # c = Creator.new("9492513642") # solved
+    # c = Creator.new("5910372858") # solved
+    # c = Creator.new("4461073426") # solved
+    # c = Creator.new("6353694026") # solved
+    # c = Creator.new("8662267289") # solved
+    # c = Creator.new("0380679585341") # solved
+    # c = Creator.new("5136523276") # solved
+    # c = Creator.new("1379272646") #not solved
   	# c = Creator.new(rand(1000000000..9999999999).to_s)
     # if c.valid?
     	c.generate_logo
