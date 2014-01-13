@@ -88,12 +88,14 @@ class Creator
 			if tmp_ar[0] < 10 then
 				tie = tmp_ar[0]
 				tmp_ar.delete_at(0)
-				if tmp_ar[0].to_s[0].to_i > 6 || tmp_ar[1].to_s[0].to_i <= 9
-					tmp_ar.insert(1, tie)
+				# if tmp_ar[0].to_s[0].to_i > 6 || tmp_ar[1].to_s[0].to_i <= 9
+				if tmp_ar[0].to_s[0].to_i > 6 && tmp_ar[1].to_s[0].to_i <= 9
+					(tmp_ar[0].to_s[0].to_i == 7) ?	tmp_ar.insert(0, tie) : tmp_ar.insert(1, tie)
 				else
 					tmp_ar.push(tie)
 				end
 			end
+
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
 				if @overlaped_closes.include?(str[0].to_i)
@@ -141,7 +143,13 @@ class Creator
 				ELEMENTS[@pa[6]][@pa[10]] == 2 ||
 				ELEMENTS[@pa[8]][@pa[10]] == 2 ) then
 			underwear = [ @pa[6], @pa[8], @pa[10] ]
-			# underwear.sort!
+
+			###########################coliision for bull, mice and cat with jacket and coat###################
+			return 1 if (@pa[4] == 1 || @pa[4] == 2 || @pa[4] == 4 || @pa[4] == 5 ) &&
+									(underwear.include?(9) || underwear.include?(8)) &&
+									underwear.include?(7) && (num == 7)
+			#####################################################################################
+
 			rule_for_underwear = [0,1,2,3,4,5,8,9]
 			rule_for_under_coat = [6,7]
 			top_wear_under_shirt = [2,4]
