@@ -118,9 +118,15 @@ class Intro
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
 				else
-					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+					if @number[6] == 6 && @number[10] == 0
+						@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+						@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+						@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+					else
+						@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+						@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
+						@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+					end
 				end
 			elsif @number[6] == 0 then
 					if @number[10] == 6 || @number[10] == 7

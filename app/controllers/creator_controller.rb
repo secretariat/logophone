@@ -3,13 +3,17 @@ class CreatorController < ApplicationController
 
   def show
   	@phone = params[:phone]
-    c = Creator.new(@phone)
+    # c = Creator.new(@phone)
     # c = Creator.new("1385993766") #solved
     # c = Creator.new("9202422877") #solved
     # c = Creator.new("7784086497") #solved
-  	# c = Creator.new(rand(1000000000..9999999999).to_s)
+    # c = Creator.new("0009903636") #solved
+    # c = Creator.new("0001903666") #solved
+    # c = Creator.new("0001469530") #solved
+  	c = Creator.new(rand(1000000000..9999999999).to_s)
     # if c.valid?
     	c.generate_logo
+      @pn = c.phone
       @ar = c.ar
     	session[:logo] = c.ar.join(',')
       @logo = Logo.new( params[:logo] )

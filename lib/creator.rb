@@ -208,10 +208,6 @@ class Creator
 			@ar << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
 		end
 	end
-
-	def revert_overlap( overlap )
-		overlap == 1 ? 0:1
-	end
 end
 
 # p = Creator.new("380674615191")
