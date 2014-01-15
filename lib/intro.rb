@@ -98,22 +98,31 @@ class Intro
 	end
 
 	def seven
-		@number[4] = mrand
-		@number[5] = mrand
-		@number[6] = mrand
-		@number[7] = mrand
-		@number[8] = mrand
-		@number[9] = mrand
-		@number[10] = mrand
+		# @number[4] = mrand
+		# @number[5] = mrand
+		# @number[6] = mrand
+		# @number[7] = mrand
+		# @number[8] = mrand
+		# @number[9] = mrand
+		# @number[10] = 0
+
+		@number[4] = 8
+		@number[5] = 4
+		@number[6] = 4
+		@number[7] = 3
+		@number[8] = 9
+		@number[9] = 6
+		@number[10] = 6
+
 
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
 		if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
 			@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png"
-			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-			@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+			@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+			@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 		else
 			if @number[6] > @number[10] then
-				if @number[10] == 0 && (@number[6] != 2 || @number[6] != 4 || @number[6] != 6) && ( over_close(@number[6]) == 0 )   then
+				if @number[10] == 0 && ( @number[6] != 8 && @number[6] != 9 ) && (@number[6] != 2 || @number[6] != 4 || @number[6] != 6 ) && ( over_close(@number[6]) == 0 )   then
 					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
@@ -129,17 +138,25 @@ class Intro
 					end
 				end
 			elsif @number[6] == 0 then
-					if @number[10] == 6 || @number[10] == 7
-						@logo << "/output/#{@number[4]}#{@number[10]}1#{@number[9]}XXXX.png"
-					else
-						@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
-					end
+			# fwrite "middle6"
+				if @number[10] == 6
+					@logo << "/output/#{@number[4]}#{@number[10]}1#{@number[9]}XXXX.png"
 					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-				else
+				elsif @number[10] == 7
 					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
 					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+				else
+					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				end
+			else
+			fwrite "middle7"
+				@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+				@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
 			end
 		end
 	end
