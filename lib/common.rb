@@ -59,4 +59,37 @@ module Common
 		@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
 		@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
 	end
+
+	def overlap?( num )
+		if( ELEMENTS[@number[6]][@number[8]] == 2 ||
+				ELEMENTS[@number[6]][@number[10]] == 2 ||
+				ELEMENTS[@number[8]][@number[10]] == 2 ) then
+			underwear = [ @number[6], @number[10] ]
+
+			###########################coliision for bull, mice and cat with jacket and coat###################
+			return 1 if (@number[4] == 1 || @number[4] == 2 || @number[4] == 4 || @number[4] == 5 ) &&
+									(underwear.include?(9) || underwear.include?(8)) &&
+									underwear.include?(7) && (num == 7)
+			#####################################################################################
+
+			rule_for_underwear = [0,1,2,3,4,5,8,9]
+			rule_for_under_coat = [6,7]
+			top_wear_under_shirt = [2,4]
+			if rule_for_under_coat.include?(num)
+				return 0 if num == 7 && (underwear.include?(6) || underwear.include?(0))
+				bret = false
+				underwear.each do |wear|
+					bret = true if top_wear_under_shirt.include?(wear)
+				end
+				return bret ? 0:1
+			else
+				if rule_for_underwear.include?(num)
+					return 0
+				else
+					return 1
+				end
+			end
+		end
+		return 0
+	end
 end

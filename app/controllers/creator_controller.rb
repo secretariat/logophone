@@ -7,8 +7,9 @@ class CreatorController < ApplicationController
     # c = Creator.new("6463724080") # + tie under mayka
     # c = Creator.new("6464704083") # + tie under mayka
     # c = Creator.new("0675565456") # + tie under mayka
-    c = Creator.new("0676212896") # + tie under mayka
-  	# c = Creator.new(rand(1000000000..9999999999).to_s)
+    # c = Creator.new("0673967245") # + tie under mayka
+    # c = Creator.new("4445779880") # + tie under mayka
+  	c = Creator.new(rand(1000000000..9999999999).to_s)
     # if c.valid?
     	c.generate_logo
       @pn = c.phone

@@ -98,22 +98,22 @@ class Intro
 	end
 
 	def seven
-		# @number[4] = mrand
-		# @number[5] = mrand
-		# @number[6] = mrand
-		# @number[7] = mrand
-		# @number[8] = mrand
-		# @number[9] = mrand
-		# @number[10] = 0
+		@number[4] = mrand
+		@number[5] = mrand
+		@number[6] = mrand
+		@number[7] = mrand
+		@number[8] = mrand
+		@number[9] = mrand
+		@number[10] = mrand
 
-		@number[4] = 8
-		@number[5] = 4
-		@number[6] = 4
-		@number[7] = 3
-		@number[8] = 9
-		@number[9] = 6
-		@number[10] = 6
-
+		test = "80619900"
+		# @number[4] = test[0].to_i
+		# @number[5] = test[1].to_i
+		# @number[6] = test[2].to_i
+		# @number[7] = test[3].to_i
+		# @number[8] = test[4].to_i
+		# @number[9] = test[5].to_i
+		# @number[10] = test[6].to_i
 
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
 		if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
@@ -121,42 +121,32 @@ class Intro
 			@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
 			@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 		else
-			if @number[6] > @number[10] then
-				if @number[10] == 0 && ( @number[6] != 8 && @number[6] != 9 ) && (@number[6] != 2 || @number[6] != 4 || @number[6] != 6 ) && ( over_close(@number[6]) == 0 )   then
-					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+			if @number[6] < @number[10]
+				if @number[6] == 0
+					@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+					@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 				else
-					if @number[6] == 6 && @number[10] == 0
-						@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-						@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-						@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-					else
-						@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-						@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-						@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-					end
-				end
-			elsif @number[6] == 0 then
-			# fwrite "middle6"
-				if @number[10] == 6
-					@logo << "/output/#{@number[4]}#{@number[10]}1#{@number[9]}XXXX.png"
-					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-				elsif @number[10] == 7
-					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
-				else
-					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
-					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+					@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
 				end
 			else
-			fwrite "middle7"
-				@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-				@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-				@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+				if @number[10] == 0
+					if @number[6] == 7 || @number[6] == 8 || @number[6] == 9
+						@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+						@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+						@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					else
+						@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+						@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+						@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+					end
+				else
+					@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+					@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				end
 			end
 		end
 	end
@@ -181,4 +171,5 @@ class Intro
 		@logo = nil
 		@number = nil
 	end
+
 end
