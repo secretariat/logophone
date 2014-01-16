@@ -129,37 +129,35 @@ class TestMode
 		@logo << "/output/#{@number[4]}XXXXXXX.png"
 		if( @number[10] == @number[6] || ELEMENTS[@number[6]][@number[10]] == 1 )
 			@logo << "/output/glasses/#{@number[4]}XXXXX#{@number[10]}#{@number[9]}.png"
-			@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-			@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
+			@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
+			@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 		else
-			if @number[6] > @number[10] then
-				if @number[10] == 0 && (@number[6] != 2 || @number[6] != 4 || @number[6] != 6) && ( over_close(@number[6]) == 0 )   then
-					@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-					@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
+			if @number[6] < @number[10]
+				if @number[6] == 0
+					@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+					@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 				else
-					if @number[6] == 6 && @number[10] == 0
-						@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-						@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-						@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-					else
-						@logo << "/output/#{@number[4]}#{@number[10]}#{over_close(@number[10])}#{@number[9]}XXXX.png"
-						@logo << "/output/#{@number[4]}#{@number[6]}0#{@number[5]}XXXX.png"
-						@logo << "/output/uzor/#{@number[4]}#{@number[6]}0X#{@number[8]}#{@number[7]}XX.png"
-					end
+					@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+					@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
 				end
-			elsif @number[6] == 0 then
-					if @number[10] == 6 || @number[10] == 7
-						@logo << "/output/#{@number[4]}#{@number[10]}1#{@number[9]}XXXX.png"
+			else
+				if @number[10] == 0
+					if @number[6] == 7 || @number[6] == 8 || @number[6] == 9
+						@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+						@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+						@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 					else
-						@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+						@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+						@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+						@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
 					end
-					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
 				else
-					@logo << "/output/#{@number[4]}#{@number[6]}#{over_close(@number[6])}#{@number[5]}XXXX.png"
-					@logo << "/output/uzor/#{@number[4]}#{@number[6]}#{over_close(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
-					@logo << "/output/#{@number[4]}#{@number[10]}0#{@number[9]}XXXX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[10]}#{overlap?(@number[10])}#{@number[9]}XXXX.png"
+					@logo <<  "/output/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}#{@number[5]}XXXX.png"
+					@logo <<  "/output/uzor/#{@number[4]}#{@number[6]}#{overlap?(@number[6])}X#{@number[8]}#{@number[7]}XX.png"
+				end
 			end
 		end
 	end

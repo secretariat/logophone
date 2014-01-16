@@ -1,2 +1,4 @@
 $("#products").html("<%= escape_javascript(render 'test') %>");
 $('#testo').delay('<%= escape_javascript("#{@tmp_time}") %>').fadeOut('slow');
+$(':input:enabled:visible:first').focus();
+

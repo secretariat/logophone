@@ -4,3 +4,6 @@
 
 # jQuery ->
 # 	$('#testo').delay(gon.time).fadeOut('slow');
+jQuery ->
+	$(':input:enabled:visible:first').focus();
+	# $("form:first *:input[type!=hidden]:first").focus()
