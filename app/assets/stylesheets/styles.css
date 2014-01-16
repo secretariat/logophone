@@ -1549,6 +1549,7 @@ input.msubmit:hover
 }
 .layers
 {
+    height: 480px;
     display: block;
     padding: 0px 50px;
 }
@@ -1587,7 +1588,7 @@ input.msubmit:hover
 }
 
 .saveasblock {
-    width: 352px !important;
+    width: 305px !important;
     height: 120px !important;
     display: block;
     padding: 10px 20px;

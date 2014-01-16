@@ -22,12 +22,12 @@
 			<%if user_signed_in? %>
 				<div class="saveasblock reveal-bg-two">
 					<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
-						<div style="width:70%; float: left;">
+						<div style="width:60%; float: left;">
 		          <%= f.text_field :phone, :value => params[:phone], :readonly => true%>
 							<%= f.text_field :first_name, :placeholder=>"First name"  %>
 							<%= f.text_field :last_name, :placeholder=>"Last name"%>
 						</div>
-						<div style="width:30%; float: right; padding-top: 20px;">
+						<div style="width:40%; float: right; padding-top: 20px;">
 							<%= submit_tag("Save logo", :class => "mbutton") %>
 						</div>
 					<% end %>
