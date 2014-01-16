@@ -4,8 +4,9 @@
   </div>
 </article>
 <article class="element clearfix home pp one-full">
+	    <h4 class="introtext">In this section, you must enter the digits of the phone numbers that are matched to specific elements of the logo	</h4>
 		<h3 style="float:left; padding-right:20px;">Select number of elements for training</h3>
-		<%= form_tag( cabinet_training_show_path, :method => "get", :style =>"margin:15px 20px;") do %>
+		<%= form_tag( cabinet_training_show_path, :method => "get", :style =>"padding:20px 20px;") do %>
 			<%= select_tag "quantity", options_for_select((1..10).step(1)) %>
 			<%= submit_tag("Create!", :class => "msubmit") %>
 		<% end %>

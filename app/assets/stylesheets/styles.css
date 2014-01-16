@@ -82,7 +82,7 @@ a:hover  {
  }
 
 h2  {
-	color: #fff;
+	color: #fff !important;
 	font-family:"Open_Sans_R";
      font-size: 32px;
      font-weight: normal;
@@ -1549,8 +1549,6 @@ input.msubmit:hover
 }
 .layers
 {
-    height: 566px;
-    width: 486px;
     display: block;
     padding: 0px 50px;
 }
@@ -1639,7 +1637,7 @@ input.msubmit:hover
     height: 556px;
 }
 .m1m1 {
-    width: 392px;
+    width: 340px;
     border: 3px solid #34495E;
 }
 .m1m0 {
@@ -1759,4 +1757,22 @@ form {
   padding: 12px 30px;
   vertical-align: baseline;
   white-space: nowrap;
+}
+
+.info tr td.digit{
+    font-size: 20pt;
+    vertical-align: middle !important;
+    text-align: center;
+}
+.info tr td.text{
+    line-height: 14pt !important;
+}
+.info thead tr td{
+    text-align: center;
+}
+.introtext {
+    color:#444444;
+    text-align:center;
+    margin-top:0px;
+    
 }
