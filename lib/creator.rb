@@ -91,15 +91,20 @@ class Creator
 		else
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i, "#{@pa[10]}#{@pa[9]}".to_i ]
 			tmp_ar.sort!
-			if tmp_ar[0] < 10 then
+			if tmp_ar[0].to_i < 10 then
 				tie = tmp_ar[0]
 				tmp_ar.delete_at(0)
-				# trousers = [1,3,5]
-				# nead_tie_under = [7,8,9]
-				# need_tie_beetween = [2,4]
-				# if need_tie_beetween.include?(tmp_ar[0].to_s[0].to_i) && nead_tie_under.include?(tmp_ar[1].to_s[0].to_i)
-				if tmp_ar[0].to_s[0].to_i > 6 && tmp_ar[1].to_s[0].to_i <= 9
-					(tmp_ar[0].to_s[0].to_i == 7) ?	tmp_ar.insert(0, tie) : tmp_ar.insert(1, tie)
+				trousers = [1,3,5]
+				nead_tie_under = [7,8,9]
+				need_tie_beetween = [2,4,6]
+				# if tmp_ar[0].to_s[0].to_i > 6 && tmp_ar[1].to_s[0].to_i <= 9
+					# (tmp_ar[0].to_s[0].to_i == 7) ?	tmp_ar.insert(0, tie) : tmp_ar.insert(1, tie)
+				if need_tie_beetween.include?(tmp_ar[0].to_s[0].to_i) && nead_tie_under.include?(tmp_ar[1].to_s[0].to_i)
+					tmp_ar.insert(1, tie)
+				elsif trousers.include?(tmp_ar[0].to_s[0].to_i) && nead_tie_under.include?(tmp_ar[1].to_s[0].to_i)
+					tmp_ar.insert(1, tie)
+				elsif nead_tie_under.include?(tmp_ar[0].to_s[0].to_i) && nead_tie_under.include?(tmp_ar[1].to_s[0].to_i)
+					tmp_ar.insert(0, tie)
 				else
 					tmp_ar.push(tie)
 				end
