@@ -3,7 +3,14 @@
 <head>
   <title>Logophone</title>
   <%= include_gon %>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%#= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application.css" %>
+  <%= stylesheet_link_tag    "bootstrap-responsive.css" %>
+  <%= stylesheet_link_tag    "bootstrap_and_overrides.css" %>
+  <%= stylesheet_link_tag    "extension.css" %>
+  <%= stylesheet_link_tag    "jquery.fancybox.css" %>
+  <%= stylesheet_link_tag    "metro-bootstrap.css" %>
+  <%= stylesheet_link_tag    "styles.css" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "/javascripts/jquery.ba-bbq.min.js" %>
   <%= csrf_meta_tags %>
