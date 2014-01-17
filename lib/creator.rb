@@ -94,7 +94,10 @@ class Creator
 			if tmp_ar[0] < 10 then
 				tie = tmp_ar[0]
 				tmp_ar.delete_at(0)
-				# if tmp_ar[0].to_s[0].to_i > 6 || tmp_ar[1].to_s[0].to_i <= 9
+				# trousers = [1,3,5]
+				# nead_tie_under = [7,8,9]
+				# need_tie_beetween = [2,4]
+				# if need_tie_beetween.include?(tmp_ar[0].to_s[0].to_i) && nead_tie_under.include?(tmp_ar[1].to_s[0].to_i)
 				if tmp_ar[0].to_s[0].to_i > 6 && tmp_ar[1].to_s[0].to_i <= 9
 					(tmp_ar[0].to_s[0].to_i == 7) ?	tmp_ar.insert(0, tie) : tmp_ar.insert(1, tie)
 				else
