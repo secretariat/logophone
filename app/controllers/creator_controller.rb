@@ -1,6 +1,8 @@
 # require "creator.rb"
 class CreatorController < ApplicationController
 
+  layout :get_layout
+
   def show
   	@phone = params[:phone]
     c = Creator.new(@phone)
@@ -49,4 +51,9 @@ class CreatorController < ApplicationController
     redirect_to cabinet_index_path
   end
 
+  private
+
+  def get_layout
+    user_signed_in? ? "cabinet" : "application"
+  end
 end

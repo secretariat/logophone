@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+    protect_from_forgery
 
-  after_filter :flash_to_headers
+    after_filter :flash_to_headers
+
+    def after_sign_in_path_for(resource)
+        cabinet_index_path
+    end
 
     def flash_to_headers
         return unless request.xhr?
