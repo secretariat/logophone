@@ -29,7 +29,7 @@ Credits: Design, Coding and Development by Jean P Johnson at Designova
 html  {
     overflow:  -moz-scrollbars-vertical;
     overflow-y:  scroll;
-    background: #fefefe url('/assets/bg.png') repeat;
+    
  }
 
 body  {
@@ -290,6 +290,15 @@ ul.list li  {
 .reveal-bg-ten{
 	background: #83BA1F !important;
 }
+.reveal-bg-white{
+    background: #fff !important;
+    color: #000 !important;
+}
+.reveal-bg-black{
+    background: #000 !important;
+}
+
+
 .text-white{
 	color: #aaa;
 }
@@ -485,11 +494,19 @@ font-size: 16px;
  }
 
 #options li a:hover{
-    color: #fff !important;
+/*    color: #fff !important;*/
     font-size: 18px !important;
     padding: 20px 30px !important;
     text-align: left !important;
 }
+
+/*#options li a:hover .reveal-bg-white {
+    color: #000 !important;
+}
+
+#options li a:active .reveal-bg-white {
+    color: #000 !important;
+}*/
 
 .activated{
     color: #fff !important;

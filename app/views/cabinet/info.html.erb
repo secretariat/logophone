@@ -5,7 +5,11 @@
 </article>
 <article class="element clearfix home pp one-full">
     <h4 class="introtext">The logo uses the following elements: characters, character clothing, sunglasses, geometrical figures, patterns on the clothes and colors. Each element is always designated one digit. All of these  elements you can see in the Table</h4>
-	<table class="table table-hover info">
+	   <% if @theme.present? && @theme == "dark" %>
+        <table class="table table-hover info" style="color:#3498DB;">
+            <% else %>
+        <table class="table table-hover info">
+    <% end %>
 		<thead>
 		   <tr class="reveal-bg-four" style="color:#fff; font-size: 16pt;">
 		  	<td width="40%"><b>The number of elements </b></td>

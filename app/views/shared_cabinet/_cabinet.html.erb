@@ -10,6 +10,13 @@
             <li><%= link_to "Training", cabinet_training_path, :class =>"reveal-bg-six" %></li>
             <li><%= link_to "Test", cabinet_test_path, :class =>"reveal-bg-five" %></li>
             <li><%= link_to "Log out", destroy_user_session_path, :method => :delete, :class =>"reveal-bg-three" %></li>
+            <% if @theme.present? && @theme == "dark" %>
+                <br><br>
+                <li><%= link_to "Light theme", {:controller => "page", :action => "set_light"}, :style=>"background-color:#fff !important;color:#000;"%></li>
+            <%  else %>
+                <br><br>
+                <li><%= link_to "Dark theme", {:controller => "page", :action => "set_dark"}, :style=>"background-color:#000 !important;"%></li>
+            <%  end %>
         </ul>
     </div>
 </header>
