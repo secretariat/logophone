@@ -1,5 +1,6 @@
 require "creator.rb"
 class PageController < ApplicationController
+
   def index
   end
 
@@ -29,4 +30,13 @@ class PageController < ApplicationController
     redirect_to(:controller => 'page', :action => 'contacts')
   end
 
+  def set_light
+    session[:theme] = "light"
+    redirect_to(request.env["HTTP_REFERER"])
+  end
+
+  def set_dark
+    session[:theme] = "dark"
+    redirect_to(request.env["HTTP_REFERER"])
+  end
 end

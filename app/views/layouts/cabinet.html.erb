@@ -11,6 +11,9 @@
   <%= stylesheet_link_tag    "jquery.fancybox.css" %>
   <%= stylesheet_link_tag    "metro-bootstrap.css" %>
   <%= stylesheet_link_tag    "styles.css" %>
+  <% if @theme.present? && @theme == "dark" %>
+    <%= stylesheet_link_tag    "dark_style.css" %>
+  <% end %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "/javascripts/jquery.ba-bbq.min.js" %>
   <%= csrf_meta_tags %>
@@ -26,6 +29,7 @@
         <div class="text">Signed in as <%= current_user.email %> | <%= link_to "Log out", destroy_user_session_path, :method => :delete %></div>
     </div>
   <% end %>
+  <%= render 'shared/theme' %>
   <% flash.each do |name, msg| %>
     <div class="alert-<%=name%>" >
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

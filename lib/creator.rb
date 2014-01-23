@@ -158,7 +158,7 @@ class Creator
 				ELEMENTS[@pa[8]][@pa[10]] == 2 ) then
 			underwear = [ @pa[6], @pa[8], @pa[10] ]
 
-			###########################coliision for bull, mice and cat with jacket and coat###################
+			#########coliision for bull, mice, gorilla and cat with jacket and coat##############
 			return 1 if (@pa[4] == 1 || @pa[4] == 2 || @pa[4] == 4 || @pa[4] == 5 ) &&
 									(underwear.include?(9) || underwear.include?(8)) &&
 									underwear.include?(7) && (num == 7)
