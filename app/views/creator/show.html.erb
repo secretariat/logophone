@@ -4,16 +4,16 @@
   </div>
 </article>
 <article class="element clearfix home pp">
-<!-- 		<%#= form_tag( creator_show_path, :method => "get", :style =>"margin:15px 20px;") do %>
-			<center>
-				<%#= submit_tag("Create!", :class => "msubmit", :style =>"bottom:0px !important;") %><br/>
-				<%#= @pn %>
-			</center>
-		<%# end %> -->
+	<%# session[:logo].drop(3) %>
+	<%#= session[:logo].to_s %>
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
-				<% layer = 1 %>
+				<div id="crts">
+					<%= render 'crt'%>
+				</div>
+				<%= link_to "BG", :controller => "creator" %>
+				<% layer = 4 %>
 				<% @ar.each do |a| %>
 						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
 					<% layer += 1 %>

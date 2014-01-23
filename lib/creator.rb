@@ -28,7 +28,7 @@ class Creator
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :phone
+  attr_accessor :phone, :ar, :flag_block, :mono_figure_block, :color_figure_block
 
   # validates_format_of :phone, :with => /^[0-9]+$/
 
@@ -36,17 +36,15 @@ class Creator
 		puts @phone = phone.gsub(/[- ]/, "").last(10)
 		@pa = @phone.scan(/\d/).map { |c| c.to_i }
 		@pa.insert(0,0)
-		@fblock = rand_fblock
 		@strict = strictlogo?
 		@glasses = need_glasses?
 		# @overlap = overlap?
 		@logo = Hash.new()
 		@ar = Array.new()
+		@flag_block = Array.new()
+		@mono_figure_block = Array.new()
+		@color_figure_block = Array.new()
 		@overlaped_closes = [0,1,2,3,4,5,8,9]
-	end
-
-	def ar
-		@ar
 	end
 
 	def get_strict_logo
@@ -185,41 +183,33 @@ class Creator
 		return 0
 	end
 
-
-	def rand_fblock
-		rand(1..3)
-		# return 3
-	end
-
 	def proc_fblock
-		case rand_fblock
-			when 1 ; flag
-			when 2 ; mono_figure
-			when 3 ; color_figure
-		end
+		flag
+		mono_figure
+		color_figure
 	end
 
 	def flag
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
-			@ar << "/output/flag/4#{@pa[1]}.png"
+			@flag_block << "/output/flag/4#{@pa[1]}.png"
 		else
-			@ar << "/output/flag/1#{@pa[1]}.png"
-			@ar << "/output/flag/2#{@pa[2]}.png"
-			@ar << "/output/flag/3#{@pa[3]}.png"
+			@flag_block << "/output/flag/1#{@pa[1]}.png"
+			@flag_block << "/output/flag/2#{@pa[2]}.png"
+			@flag_block << "/output/flag/3#{@pa[3]}.png"
 		end
 	end
 
 	def mono_figure
-		@ar << "/output/flag/4#{@pa[1]}.png"
-		@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+		@mono_figure_block << "/output/flag/4#{@pa[1]}.png"
+		@mono_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 	end
 
 	def color_figure
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
-			@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+			@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 		else
-			@ar << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
-			@ar << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
+			@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+			@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
 		end
 	end
 end
