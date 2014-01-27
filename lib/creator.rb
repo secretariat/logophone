@@ -28,9 +28,15 @@ class Creator
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :phone, :ar, :flag_block, :mono_figure_block, :color_figure_block
-
+  attr_accessor :phone
+  cattr_accessor :ar
   # validates_format_of :phone, :with => /^[0-9]+$/
+
+	@@mono_figure_block = Array.new()
+	@@color_figure_block = Array.new()
+	@@block_array = Array.new()
+	@@ar = Array.new()
+	@@cur_index = 0
 
 	def initialize(phone)
 		puts @phone = phone.gsub(/[- ]/, "").last(10)
@@ -39,39 +45,41 @@ class Creator
 		@strict = strictlogo?
 		@glasses = need_glasses?
 		# @overlap = overlap?
+		@current_block = Array.new()
 		@logo = Hash.new()
-		@ar = Array.new()
-		@flag_block = Array.new()
-		@mono_figure_block = Array.new()
-		@color_figure_block = Array.new()
+		@@flag_block = Array.new()
 		@overlaped_closes = [0,1,2,3,4,5,8,9]
+	end
+
+	def clear
+		@@ar = []
 	end
 
 	def get_strict_logo
 		if @glasses
-			@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
-			@ar << "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
-			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
+			@@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+			@@ar << "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
+			@@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 		else
 			if @pa[6] < @pa[10]
 				if @pa[6] == 0
-					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
-					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
-					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+					@@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
 				else
-					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
-					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
-					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+					@@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
 				end
 			else
 				if @pa[10] == 0
-					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
-					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
-					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+					@@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
 				else
-					@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
-					@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
-					@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[10]}#{overlap?(@pa[10])}#{@pa[9]}XXXX.png"
+					@@ar <<  "/output/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}#{@pa[5]}XXXX.png"
+					@@ar <<  "/output/uzor/#{@pa[4]}#{@pa[6]}#{overlap?(@pa[6])}X#{@pa[8]}#{@pa[7]}XX.png"
 				end
 			end
 		end
@@ -79,12 +87,12 @@ class Creator
 
 	def get_nostrict_logo
 		if @glasses
-			@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
+			@@ar << "/output/glasses/#{@pa[4]}XXXXX#{@pa[10]}#{@pa[9]}.png"
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i ]
 			tmp_ar.sort!
 			tmp_ar.each do |t|
 				str = t.to_s
-				@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?(str[0].to_i)}#{str[1]}XXXX.png"
+				@@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?(str[0].to_i)}#{str[1]}XXXX.png"
 			end
 		else
 			tmp_ar = [ "#{@pa[6]}#{@pa[5]}".to_i, "#{@pa[8]}#{@pa[7]}".to_i, "#{@pa[10]}#{@pa[9]}".to_i ]
@@ -111,9 +119,9 @@ class Creator
 			tmp_ar.each do |t|
 				str = sprintf('%02d', t).to_s
 				if @overlaped_closes.include?(str[0].to_i)
-					@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
+					@@ar << "/output/#{@pa[4]}#{str[0]}0#{str[1]}XXXX.png"
 				else
-					@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?(str[0].to_i)}#{str[1]}XXXX.png"
+					@@ar << "/output/#{@pa[4]}#{str[0]}#{overlap?(str[0].to_i)}#{str[1]}XXXX.png"
 				end
 			end
 		end
@@ -122,17 +130,20 @@ class Creator
 	def generate_logo
 		puts "LOGO IS IS STRICT: #{@strict}"
 		puts "NEED GLASSES: #{@glasses}"
-		proc_fblock
+		get_first_block
 		character
 		if @strict
 			get_strict_logo
 		else
 			get_nostrict_logo
 		end
+		@@ar.reverse!
+		@current_block.reverse!
+		@@ar.concat(@current_block).reverse!
 	end
 
 	def character
-		@ar << "/output/#{@pa[4]}XXXXXXX.png"
+		@@ar << "/output/#{@pa[4]}XXXXXXX.png"
 	end
 
 	def strictlogo?
@@ -183,38 +194,66 @@ class Creator
 		return 0
 	end
 
-	def proc_fblock
+	def chbg_plus
+		# @current_block = []
+		@@ar = @@ar.drop(3)
+		@@cur_index += 1
+		if @@cur_index > 2
+			@@cur_index = 0
+		end
+		puts "++++++++++++++#{@@cur_index}"
+		@current_block = @@block_array[@@cur_index]
+		# puts "++++++++++++++"
+		@@ar.reverse!
+		@current_block.reverse!
+		@@ar.concat(@current_block).reverse!
+		# puts ">>>>>>>>>>>>>"
+		puts @@ar
+		# puts ">>>>>>>>>>>>>"
+	end
+
+
+	def get_first_block
 		flag
 		mono_figure
 		color_figure
+		@current_block = @@block_array.sample
 	end
 
+
 	def flag
+		@@cur_index = 0
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
-			@flag_block << "/output/flag/4#{@pa[1]}.png"
+			@@flag_block << "/output/flag/4#{@pa[1]}.png"
+			@@flag_block << ""
+			@@flag_block << ""
 		else
-			@flag_block << "/output/flag/1#{@pa[1]}.png"
-			@flag_block << "/output/flag/2#{@pa[2]}.png"
-			@flag_block << "/output/flag/3#{@pa[3]}.png"
+			@@flag_block << "/output/flag/1#{@pa[1]}.png"
+			@@flag_block << "/output/flag/2#{@pa[2]}.png"
+			@@flag_block << "/output/flag/3#{@pa[3]}.png"
 		end
+		@@block_array << @@flag_block
 	end
 
 	def mono_figure
-		@mono_figure_block << "/output/flag/4#{@pa[1]}.png"
-		@mono_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+		@@cur_index = 1
+		@@mono_figure_block << "/output/flag/4#{@pa[1]}.png"
+		@@mono_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+		@@mono_figure_block << ""
+		@@block_array << @@mono_figure_block
 	end
 
 	def color_figure
+		@@cur_index = 2
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
-			@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+			@@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+			@@color_figure_block << ""
+			@@color_figure_block << ""
 		else
-			@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
-			@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
+			@@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
+			@@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
+			@@color_figure_block << ""
 		end
+		@@block_array << @@color_figure_block
 	end
 end
-
-# p = Creator.new("380674615191")
-# p.generate_logo
-
-# Creator.new("380674685991")

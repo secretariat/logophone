@@ -6,16 +6,22 @@ class CreatorController < ApplicationController
   def show
   	@phone = params[:phone]
     c = Creator.new(@phone)
+    c.clear
   	c.generate_logo
     @pn = c.phone
     @ar = c.ar
-    @flag = c.flag_block
   	session[:logo] = c.ar
     @logo = Logo.new( params[:logo] )
     # else
     #   flash[:error] = "Wrong phone number (only digits allowed). Please check and try again"
     #   redirect_to creator_new_path
     # end
+  end
+
+  def chbg
+    c = Creator.new(params[:phone])
+    c.chbg_plus
+    @ar = c.ar
   end
 
   def create

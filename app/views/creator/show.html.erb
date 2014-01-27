@@ -9,10 +9,10 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
-				<div id="crts">
+				<%= link_to "BG", :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
+				<div id="ctrs">
 					<%= render 'crt'%>
 				</div>
-				<%= link_to "BG", :controller => "creator" %>
 				<% layer = 4 %>
 				<% @ar.each do |a| %>
 						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>

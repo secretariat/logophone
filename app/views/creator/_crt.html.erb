@@ -1,5 +1,7 @@
 <% l = 1 %>
-<% @flag.each do |a| %>
+<% @ar.each do |a| %>
+	<% next if a.size == 0 %>
 	<%= image_tag a, :class => "m1m1 imgl"+l.to_s, :alt => ""  %>
 	<% l += 1 %>
+	<% break if l == 4 %>
 <% end %>
