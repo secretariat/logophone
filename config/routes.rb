@@ -30,6 +30,8 @@ Logophone::Application.routes.draw do
   get "page/how"
   get "page/like"
   get "page/aboutl"
+  get "page/set_dark"
+  get "page/set_light"
   get "decoder/background"
   get "decoder/character"
   get "decoder/sunglasses"

@@ -15,10 +15,10 @@
             <li><%= link_to "Contact us", page_contacts_path, :class =>"reveal-bg-eight" %></li>
             <% if @theme.present? && @theme == "dark" %>
                 <br><br>
-                <li><%= link_to "Light theme", {:controller => "page", :action => "set_light"}, :style=>"background-color:#fff !important;color:#000;"%></li>
+                <li><%= link_to "Light theme", page_set_light_path, :style=>"background-color:#fff !important;color:#000;"%></li>
             <%  else %>
                 <br><br>
-                <li><%= link_to "Dark theme", {:controller => "page", :action => "set_dark"}, :style=>"background-color:#000 !important;"%></li>
+                <li><%= link_to "Dark theme", page_set_dark_path, :style=>"background-color:#000 !important;"%></li>
             <%  end %>
         </ul>
     </div>

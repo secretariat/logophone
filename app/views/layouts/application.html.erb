@@ -21,6 +21,16 @@
       htmlEl.style.background = "#000";
     </script>
   <% end %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47330413-1', 'logophone.org');
+    ga('send', 'pageview');
+  </script>
+
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "/javascripts/jquery.ba-bbq.min.js" %>
   <%= csrf_meta_tags %>
@@ -69,14 +79,6 @@
       open: function(){}, // Function: Open callback
       close: function(){} // Function: Close callback
     });
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-47330413-1', 'logophone.org');
-  ga('send', 'pageview');
   </script>
 </body>
 </html>
