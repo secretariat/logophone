@@ -22,6 +22,14 @@ class CreatorController < ApplicationController
     c = Creator.new(params[:phone])
     c.chbg_plus
     @ar = c.ar
+    session[:logo] = c.ar
+  end
+
+  def chbgm
+    c = Creator.new(params[:phone])
+    c.chbg_minus
+    @ar = c.ar
+    session[:logo] = c.ar
   end
 
   def create

@@ -9,12 +9,16 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
-				<%= link_to "BG", :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
+				<center>
+					<%= link_to "-BG ", :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+					change background <%= link_to " BG+", :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
+				</center>
 				<div id="ctrs">
 					<%= render 'crt'%>
 				</div>
 				<% layer = 4 %>
 				<% @ar.each do |a| %>
+						<% next if @ar.index(a)<3 %>
 						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
 					<% layer += 1 %>
 				<% end %>

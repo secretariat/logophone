@@ -53,6 +53,10 @@ class Creator
 
 	def clear
 		@@ar = []
+		@@cur_index = 0
+		@@block_array = []
+		@@color_figure_block = []
+		@@mono_figure_block = []
 	end
 
 	def get_strict_logo
@@ -195,21 +199,33 @@ class Creator
 	end
 
 	def chbg_plus
-		# @current_block = []
-		@@ar = @@ar.drop(3)
 		@@cur_index += 1
+		@@ar = @@ar.drop(3)
 		if @@cur_index > 2
 			@@cur_index = 0
 		end
-		puts "++++++++++++++#{@@cur_index}"
-		@current_block = @@block_array[@@cur_index]
-		# puts "++++++++++++++"
+		# puts "++++++++++++++#{@@cur_index}"
+		@current_block = @@block_array[@@cur_index].dup
 		@@ar.reverse!
 		@current_block.reverse!
+		@@block_array[@@cur_index]
 		@@ar.concat(@current_block).reverse!
-		# puts ">>>>>>>>>>>>>"
-		puts @@ar
-		# puts ">>>>>>>>>>>>>"
+		# puts "++++++++++++++#{@@cur_index}"
+	end
+
+	def chbg_minus
+		@@cur_index -= 1
+		if @@cur_index < 0
+			@@cur_index = 2
+		end
+		@@ar = @@ar.drop(3)
+		# puts "++++++++++++++#{@@cur_index}"
+		@current_block = @@block_array[@@cur_index].dup
+		@@ar.reverse!
+		@current_block.reverse!
+		@@block_array[@@cur_index]
+		@@ar.concat(@current_block).reverse!
+		# puts "++++++++++++++#{@@cur_index}"
 	end
 
 
@@ -217,12 +233,11 @@ class Creator
 		flag
 		mono_figure
 		color_figure
-		@current_block = @@block_array.sample
+		@current_block = @@block_array[0]
 	end
 
 
 	def flag
-		@@cur_index = 0
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
 			@@flag_block << "/output/flag/4#{@pa[1]}.png"
 			@@flag_block << ""
@@ -236,7 +251,7 @@ class Creator
 	end
 
 	def mono_figure
-		@@cur_index = 1
+		# @@cur_index = 1
 		@@mono_figure_block << "/output/flag/4#{@pa[1]}.png"
 		@@mono_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 		@@mono_figure_block << ""
@@ -244,7 +259,7 @@ class Creator
 	end
 
 	def color_figure
-		@@cur_index = 2
+		# @@cur_index = 2
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
 			@@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 			@@color_figure_block << ""

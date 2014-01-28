@@ -11,7 +11,8 @@
         <div class="layerscab">
           <% layer = 1 %>
           <% logo.logo_files.split(',').each do |file| %>
-                <%= image_tag file, :class => "m1m0 imgl"+layer.to_s,:alt => "logophone"%>
+            <% next if file.size == 0%>
+            <%= image_tag file, :class => "m1m0 imgl"+layer.to_s,:alt => "logophone"%>
             <% layer +=1 %>
           <% end %>
         </div>
