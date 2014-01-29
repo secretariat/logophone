@@ -265,9 +265,9 @@ class Creator
 			@@color_figure_block << ""
 			@@color_figure_block << ""
 		else
+			@@color_figure_block <<  "/output/flag/40.png"
 			@@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[2]}1.png"
 			@@color_figure_block << "/output/figure/#{@pa[3]}#{@pa[1]}0.png"
-			@@color_figure_block << ""
 		end
 		@@block_array << @@color_figure_block
 	end

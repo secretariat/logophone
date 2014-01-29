@@ -1566,7 +1566,7 @@ input.msubmit:hover
 }
 .layers
 {
-    height: 480px;
+    height: 530px;
     display: block;
     padding: 0px 50px;
 }
@@ -1814,4 +1814,39 @@ form {
 
 .flash_message.error{
     background:#b34c00
+}
+
+.bg-switch
+{
+    width: 341px;
+    height: 35px;
+    font-size: 16pt;
+    display: block;
+}
+
+.bg-switch.dwn
+{
+    margin-top: 490px;
+}
+
+.bg-switch img
+{
+    width: 30px;
+    position: relative;
+}
+.logosliderp
+{
+    font-family: "Segoe UI Light","Helvetica Neue","Segoe UI","Segoe WP",sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: #444444;
+    width: 50%;
+    float: left;
+    margin-left: 50px;
+    margin-top: 3px;
+}
+
+.lt 
+{
+    color: #fff;
 }

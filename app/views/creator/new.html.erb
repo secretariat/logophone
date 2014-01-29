@@ -4,8 +4,13 @@
   </div>
 </article>
 <article class="element clearfix home pp one-full">
-	<h4 class="introtext">Enter the phone number and create a logo. You can also sign it and save</h4>
+	<% if @theme.present? && @theme == "dark" %>
+		<h4 class="introtext lt">Enter the phone number and create a logo. You can also sign it and save</h4>
+		<h3 class="lt" style="float:left; padding-right:20px;">Enter phone number:</h3>
+	<% else %>
+		<h4 class="introtext">Enter the phone number and create a logo. You can also sign it and save</h4>
 		<h3 style="float:left; padding-right:20px;">Enter phone number:</h3>
+	<% end %>
 		<%= form_tag( creator_show_path, :method => "get", :style =>"padding:18px 20px;") do %>
 				<%= text_field_tag :phone, params[:phone], :class => "minput", :maxlenght => "10"%>
 				<%= submit_tag("Create!", :class => "msubmit", :style =>"bottom:0px !important;") %>

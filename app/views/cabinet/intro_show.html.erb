@@ -4,7 +4,11 @@
   </div>
 </article>
 <article class="element clearfix home pp one-full">
-	<h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
+	<% if @theme.present? && @theme == "dark" %>
+		<h3 class="lt" style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
+	<% else %>
+		<h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
+	<% end %>
 	<div id="intros">
 		<%= render 'intro' %>
 	</div>

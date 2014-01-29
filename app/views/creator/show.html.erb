@@ -9,10 +9,15 @@
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
-				<center>
-					<%= link_to "-BG ", :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
-					change background <%= link_to " BG+", :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
-				</center>
+				<div class="bg-switch">
+				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<% if @theme.present? && @theme == "dark" %>
+					<div class="logosliderp lt"><center>BACKGROUND</center></div>
+				<% else %>
+					<div class="logosliderp"><center>BACKGROUND</center></div>
+				<% end %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				</div>
 				<div id="ctrs">
 					<%= render 'crt'%>
 				</div>
@@ -22,6 +27,16 @@
 						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
 					<% layer += 1 %>
 				<% end %>
+				<div class="cls"></div>
+				<div class="bg-switch dwn">
+				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<% if @theme.present? && @theme == "dark" %>
+					<div class="logosliderp dwn lt"><center>CHARACTER</center></div>
+				<% else %>
+					<div class="logosliderp dwn "><center>CHARACTER</center></div>
+				<% end %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				</div>
 			</div>
 			<%if user_signed_in? %>
 				<div class="saveasblock reveal-bg-two">

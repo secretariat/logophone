@@ -4,10 +4,11 @@
   </div>
 </article>
 <article class="element clearfix home pp one-full">
-	    <h4 class="introtext">In this section you can see what digits are matched to specific elements of the image. In order to quickly decipher the logo you need to remember this table</h4>
 	<% if @theme.present? && @theme == "dark" %>
+	    <h4 class="introtext lt">In this section you can see what digits are matched to specific elements of the image. In order to quickly decipher the logo you need to remember this table</h4>
 		<table class="table table-hover" style="color:#3498DB;">
-			<% else %>
+	<% else %>
+	    <h4 class="introtext">In this section you can see what digits are matched to specific elements of the image. In order to quickly decipher the logo you need to remember this table</h4>
 		<table class="table table-hover">
 	<% end %>
 		<thead>
