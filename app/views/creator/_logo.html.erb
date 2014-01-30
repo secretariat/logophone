@@ -1,0 +1,6 @@
+<% layer = 4 %>
+<% @ar.each do |a| %>
+		<% next if @ar.index(a)<3 %>
+		<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
+	<% layer += 1 %>
+<% end %>

@@ -32,6 +32,20 @@ class CreatorController < ApplicationController
     session[:logo] = c.ar
   end
 
+  def chlogop
+    c = Creator.new(params[:phone])
+    c.chlogop
+    @ar = c.ar
+    session[:logo] = c.ar
+  end
+
+  def chlogom
+    c = Creator.new(params[:phone])
+    c.chlogom
+    @ar = c.ar
+    session[:logo] = c.ar
+  end
+
   def create
     @logo = Logo.new( params[:logo] )
     @logo.user_id = current_user.id

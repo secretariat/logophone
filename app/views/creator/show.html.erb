@@ -4,8 +4,6 @@
   </div>
 </article>
 <article class="element clearfix home pp">
-	<%# session[:logo].drop(3) %>
-	<%#= session[:logo].to_s %>
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
@@ -21,12 +19,9 @@
 				<div id="ctrs">
 					<%= render 'crt'%>
 				</div>
-				<% layer = 4 %>
-				<% @ar.each do |a| %>
-						<% next if @ar.index(a)<3 %>
-						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
-					<% layer += 1 %>
-				<% end %>
+				<div id="chlogo">
+					<%= render 'logo', :ar => @ar %>
+				</div>
 				<div class="cls"></div>
 				<div class="bg-switch dwn">
 				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
