@@ -16,7 +16,7 @@
 				<% else %>
 					<div class="logosliderp"><center>BACKGROUND</center></div>
 				<% end %>
-				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
 				</div>
 				<div id="ctrs">
 					<%= render 'crt'%>
@@ -35,7 +35,7 @@
 				<% else %>
 					<div class="logosliderp dwn "><center>CHARACTER</center></div>
 				<% end %>
-				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
 				</div>
 			</div>
 			<%if user_signed_in? %>
