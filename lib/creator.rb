@@ -278,6 +278,7 @@ class Creator
 		@@block_array << @@mono_figure_block
 	end
 
+
 	def color_figure
 		if(@pa[1] == @pa[2] && @pa[2] == @pa[3])
 			@@color_figure_block << "/output/flag/40.png"
