@@ -6,10 +6,10 @@
 <article class="element clearfix home pp one-full">
 	<% if @theme.present? && @theme == "dark" %>
 		<h4 class="introtext lt">In this section, you can test your skills in memorization</h4>
-		<h3 class="lt" style="float:left; padding-right:20px;">Select time for preview</h3>
+		<h3 class="lt" style="float:left;  padding: 0 20px 0 230px;">Select time for preview</h3>
 	<% else %>
 		<h4 class="introtext">In this section, you can test your skills in memorization</h4>
-		<h3 style="float:left; padding-right:20px;">Select time for preview</h3>
+		<h3 style="float:left;  padding: 0 20px 0 230px;">Select time for preview</h3>
 	<% end %>
 		<%= form_tag( cabinet_test_show_path, :method => "get", :style =>"padding:18px 20px;") do %>
 			<%= select_tag "time", options_for_select([5,4,3,2,1,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2]) %>

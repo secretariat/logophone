@@ -51,13 +51,13 @@
       </center>
     </div>
   <% end %>
+  <%= render 'shared_cabinet/cabinet' %>
   <% if @theme.present? && @theme == "dark" %>
     <section class="container" style="background-color:#272728;">
   <% else %>
     <section class="container">
   <% end %>
     <section id="container" class="clearfix">
-    <%= render 'shared_cabinet/cabinet' %>
     <%= yield %>
     </section>
   </section>
