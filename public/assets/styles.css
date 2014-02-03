@@ -1497,12 +1497,10 @@ fieldset h1
 .minput10
 {
     margin: 0;
-    width: 155px;
-    font-size: 30px !important;
+    width: 83px;
     border: 1px solid #E56C19 !important;
     float: left;
     background-color: #fff !important;
-    color: #444444 !important;
     margin-right: 20px;
 }
 .minput10:focus

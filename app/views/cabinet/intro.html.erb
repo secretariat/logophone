@@ -6,10 +6,10 @@
 <article class="element clearfix home pp one-full">
 	    <% if @theme.present? && @theme == "dark" %>
         	<h4 class="introtext lt">This section will help you understand what the digits in the phone number designate certain elements of the logo</h4>
-		<h3 class="lt" style="float:left; padding: 0 20px 0 200px;">Select number of elements</h3>
+		<h3 class="lt" style="float:left; padding:0px 20px 0px 190px;">Select number of elements</h3>
         <% else %>
 			<h4 class="introtext">This section will help you understand what the digits in the phone number designate certain elements of the logo</h4>
-		<h3 style="float:left; padding: 0 20px 0 200px;">Select number of elements</h3>
+		<h3 style="float:left; padding:0px 20px 0px 190px;">Select number of elements</h3>
 		<% end %>
 		<%= form_tag( cabinet_intro_show_path, :method => "get", :style =>"padding:18px 20px;") do %>
 			<%= select_tag "quantity", options_for_select((1..10).step(1)) %>
