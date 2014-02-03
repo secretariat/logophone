@@ -301,7 +301,7 @@ class Creator
 			get_nostrict_logo if six_eight_ten_compatible?
 		end
 		puts @@block_logo.size
-		sleep(1)
+		# sleep(1)
 	end
 
 	def chlogom
