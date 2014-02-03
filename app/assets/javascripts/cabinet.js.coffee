@@ -6,4 +6,8 @@
 # 	$('#testo').delay(gon.time).fadeOut('slow');
 jQuery ->
 	$(':input:enabled:visible:first').focus();
-	# $("form:first *:input[type!=hidden]:first").focus()
+
+$(document).on 'change', $('input#numbers_only'), ->
+  $('input#numbers_only').each ->
+    if $(this).val()!= '' && $.isNumeric($(this).val()) == false
+      alert("Only digits in phone nummber!");

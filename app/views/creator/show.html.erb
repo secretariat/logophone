@@ -4,8 +4,6 @@
   </div>
 </article>
 <article class="element clearfix home pp">
-	<%# session[:logo].drop(3) %>
-	<%#= session[:logo].to_s %>
 	<div class="mcenter">
 		<div class="layersw">
 			<div class="layers">
@@ -16,26 +14,23 @@
 				<% else %>
 					<div class="logosliderp"><center>BACKGROUND</center></div>
 				<% end %>
-				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
 				</div>
 				<div id="ctrs">
 					<%= render 'crt'%>
 				</div>
-				<% layer = 4 %>
-				<% @ar.each do |a| %>
-						<% next if @ar.index(a)<3 %>
-						<%= image_tag a, :class => "m1m1 imgl"+layer.to_s, :alt => ""  %>
-					<% layer += 1 %>
-				<% end %>
+				<div id="chlogo">
+					<%= render 'logo', :ar => @ar %>
+				</div>
 				<div class="cls"></div>
 				<div class="bg-switch dwn">
-				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chlgp, :phone => params[:phone], :remote => true %>
 				<% if @theme.present? && @theme == "dark" %>
 					<div class="logosliderp dwn lt"><center>CHARACTER</center></div>
 				<% else %>
 					<div class="logosliderp dwn "><center>CHARACTER</center></div>
 				<% end %>
-				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbg, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chlgp, :phone => params[:phone], :remote => true %>
 				</div>
 			</div>
 			<%if user_signed_in? %>
