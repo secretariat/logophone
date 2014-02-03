@@ -29,7 +29,7 @@ class Creator
   extend ActiveModel::Naming
 
   attr_accessor :phone
-  cattr_accessor :ar
+  cattr_accessor :ar, :block_logo_size
   # validates_format_of :phone, :with => /^[0-9]+$/
 
 	@@mono_figure_block = Array.new()
