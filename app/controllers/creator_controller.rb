@@ -4,18 +4,19 @@ class CreatorController < ApplicationController
   layout :get_layout
 
   def show
-  	@phone = params[:phone]
+    if params[:phone].length < 10 || !params[:phone].present?
+      flash[:error] = "Error creating logotype. Please, enter correct phone number!"
+      redirect_to creator_new_path
+      return
+    end
+    @phone = params[:phone]
     c = Creator.new(@phone)
     c.clear
-  	c.generate_logo
+    c.generate_logo
     @pn = c.phone
     @ar = c.ar
-  	session[:logo] = c.ar
+    session[:logo] = c.ar
     @logo = Logo.new( params[:logo] )
-    # else
-    #   flash[:error] = "Wrong phone number (only digits allowed). Please check and try again"
-    #   redirect_to creator_new_path
-    # end
   end
 
   def chbg
@@ -32,14 +33,14 @@ class CreatorController < ApplicationController
     session[:logo] = c.ar
   end
 
-  def chlogop
+  def chlgp
     c = Creator.new(params[:phone])
     c.chlogop
     @ar = c.ar
     session[:logo] = c.ar
   end
 
-  def chlogom
+  def chlgm
     c = Creator.new(params[:phone])
     c.chlogom
     @ar = c.ar
@@ -56,7 +57,7 @@ class CreatorController < ApplicationController
       redirect_to cabinet_index_path
     else
       session[:logo] = nil
-      flash[:error] = "Error creating logotype. Please? try again."
+      flash[:error] = "Error creating logotype. Please, try again."
       redirect_to creator_new_path
     end
   end

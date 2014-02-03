@@ -24,13 +24,13 @@
 				</div>
 				<div class="cls"></div>
 				<div class="bg-switch dwn">
-				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chlgp, :phone => params[:phone], :remote => true %>
 				<% if @theme.present? && @theme == "dark" %>
 					<div class="logosliderp dwn lt"><center>CHARACTER</center></div>
 				<% else %>
 					<div class="logosliderp dwn "><center>CHARACTER</center></div>
 				<% end %>
-				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
+				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chlgp, :phone => params[:phone], :remote => true %>
 				</div>
 			</div>
 			<%if user_signed_in? %>
