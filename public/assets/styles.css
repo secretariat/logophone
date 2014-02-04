@@ -1449,7 +1449,6 @@ fieldset h1
          transition:   none !important;
     }
 
-
     .fx-slide-out:hover > .inner-panel{
         top: -200px;
         -webkit-transition:  none !important;
