@@ -1449,7 +1449,6 @@ fieldset h1
          transition:   none !important;
     }
 
-
     .fx-slide-out:hover > .inner-panel{
         top: -200px;
         -webkit-transition:  none !important;
@@ -1493,6 +1492,20 @@ fieldset h1
     float: left;
     color: #000 !important;
     margin-right: 20px;
+}
+.minput10
+{
+    margin: 0;
+    width: 210px;
+    border: 1px solid #E56C19 !important;
+    float: left;
+    color: #000 !important;
+    background-color: #fff !important;
+    margin-right: 35px !important;
+}
+.minput10:focus
+{
+    color: #444444 !important;
 }
 
 .minput_small

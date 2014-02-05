@@ -17,6 +17,7 @@ class CreatorController < ApplicationController
     @ar = c.ar
     session[:logo] = c.ar
     @logo = Logo.new( params[:logo] )
+    @block_logo_size = c.block_logo_size
   end
 
   def chbg

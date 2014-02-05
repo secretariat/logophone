@@ -29,7 +29,7 @@ class Creator
   extend ActiveModel::Naming
 
   attr_accessor :phone
-  cattr_accessor :ar
+  cattr_accessor :ar, :block_logo_size
   # validates_format_of :phone, :with => /^[0-9]+$/
 
 	@@mono_figure_block = Array.new()
@@ -301,7 +301,7 @@ class Creator
 			get_nostrict_logo if six_eight_ten_compatible?
 		end
 		puts @@block_logo.size
-		sleep(1)
+		# sleep(1)
 	end
 
 	def chlogom
