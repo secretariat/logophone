@@ -296,9 +296,9 @@ class Creator
 		if need_glasses?
 			get_strict_logo_glasses
 		else
-			get_strict_logo_glasses
 			get_strict_logo if six_ten_compatible?
 			get_nostrict_logo if six_eight_ten_compatible?
+			get_strict_logo_glasses
 		end
 		puts @@block_logo.size
 		# sleep(1)
