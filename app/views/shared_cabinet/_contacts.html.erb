@@ -12,12 +12,15 @@
           <% layer = 1 %>
           <% logo.logo_files.split(',').each do |file| %>
             <% next if file.size == 0%>
-            <%= image_tag file, :class => "m1m0 imgl"+layer.to_s,:alt => "logophone"%>
+            <%if file =~ /output\/[15]/ or file =~ /output\/uzor\/[15]/ or file =~ /output\/glasses\/[15]/ %>
+            <%= image_tag file, :class => "m1m5 imgl"+layer.to_s,:alt => "logophone"%>
+            <%else%>
+              <%= image_tag file, :class => "m1m0 imgl"+layer.to_s,:alt => "logophone"%>
+            <% end %>
             <% layer +=1 %>
           <% end %>
         </div>
     </div>
-
     <center>
       <%= link_to( "Delete logo", creator_destroy_path(:id => logo.id), :method => :delete,  :class => "btn-delete", :confirm => "Are yo sure?") %>
     </center>
