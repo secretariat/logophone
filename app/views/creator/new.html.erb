@@ -1,20 +1,20 @@
 <article class="element home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <h2 class="pad pad-top-minus pad-bottom-minus"><center>Create new logo</center></h2>
+    <h2 class="pad pad-top-minus pad-bottom-minus"><center><%= t 'create.title' %></center></h2>
   </div>
 </article>
 <article class="element clearfix home pp one-full">
 	<% if @theme.present? && @theme == "dark" %>
-		<h4 class="introtext lt" style="padding-bottom:0px;">Enter the phone number and create a logo. You can also sign it and save</h4>
-		<h3 class="lt" style="text-align:center;padding-bottom:0px;">Enter phone number (10 digits):</h3>
+		<h4 class="introtext lt" style="padding-bottom:0px;"><%= t 'create.header' %></h4>
+		<h3 class="lt" style="text-align:center;padding-bottom:0px;"><%= t 'create.phrase' %></h3>
 	<% else %>
-		<h4 class="introtext" style=padding-bottom:0px;>Enter the phone number and create a logo. You can also sign it and save</h4>
-		<h3 style="text-align:center;padding-bottom:0px;">Enter phone number (10 digits):</h3>
+		<h4 class="introtext" style=padding-bottom:0px;><%= t 'create.header' %></h4>
+		<h3 style="text-align:center;padding-bottom:0px;"><%= t 'create.phrase' %></h3>
 	<% end %>
 	<center>
 		<%= form_tag( creator_show_path, :method => "get", :style =>"width:40%;") do %>
 				<%= text_field_tag :phone, params[:phone], :class => "minput10", :maxlength => "10", :id => 'numbers_only'%>
-				<%= submit_tag("Create!", :class => "msubmit", :style =>"bottom:0px !important;margin-right:0 !important;") %>
+				<%= submit_tag("#{t 'buttons.create'}", :class => "msubmit", :style =>"bottom:0px !important;margin-right:0 !important;") %>
 		<% end %>
 	</center>
 </article>

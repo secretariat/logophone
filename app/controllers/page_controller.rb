@@ -2,6 +2,7 @@ require "creator.rb"
 class PageController < ApplicationController
 
   def index
+    session[:lang] = "en" if session[:lang].nil?
   end
 
   def download
@@ -37,6 +38,16 @@ class PageController < ApplicationController
 
   def set_dark
     session[:theme] = "dark"
+    redirect_to(request.env["HTTP_REFERER"])
+  end
+
+  def set_en
+    session[:lang] = "en"
+    redirect_to(request.env["HTTP_REFERER"])
+  end
+
+  def set_ru
+    session[:lang] = "ru"
     redirect_to(request.env["HTTP_REFERER"])
   end
 end

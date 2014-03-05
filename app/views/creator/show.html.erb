@@ -1,6 +1,6 @@
 <article class="element fx-slide-up home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Your logo</h2></center>
+    <center><h2 class="pad pad-top-minus pad-bottom-minus"><%= t 'createlogo.title' %></h2></center>
   </div>
 </article>
 <article class="element clearfix home pp">
@@ -10,9 +10,9 @@
 				<div class="bg-switch">
 				<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
 				<% if @theme.present? && @theme == "dark" %>
-					<div class="logosliderp lt"><center>BACKGROUND</center></div>
+					<div class="logosliderp lt"><center><%= t 'createlogo.bg' %></center></div>
 				<% else %>
-					<div class="logosliderp"><center>BACKGROUND</center></div>
+					<div class="logosliderp"><center><%= t 'createlogo.bg' %></center></div>
 				<% end %>
 				<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chbgm, :phone => params[:phone], :remote => true %>
 				</div>
@@ -27,9 +27,9 @@
 					<div class="bg-switch dwn">
 						<%= link_to image_tag("left.png",:style=>"float:left;"), :controller => "creator", :action => :chlgp, :phone => params[:phone], :remote => true %>
 						<% if @theme.present? && @theme == "dark" %>
-							<div class="logosliderp dwn lt"><center>CHARACTER</center></div>
+							<div class="logosliderp dwn lt"><center><%= t 'createlogo.pers' %></center></div>
 						<% else %>
-							<div class="logosliderp dwn "><center>CHARACTER</center></div>
+							<div class="logosliderp dwn "><center><%= t 'createlogo.pers' %></center></div>
 						<% end %>
 						<%= link_to image_tag("right.png",:style=>"float:right;"), :controller => "creator", :action => :chlgp, :phone => params[:phone], :remote => true %>
 					</div>
@@ -40,11 +40,11 @@
 					<%= form_for( @logo, :url => {:action => 'create'} ) do |f| %>
 						<div style="width:60%; float: left;">
 		          <%= f.text_field :phone, :value => params[:phone], :readonly => true%>
-							<%= f.text_field :first_name, :placeholder=>"First name"  %>
-							<%= f.text_field :last_name, :placeholder=>"Last name"%>
+							<%= f.text_field :first_name, :placeholder=>"#{t 'createlogo.placefn'}"  %>
+							<%= f.text_field :last_name, :placeholder=>"#{t 'createlogo.placename'}"%>
 						</div>
 						<div style="width:40%; float: right; padding-top: 20px;">
-							<%= submit_tag("Save logo", :class => "mbutton") %>
+							<%= submit_tag("#{t 'buttons.save'}", :class => "mbutton") %>
 						</div>
 					<% end %>
 				</div>

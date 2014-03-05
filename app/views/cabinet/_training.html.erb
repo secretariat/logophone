@@ -1,7 +1,7 @@
 <% if @theme.present? && @theme == "dark" %>
-	<h3 class="lt" style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
+	<h3 class="lt" style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;"><%= t 'train_mode.phrase' %></h3>
 <% else %>
-	<h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;">Phone number:</h3>
+	<h3 style="float:left; padding:0px 15px 0px 0px; margin-left: 20px;top:-12px;position:relative;"><%= t 'train_mode.phrase' %></h3>
 <% end %>
 	<%= form_tag cabinet_training_show_path(:quantity => @quantity), :method => :get, :remote => true do %>
 		<%= text_field_tag :number1, nil, :class => "minput_small", :maxlength => 1, :disabled => disabled?(@number[1]) %>
@@ -15,17 +15,17 @@
 		<%= text_field_tag :number9, nil, :class => "minput_small", :maxlength => 1, :disabled => disabled?(@number[9]) %>
 		<%= text_field_tag :number10, nil, :class => "minput_small", :maxlength => 1, :disabled => disabled?(@number[10]) %>
 
-		<%= submit_tag "Check answer", :name => nil, :class => "msubmit", :style => "margin: 2px 0 0 30px;top:3px;"%>
+		<%= submit_tag "#{t 'buttons.check'}", :name => nil, :class => "msubmit", :style => "margin: 2px 0 0 30px;top:3px;"%>
 	<% end %>
 </div>
 
 <div class="cls"></div>
 <center>
 	<% if @res == 1 %>
-	<div class="label1 reveal-bg-ten">Correct!</div>
+	<div class="label1 reveal-bg-ten"><%= t 'results.success' %></div>
 	<% end %>
 	<% if @res == 2%>
-		<div class="label1 reveal-bg-one">Incorrect!</div>
+		<div class="label1 reveal-bg-one"><%= t 'results.error' %></div>
 	<% end %>
 </center>
 

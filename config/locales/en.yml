@@ -1,5 +1,58 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  menu:
+    logophone: "Logophone"
+    elem: "Elements"
+    decode: "Decoding Logo"
+    create: "Create My Logo"
+    down: "Download"
+    cabinet: "Cabinet"
+    reg: "Registration"
+    login: "Log in"
+    contacts: "Contact us"
+    light: "Light theme"
+    dark: "Dark theme"
+  cmenu:
+    mycontacts: "My contacts"
+    info: "Information"
+    table: "Table"
+    intro: "Introduction"
+    train: "Training"
+    test: "Test"
+    logout: "Logout"
+  index:
+    welcome: "Welcome!"
+    wel_text: "Logophone - is a software that generates a unique logo for any phone number. Using logophone, you will be able to remember any phone number in less than half a second (that is 8 times faster than you can read it). In addition, you will always be able to remember any phone number."
+  create:
+    title: "Create new logo"
+    header: "Enter the phone number and create a logo. You can also sign it and save"
+    phrase: "Enter phone number (10 digits):"
+  createlogo:
+    title: "Your logo"
+    bg: "BACKGROUND"
+    pers: "CHARACTER"
+    placefn: "First name"
+    placename: "Last name"
+  ccontacts:
+    title: "Saved contacts"
+  train:
+    title: "Training"
+    header: "In this section, you must enter the digits of the phone numbers that are matched to specific elements of the logo"
+    phrase: "Select number of elements for training"
+  train_mode:
+    title: "Training mode"
+    phrase: "Phone number:"
+  test:
+    title: "Test"
+    header: "In this section, you can test your skills in memorization"
+    phrase: "Select time for preview"
+  test_mode:
+    title: "Test mode"
+    phrase: "Phone number:"
+  buttons:
+    create: "Create"
+    save: "Save logo"
+    delete: "Delete logo"
+    check: "Check answer"
+  results:
+    success: "Correct!"
+    error: "Incorrect!"

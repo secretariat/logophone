@@ -1,0 +1,58 @@
+ru:
+  menu:
+    logophone: "Логофон"
+    elem: "Элементы"
+    decode: "Расшифровка"
+    create: "Создать Лого"
+    down: "Скачать"
+    cabinet: "Кабинет"
+    reg: "Регистрация"
+    login: "Вход"
+    contacts: "Контакты"
+    light: "Светля тема"
+    dark: "Темная тема"
+  cmenu:
+    mycontacts: "Контакты"
+    info: "Справка"
+    table: "Таблица"
+    intro: "Ознакомление"
+    train: "Тренировка"
+    test: "Тест"
+    logout: "Выход"
+  index:
+    welcome: "Welcome!"
+    wel_text: "Logophone - is a software that generates a unique logo for any phone number. Using logophone, you will be able to remember any phone number in less than half a second (that is 8 times faster than you can read it). In addition, you will always be able to remember any phone number."
+  create:
+    title: "Создать Логотип"
+    header: "Введите номер телефона и создайте логотип. Вы так же можете подписать его и сохранить."
+    phrase: "Введите номер телефона (10 цифр):"
+  createlogo:
+    title: "Ваш логотип"
+    bg: "Фон"
+    pers: "Персонаж"
+    placefn: "Имя"
+    placename: "Фамилия"
+  ccontacts:
+    title: "Контакты"
+  train:
+    title: "Тренировка"
+    header: "В этом разделе Вы должны ввести цифры, соответсвующие номеру телефона, представленного на Логотипе"
+    phrase: "Выберете количество элементов для тренировки"
+  train_mode:
+    title: "Режим Тренировка"
+    phrase: "Номер телефона:"
+  test:
+    title: "Тест"
+    header: "В этом разделе Вы можете проверить свои навыки в запоминании"
+    phrase: "Выберете время для просмотра"
+  test_mode:
+    title: "Режим Тест"
+    phrase: "Номер телефона:"
+  buttons:
+    create: "Создать"
+    save: "Сохранить"
+    delete: "Удалить"
+    check: "Проверить"
+  results:
+    success: "Правильно"
+    error: "Ошибка"

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
     protect_from_forgery
 
     before_filter :set_user_theme
+    before_filter :set_user_language
     after_filter :flash_to_headers
 
     def after_sign_in_path_for(resource)
@@ -32,5 +33,9 @@ class ApplicationController < ActionController::Base
 
     def set_user_theme
         @theme = session[:theme].present? ? session[:theme] : "light"
+    end
+
+    def set_user_language
+        I18n.locale = session[:lang]
     end
 end
