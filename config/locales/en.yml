@@ -48,11 +48,147 @@ en:
   test_mode:
     title: "Test mode"
     phrase: "Phone number:"
+  intro:
+    title: "Introduction mode"
+    header: "This section will help you understand what the digits in the phone number designate certain elements of the logo"
+    phrase: "Select number of elements"
+  intro_mode:
+    title: "Introduction mode"
+    phrase: "Phone number:"
+  table:
+    title: "Table"
+    phrase: "In this section you can see what digits are matched to specific elements of the image. In order to quickly decipher the logo you need to remember this table"
+    thead: "<td><b>Digit</b></td>
+        <td><b>Character</b></td>
+        <td><b>Clothing</b></td>
+        <td><b>Color</b></td>
+        <td><b>Figure</b></td>
+        <td><b>Pattern</b></td>
+        <td><b>Glasses</b></td></b>"
+    tr1: "<td>0</td>
+        <td>Duck</td>
+        <td>Tie</td>
+        <td>White</td>
+        <td>Circle</td>
+        <td>Circles</td>
+        <td>Circles</td>"
+    tr2: "<td>1</td>
+        <td>Mouse</td>
+        <td>Trunks</td>
+        <td>Red</td>
+        <td>Vertical rectangle</td>
+        <td>Vertical stripes</td>
+        <td>Vertical rectangles</td>"
+    tr3: "<td>2</td>
+        <td>Cat</td>
+        <td>Sleeveless shirt</td>
+        <td>Orange</td>
+        <td>Horizontal rectangle</td>
+        <td>Horizontal stripes</td>
+        <td>Horizontal rectangles</td>"
+    tr4: "<td>3</td>
+        <td>Dog</td>
+        <td>Shorts</td>
+        <td>Yellow</td>
+        <td>Triangle</td>
+        <td>Triangles</td>
+        <td>Triangles</td>"
+    tr5: "<td>4</td>
+        <td>Gorilla</td>
+        <td>T-shirt</td>
+        <td>Green</td>
+        <td>Square</td>
+        <td>Squares</td>
+        <td>Squares</td>"
+    tr6: "<td>5</td>
+        <td>Bull</td>
+        <td>Pants</td>
+        <td>Blue</td>
+        <td>Five-pointed star</td>
+        <td>Stars</td>
+        <td>Stars</td>"
+    tr7: "<td>6</td>
+        <td>Leo</td>
+        <td>Shirt</td>
+        <td>Deep blue</td>
+        <td>Hexagon</td>
+        <td>Hexagons</td>
+        <td>Hexagons</td>"
+    tr8: "<td>7</td>
+        <td>Crocodile</td>
+        <td>Blazer</td>
+        <td>Purple</td>
+        <td>Parallelepiped</td>
+        <td>Slanting stripes</td>
+        <td>Parallelepipeds</td>"
+    tr9: "<td>8</td>
+        <td>Bear</td>
+        <td>Jacket</td>
+        <td>Brown</td>
+        <td>Octagon</td>
+        <td>Flowers</td>
+        <td>Flowers</td>"
+    tr10: "<td>9</td>
+        <td>Hippo</td>
+        <td>Coat</td>
+        <td>Black</td>
+        <td>Diamond</td>
+        <td>Diamonds</td>
+        <td>Diamonds</td>"
+  info:
+    title: "Information"
+    phrase: "The logo uses the following elements: characters, character clothing, sunglasses, geometrical figures, patterns on the clothes and colors. Each element is always designated one digit. All of these elements you can see in the Table"
+    thead1: "The number of elements"
+    thead2: "Decoding formula"
+    td1: "<b>Tricolor flag</b><br>The first digit is the color of the upper band<br>
+          <b>Background color and monochrome figure</b><br>The first digit  represents the background color<br>
+          <b>Two-colored figure</b><br>The first digit is the color of the center pieces<br>
+          <b>Character and Clothing</b><br>The first digit is the character<br>"
+    td2: "<b>Two-colored figure</b><br>The first digit is the color of a shape<br/>The second digit  is the shape of the figure<br> <b>Glasses</b><br>The first digit  is the color of glasses<br/>The second digit indicates the shape of glasses <br>"
+    td3: "<b>Tricolor flag</b><br>The first digit is the color of the upper band<br>The second digit - the color of the middle band<br>The third digit - the color of the lower band<br><b>Background color and monochrome figure</b><br>The first digit represents the background color<br>The second digit is the color of a shape<br>The third digit is the shape of the figure<br><b>Two-colored figure </b><br>The first digit is the color of the center pieces <br>The second digit number is the color fringe figures<br> third digit is the shape of the figure<br><b>Character and Clothing</b><br>The first digit is the character<br>The second digit is the color of the clothes<br>The third digit indicates the kind of clothes<br>"
+    td4: "The first digit  indicates the color of the background<br>The second digit  is the character<br>The third digit  indicates the color of clothing<br>The fourth digit indicates the kind of clothes<br>"
+    td5: "The first digit is the character<br>The second digit  is the color of the clothes<br>The third digit indicates the kind of clothing<br>The fourth digit  indicates the color of the pattern<br>The fifth digit is the type of pattern<br>"
+    td6: "The first digit  indicates the color of the background<br>The second digit  is the character<br>The third digit  - is the color of clothing<br>The fourth digit  indicates the kind of clothing<br>The fifth digit  indicates the color of the pattern<br>The sixth digit  is the type of pattern<br>"
+    td7: "The first digit  is the character<br>
+          The second digit  is the color of clothing with a pattern<br>
+          The third digit  indicates the kind of clothing with a pattern<br>
+          The fourth digit  indicates the color of the pattern<br>
+          The fifth digit  is the type of pattern<br>
+          The sixth digit is the color of clothes without a pattern or color of the glasses<br>
+          The seventh digit is the type of character clothing or shape of the glasses<br>"
+    td8: "The first digit is the background color<br>
+        The second digit is a character<br>
+        The third digit is the color of clothing with a pattern<br>
+        The fourth digit is the type of clothing with a pattern<br>
+        The fifth digit is the color of the pattern<br>
+        The sixth digit refers to the type of pattern<br>
+        The seventh digit is the color of the clothes without a pattern or color of the glasses<br>
+        The eighth digit is the type of clothing the character or form of glasses<br>"
+    td9: "The first digit  - the color of the background figures<br>
+      The second digit  - the form of the background figures<br>
+      The third digit  is the character<br>
+      The fourth digit  indicates the color of clothing with a pattern<br>
+      The fifth digit  is the kind of clothing with a pattern<br>
+      The sixth digit  indicates the color of the pattern<br>
+      The seventh digit  refers to the type of pattern<br>
+      The eighth digit  is the color of the clothes without a pattern or color of the glasses<br>
+      The ninth digit   is the type of clothing the character or form of glasses<br>"
+    td10: "The first three digits describe the background (see the help section on the three elements)<br>
+      The fourth digit indicates the character<br>
+      The fifth digit  is the color of clothing with a pattern<br>
+      The sixth digit  is the kind of clothing with a pattern<br>
+      The seventh digit indicates the color of the pattern<br>
+      The eighth digit  is the kind of pattern<br>
+      The ninth digit  is the color of the clothes without a pattern or color of the glasses<br>
+      The tenth digit  is the kind of clothes without a pattern or shape of the glasses<br>"
+    td11: "More then 10"
+    td12: "Please enter the answer to the first image, then on the second, and so on."
   buttons:
     create: "Create"
     save: "Save logo"
     delete: "Delete logo"
     check: "Check answer"
+    next: "Next"
   results:
     success: "Correct!"
     error: "Incorrect!"

@@ -1,117 +1,51 @@
 <article class="element fx-slide-up home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Table</h2></center>
+    <center><h2 class="pad pad-top-minus pad-bottom-minus"><%= t 'table.title' %></h2></center>
   </div>
 </article>
 <article class="element clearfix home pp one-full">
 	<% if @theme.present? && @theme == "dark" %>
-	    <h4 class="introtext lt">In this section you can see what digits are matched to specific elements of the image. In order to quickly decipher the logo you need to remember this table</h4>
+	    <h4 class="introtext lt"><%= t 'table.phrase' %></h4>
 		<table class="table table-hover" style="color:#3498DB;">
 	<% else %>
-	    <h4 class="introtext">In this section you can see what digits are matched to specific elements of the image. In order to quickly decipher the logo you need to remember this table</h4>
+	    <h4 class="introtext"><%= t 'table.phrase' %></h4>
 		<table class="table table-hover">
 	<% end %>
 		<thead>
 		   <tr class="reveal-bg-four" style="color:#fff;font-size: 12pt;">
-		  	<td><b>Digit</b></td>
-		  	<td><b>Character</b></td>
-		  	<td><b>Clothing</b></td>
-		  	<td><b>Color</b></td>
-		  	<td><b>Figure</b></td>
-		  	<td><b>Pattern</b></td>
-		  	<td><b>Glasses</b></td></b>
-		  </tr>
+				<%= (t 'table.thead').html_safe %>
+			</tr>
 		</thead>
 		<tbody>
 		<tr>
-		  	<td>0</td>
-		  	<td>Duck</td>
-		  	<td>Tie</td>
-		  	<td>White</td>
-		  	<td>Circle</td>
-		  	<td>Circles</td>
-		  	<td>Circles</td>
+			<%= (t 'table.tr1').html_safe %>
 		</tr>
 		<tr>
-			<td>1</td>
-			<td>Mouse</td>
-			<td>Trunks</td>
-			<td>Red</td>
-			<td>Vertical rectangle</td>
-			<td>Vertical stripes</td>
-			<td>Vertical rectangles</td>
+			<%= (t 'table.tr2').html_safe %>
 		</tr>
 		<tr>
-			<td>2</td>
-			<td>Cat</td>
-			<td>Sleeveless shirt</td>
-			<td>Orange</td>
-			<td>Horizontal rectangle</td>
-			<td>Horizontal stripes</td>
-			<td>Horizontal rectangles</td>
+			<%= (t 'table.tr3').html_safe %>
 		</tr>
 		<tr>
-			<td>3</td>
-			<td>Dog</td>
-			<td>Shorts</td>
-			<td>Yellow</td>
-			<td>Triangle</td>
-			<td>Triangles</td>
-			<td>Triangles</td>
+			<%= (t 'table.tr4').html_safe %>
 		</tr>
 		<tr>
-			<td>4</td>
-			<td>Gorilla</td>
-			<td>T-shirt</td>
-			<td>Green</td>
-			<td>Square</td>
-			<td>Squares</td>
-			<td>Squares</td>
+			<%= (t 'table.tr5').html_safe %>
 		</tr>
 		<tr>
-			<td>5</td>
-			<td>Bull</td>
-			<td>Pants</td>
-			<td>Blue</td>
-			<td>Five-pointed star</td>
-			<td>Stars</td>
-			<td>Stars</td>
+			<%= (t 'table.tr6').html_safe %>
 		</tr>
 		<tr>
-			<td>6</td>
-			<td>Leo</td>
-			<td>Shirt</td>
-			<td>Deep blue</td>
-			<td>Hexagon</td>
-			<td>Hexagons</td>
-			<td>Hexagons</td>
+			<%= (t 'table.tr7').html_safe %>
 		</tr>
 		<tr>
-			<td>7</td>
-			<td>Crocodile</td>
-			<td>Blazer</td>
-			<td>Purple</td>
-			<td>Parallelepiped</td>
-			<td>Slanting stripes</td>
-			<td>Parallelepipeds</td>
+			<%= (t 'table.tr8').html_safe %>
 		</tr>
 		<tr>
-			<td>8</td>
-			<td>Bear</td>
-			<td>Jacket</td>
-			<td>Brown</td>
-			<td>Octagon</td>
-			<td>Flowers</td>
-			<td>Flowers</td>
+			<%= (t 'table.tr9').html_safe %>
 		</tr>
 		<tr>
-		  	<td>9</td>
-		  	<td>Hippo</td>
-		  	<td>Coat</td>
-		  	<td>Black</td>
-		  	<td>Diamond</td>
-		  	<td>Diamonds</td>
-		  	<td>Diamonds</td>
+			<%= (t 'table.tr10').html_safe %>
 		</tr>
 		</tbody>
 	</table>

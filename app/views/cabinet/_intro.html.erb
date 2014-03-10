@@ -9,7 +9,7 @@
 	<%= text_field_tag :phone, @number[8], :class => "minput_small", :maxlength => 1, :readonly => true %>
 	<%= text_field_tag :phone, @number[9], :class => "minput_small", :maxlength => 1, :readonly => true %>
 	<%= text_field_tag :phone, @number[10], :class => "minput_small", :maxlength=> 1, :readonly => true %>
-	<%= submit_tag "Next", :name => nil, :class => "msubmit", :style =>"top: 3px;" %>
+	<%= submit_tag "#{t 'buttons.next'}", :name => nil, :class => "msubmit", :style =>"top: 3px;" %>
 <% end %>
 <div class="cls"></div>
 <div class="mcenter">
