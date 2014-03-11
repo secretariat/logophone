@@ -4,10 +4,10 @@
   </div>
   <div class="content-bottom content-bottom-alt reveal-bg-one">
     <div class="thumb pad pad-bottom-minus"></div>
-    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;">Groups of elements</h2>
-    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;">Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information.</p>
+    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;"><%= "#{t 'elements.groups'}"%></h2>
+    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= "#{t 'elements.groups_text'}"%></p>
     <div class="pad pad-top-minus">
-      <%= link_to "Read Full Story", "#filter=.index%3Anot(.index5),+.post1", :class => "btn btn-reveal" %>
+      <%= link_to "#{t 'index.more_btn'}", "#filter=.index%3Anot(.index5),+.post1", :class => "btn btn-reveal" %>
     </div>
   </div>
 </article>
@@ -16,7 +16,7 @@
   <div class="images"><%= image_tag("#{@theme}/index/index1.jpg") %>
   </div>
   <div class="content-bottom reveal-bg-one">
-    <h2 class="pad pad-bottom-minus">Groups of elements</h2>
+    <h2 class="pad pad-bottom-minus"><%= "#{t 'elements.groups'}"%></h2>
     <p class="pad pad-top-minus pad-bottom-minus">
       There are five groups of elements. Thus, each element of the group always has only one digit (from 0 to 9).
     Groups of elements: characters, clothes, colors, geometric figures and patterns.<br>

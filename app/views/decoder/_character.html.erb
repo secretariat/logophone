@@ -5,8 +5,8 @@
   <div class="content-bottom content-bottom-alt reveal-bg-one">
     <div class="thumb pad pad-bottom-minus">
     </div>
-    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;">Character</h2>
-    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;">Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order.</p>
+    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;"><%= "#{t 'decoding.character'}"%></h2>
+    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= "#{t 'decoding.character_text'}"%></p>
     <div class="pad pad-top-minus">
       <%= link_to "Read Full Story", "#filter=.home%3Anot(.index2),+.post2", :class => "btn btn-reveal" %>
     </div>
@@ -17,7 +17,7 @@
   <div class="images"><%= image_tag("#{@theme}/index/index1.jpg") %>
   </div>
   <div class="content-bottom reveal-bg-one">
-    <h2 class="pad pad-bottom-minus">Character</h2>
+    <h2 class="pad pad-bottom-minus"><%= "#{t 'decoding.character'}"%></h2>
     <p class="pad pad-top-minus pad-bottom-minus">
      Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order.<br>
     The first digit is the <b>character</b>, the second - the <b>color of clothes with a pattern</b>, the third digit indicates the </b>type of clothes with a pattern</b>, the fourth - the color of the pattern, the fifth – the kind of a pattern, the sixth - the color of clothes without a pattern (or the color of glasses), the seventh - the kind of clothes without a pattern (or the shape of glasses).

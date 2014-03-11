@@ -1,6 +1,6 @@
 <article class="element fx-slide-up home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Contact us</h2></center>
+    <center><h2 class="pad pad-top-minus pad-bottom-minus"><%= "#{t 'contacts.title'}"%></h2></center>
   </div>
 </article>
 <article class="element fx-slide-up clearfix one-third home contact">
@@ -13,7 +13,7 @@
     <div class="thumb pad pad-bottom-minus">
       <%= image_tag ("mail.png") %>
     </div>
-    <h2 class="pad pad-top-minus pad-bottom-minus">Send Message</h2>
+    <h2 class="pad pad-top-minus pad-bottom-minus"><%= "#{t 'contacts.send'}"%></h2>
     <div class="pad pad-top-minus">
       <%= form_tag( page_feedback_path, :method => "get") do %>
         <div class="row-fluid">
@@ -27,10 +27,10 @@
             <div id="fmsg" class="alert alert-error error">
             Message should not be empty
             </div>
-            <%= text_field_tag :uname, params[:uname], :size=>"30", :placeholder=>"Name"%>
+            <%= text_field_tag :uname, params[:uname], :size=>"30", :placeholder=>"#{t 'contacts.name'}"%>
             <%= text_field_tag :email, params[:email], :size=>"30", :placeholder=>"Email"%>
-            <%= text_area_tag :msg, params[:msg], :size=>"3x40", :placeholder=>"Message", :style => "height:100px;"%>
-            <%= button_tag("Send Message", :class => "btn btn-reveal add-top-half", :style => "width: 240px;padding: 2px 10px;margin: 0 !important;") %>
+            <%= text_area_tag :msg, params[:msg], :size=>"3x40", :placeholder=>"#{t 'contacts.msg'}", :style => "height:100px;"%>
+            <%= button_tag("#{t 'contacts.msg_button'}", :class => "btn btn-reveal add-top-half", :style => "width: 240px;padding: 2px 10px;margin: 0 !important;") %>
           </article>
         </div>
   <% end %>

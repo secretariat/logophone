@@ -1,7 +1,7 @@
 <%#= render "devise/shared/links" %>
 <article class="element fx-slide-up home clearfix one-full about isotope-item">
   <div class="reveal-bg-nine">
-    <center><h2 class="pad pad-top-minus pad-bottom-minus">Registration</h2></center>
+    <center><h2 class="pad pad-top-minus pad-bottom-minus"><%= "#{t 'registration.title'}"%></h2></center>
   </div>
 </article>
 <article class="element fx-slide-up clearfix one-third home contact">
@@ -22,9 +22,9 @@
 	        <div class="row-fluid">
 	          <article>
 				<%= f.email_field :email, :autofocus => true, :size=>"30", :placeholder => "Email"%><br>
-				<%= f.password_field :password, :size=>"30", :placeholder => "Password"%><br>
-				<%= f.password_field :password_confirmation, :size=>"30", :placeholder => "Confirm"%><br>
-				<%= submit_tag "Register", :class => "signup"%>
+				<%= f.password_field :password, :size=>"30", :placeholder => "#{t 'registration.pass'}"%><br>
+				<%= f.password_field :password_confirmation, :size=>"30", :placeholder => "#{t 'registration.confirm'}"%><br>
+				<%= submit_tag "#{t 'registration.reg_button'}", :class => "signup"%>
 	          </article>
 	        </div>
   		<% end %>

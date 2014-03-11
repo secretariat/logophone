@@ -3,7 +3,7 @@
     <div class="row-fluid">
       <article class="span6 mob-center">
         <%= image_tag("foot_logo.jpg", :id => "footlogo") %>
-        <p class="slogan">Creating logos for any phone numbers</p>
+        <p class="slogan"><%= "#{t 'footer.slogan'}"%></p>
       </article>
       <article class="span6 text-right">
         <ul id="foot-icons" class="clearfix">
@@ -11,7 +11,7 @@
           <li><a href="#"><%= image_tag("social/footer_facebook.png") %></a></li>
           <li><a href="#"><%= image_tag("social/footer_twitter.png") %></a></li>
         </ul>
-        <p class="copyright" >Created &copy; 2013 by CitrusDev</p>
+        <p class="copyright" ><%= "#{t 'footer.created'}"%></p>
       </article>
     </div>
   </section>

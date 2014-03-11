@@ -5,7 +5,7 @@ class CreatorController < ApplicationController
 
   def show
     if params[:phone].length < 10 || !params[:phone].present?
-      flash[:error] = "Error creating logotype. Please, enter correct phone number!"
+      flash[:error] = "#{t 'show.error'}"
       redirect_to creator_new_path
       return
     end
@@ -54,18 +54,18 @@ class CreatorController < ApplicationController
     @logo.logo_files = session[:logo].join(',')
     if @logo.save
       session[:logo] = nil
-      flash[:success] = "Logotype succefully saved"
+      flash[:success] = "#{t 'create.success'}"
       redirect_to cabinet_index_path
     else
       session[:logo] = nil
-      flash[:error] = "Error creating logotype. Please, try again."
+      flash[:error] = "#{t 'create.error'}"
       redirect_to creator_new_path
     end
   end
 
   def destroy
     Logo.find( params[:id] ).destroy
-    flash[:notice] = "Logotype succefully deleted"
+    flash[:notice] = "#{t 'destroy.notice'}"
     redirect_to cabinet_index_path
   end
 

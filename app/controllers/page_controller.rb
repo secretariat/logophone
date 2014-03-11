@@ -22,11 +22,11 @@ class PageController < ApplicationController
 
   def feedback
     if !params[:uname].present? || !params[:email].present? || !params[:msg].present?
-      flash[:danger] = "All fields are required"
+      flash[:danger] = "#{t 'feedback.danger'}"
     else
       @msg = params[:msg]
       Feedback.feedback_mail( params[:uname], params[:email], @msg ).deliver
-      flash[:success] = "Success!"
+      flash[:success] = "#{t 'feedback.success'}"
     end
     redirect_to(:controller => 'page', :action => 'contacts')
   end
