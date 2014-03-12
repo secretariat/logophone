@@ -20,42 +20,8 @@ en:
     test: "Test"
     logout: "Logout"
   index:
-    welcome: "Добро пожаловать!"
-    wel_text: "Logophone - это программа которая генерирует уникальный логотип для любого телефонного номера. Используя Logophone, вы сможете запомнить любой телефонный номер менее чем за полсекунды (это в 8 раз быстрее чем прочитать его)."
-    how: "Как это работает"
-    how_text: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information."
-    how_text_full: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information. This information does not contain any specific meaning. To remember a set of numbers including the phone number, you will need to visualize - give digits optical image (picture), consisting of several elements.<br>The human eye is able to capture an image for 0.1 seconds plus the brain should be 0.2 seconds to understand the visual image — that is, to understand what is shown in the picture.<br>The first feature of the human brain is the inability to remember more than 7 unconnected elements.  An adult is easy to remember 4-5 items, but it is very difficult to remember more than 7-8 of unrelated items.<br>The second feature is to memorize and then remembering the information the brain needs association: all information should be associated with the activity inside, place and other things.  So, in our case, to remember the telephone number, you must memorize the picture, rather than a set of numbers, and associate this image with the person. The basic condition for the formation of images (the logo of telephone number) should be in the picture no more than 7 logical elements. We have developed methodology, where only 4 groups of elements, each set consists of 10 elements to create a visual image (logo) of any phone number that consists of 7 or 10 digits. Thus, each element of the group always corresponds to only one digit (from 0 to 9).  Groups of elements: characters, clothes, colors and geometric shapes (or patterns)."
-    aboutl: "Про логотип"
-    aboutl_text: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application."
-    about: "Про Logophone"
-    about_text: "Each logo consists of a background and character. Background always encodes a mobile communication operator code or region code. The character and his clothes always encoded number."
-    about_text_full: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application. Very soon you will be able to memorize any phone number in less than half a second. You can download our app for your smartphone absolutely free. By downloading our application or by registering on our website, you can take the test on memorization. All functionality is available directly on our website for registered users."
-    like: "Понравилось?"
-    like_text: "If you like our product, tell your friends about it, write about it on social networks or send to your friends their logos phone numbers, or just put a Like."
-    like_text_full: "Create your logophone and logos of their friends. If you like our product, tell your friends about it, write about it on social networks or send to your friends their logos phone numbers, or just put a Like.<br>It's easy, it's fun, it's useful.<br>We thank all those who helped to inform the world about this product!"
-    more_btn: "Read full story"
-  elements:
-    title: "Elements"
-    groups: "Groups of elements"
-    groups_text: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information."
-    characters: "Characters"
-    colors: "Colors"
-    patterns: "Patterns"
-    clothes: "clothes"
-    figures: "Figures"
-  decoding:
-    title: "Decoding"
-    background: "Background"
-    background_text: "The first three digits of the phone number always mean operator code or area code and encrypted in the background logo. There are three types of background logo: flag, monochrome background with monochrome figure, neutral background with two-color figure"
-    flag: "Flag"
-    figures: "Figures"
-    col_patterns: "Color patterns"
-    character: "Character"
-    character_text: "Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order."
-    characters: "Characters"
-    sunglasses: "Sunglasses"
-    glasses: "Glasses"
-    glasses_text: "Glasses are deciphered as follows: the first digit indicates the color of glasses, the second digit means the form of glasses."
+    welcome: "Welcome!"
+    wel_text: "Logophone - is a software that generates a unique logo for any phone number. Using logophone, you will be able to remember any phone number in less than half a second (that is 8 times faster than you can read it). In addition, you will always be able to remember any phone number."
   create:
     title: "Create new logo"
     header: "Enter the phone number and create a logo. You can also sign it and save"
@@ -66,32 +32,6 @@ en:
     pers: "CHARACTER"
     placefn: "First name"
     placename: "Last name"
-  download:
-    title: "Download Logophone"
-    coming: "Coming soon"
-  footer:
-    slogan: "Creating logos for any phone numbers"
-    created: "Created © 2013 by CitrusDev"
-  feedback:
-    danger: "All fields are required"
-    success: "Success!"
-  registration:
-    title: "Registration"
-    pass: "Password"
-    confirm: "Confirm"
-    reg_button: "Register"
-  login:
-    title: "Login"
-    remember: "Remember me"
-    pass: "Password"
-    confirm: "Confirm"
-    login_button: "Login"
-  contacts:
-    title: "Contact us"
-    send: "Send message"
-    name: "Name"
-    msg: "Message"
-    msg_button: "Send message"
   ccontacts:
     title: "Saved contacts"
   train:
@@ -252,10 +192,3 @@ en:
   results:
     success: "Correct!"
     error: "Incorrect!"
-  show:
-    error: "Error creating logotype. Please, enter correct phone number!"
-  create:
-    success: "Logotype succefully saved"
-    error: "Error creating logotype. Please, try again."
-  destroy:
-    notice: "Logotype succefully deleted"
