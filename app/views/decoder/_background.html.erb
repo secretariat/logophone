@@ -5,10 +5,10 @@
   <div class="content-bottom content-bottom-alt reveal-bg-five">
     <div class="thumb pad pad-bottom-minus">
     </div>
-    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;"><%= "#{t 'decoding.background'}"%></h2>
-    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= "#{t 'decoding.background_text'}"%></p>
+    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;"><%= t 'decoding.background' %></h2>
+    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= t 'decoding.background-short' %></p>
     <div class="pad pad-top-minus">
-      <%= link_to "#{t 'index.more_btn'}", "#filter=.home%3Anot(.index3),+.post3", :class => "btn btn-reveal" %>
+      <%= link_to "#{t 'buttons.read_full'}", "#filter=.home%3Anot(.index3),+.post3", :class => "btn btn-reveal" %>
     </div>
   </div>
 </article>
@@ -19,11 +19,7 @@
   <div class="content-bottom reveal-bg-five">
     <h2 class="pad pad-bottom-minus"><%= "#{t 'decoding.background'}"%></h2>
     <p class="pad pad-top-minus pad-bottom-minus">
-     The first three digits of the phone number always mean operator code or area code and encrypted in the background logo. There are three types of background logo: flag, monochrome background with monochrome figure, neutral background with two-color figure.
-     If the background of the logo consists of a flag, the first digit indicates the color of the top band, the second digit indicates the color of the middle zone, and the third digit indicates the color of the bottom band.<br>
-    If the background of the logo consists of a one-color background and one-color figures, the logo will decrypt the way: the first digit is the background color, the second digit indicates the color of the figures and the third digit indicates the shape of the figure.<br>
-    If the background is composed of neutral background color and two-color figure, the logo will decrypt the way: the first digit indicates the color of the shape's center, the second digit denotes the color of the border of a shape and the third digit refers to the shape of the figure.
-
+      <%= (t 'decoding.background-full').html_safe %>
     </p>
-   </div>  
+   </div>
 </article>

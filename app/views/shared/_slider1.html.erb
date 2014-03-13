@@ -5,10 +5,10 @@
   <div class="content-bottom content-bottom-alt reveal-bg-one">
     <div class="thumb pad pad-bottom-minus">
     </div>
-    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;"><%= "#{t 'index.how'}"%></h2>
-    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= "#{t 'index.how_text'}"%></p>
+    <h2 class="pad pad-top-minus pad-bottom-minus"  style="height:80px;"><%= t 'index.howto-header' %></h2>
+    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= t 'index.howto-short' %></p>
     <div class="pad pad-top-minus">
-      <%= link_to "#{t 'index.more_btn'}", "#filter=.index%3Anot(.index1),+.post1", :class => "btn btn-reveal" %>
+      <%= link_to "#{t 'buttons.read_full'}", "#filter=.index%3Anot(.index1),+.post1", :class => "btn btn-reveal" %>
     </div>
   </div>
 </article>
@@ -17,10 +17,9 @@
   <div class="images"><%= image_tag("#{@theme}/index/index1.jpg") %>
   </div>
   <div class="content-bottom reveal-bg-one">
-    <h2 class="pad pad-bottom-minus"><%= "#{t 'index.how'}"%></h2>
+    <h2 class="pad pad-bottom-minus"><%= "#{t 'index.howto-header'}"%></h2>
     <p class="pad pad-top-minus pad-bottom-minus">
-     Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information. This information does not contain any specific meaning. To remember a set of numbers including the phone number, you will need to visualize - give digits optical image (picture), consisting of several elements.<br>The human eye is able to capture an image for 0.1 seconds plus the brain should be 0.2 seconds to understand the visual image — that is, to understand what is shown in the picture.<br>The first feature of the human brain is the inability to remember more than 7 unconnected elements. An adult is easy to remember 4-5 items, but it is very difficult to remember more than 7-8 of unrelated items.<br>The second feature is to memorize and then remembering the information the brain needs association: all information should be associated with the activity inside, place and other things. So, in our case, to remember the telephone number, you must memorize the picture, rather than a set of numbers, and associate this image with the person. The basic condition for the formation of images (the logo of telephone number) should be in the picture no more than 7 logical elements. We have developed methodology, where only 4 groups of elements, each set consists of 10 elements to create a visual image (logo) of any phone number that consists of 7 or 10 digits. Thus, each element of the group always corresponds to only one digit (from 0 to 9). Groups of elements: characters, clothes, colors and geometric shapes (or patterns). 
+     <%= (t 'index.howto-full').html_safe %>
     </p>
-   </div>  
+   </div>
 </article>
-            

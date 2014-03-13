@@ -22,6 +22,64 @@ en:
   index:
     welcome: "Welcome!"
     wel_text: "Logophone - is a software that generates a unique logo for any phone number. Using logophone, you will be able to remember any phone number in less than half a second (that is 8 times faster than you can read it). In addition, you will always be able to remember any phone number."
+    ###################################################
+    howto-header: "How does it work"
+    howto-short: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information."
+    howto-full: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information. This information does not contain any specific meaning. To remember a set of numbers including the phone number, you will need to visualize - give digits optical image (picture), consisting of several elements.<br>The human eye is able to capture an image for 0.1 seconds plus the brain should be 0.2 seconds to understand the visual image — that is, to understand what is shown in the picture.<br>The first feature of the human brain is the inability to remember more than 7 unconnected elements. An adult is easy to remember 4-5 items, but it is very difficult to remember more than 7-8 of unrelated items.<br>The second feature is to memorize and then remembering the information the brain needs association: all information should be associated with the activity inside, place and other things. So, in our case, to remember the telephone number, you must memorize the picture, rather than a set of numbers, and associate this image with the person. The basic condition for the formation of images (the logo of telephone number) should be in the picture no more than 7 logical elements. We have developed methodology, where only 4 groups of elements, each set consists of 10 elements to create a visual image (logo) of any phone number that consists of 7 or 10 digits. Thus, each element of the group always corresponds to only one digit (from 0 to 9). Groups of elements: characters, clothes, colors and geometric shapes (or patterns)."
+    ###################################################
+    about-header: "About Logo"
+    about-short: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application."
+    about-full: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application."
+    ###################################################
+    aboutlogo-header: "About Logophone"
+    aboutlogo-short: "Each logo consists of a background and character. Background always encodes a mobile communication operator code or region code. The character and his clothes always "
+    aboutlogo-full: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application. Very soon you will be able to memorize any phone number in less than half a second. You can download our app for your smartphone absolutely free. By downloading our application or by registering on our website, you can take the test on memorization. All functionality is available directly on our website for registered users."
+    ###################################################
+    like-header: "If you like"
+    like-short: "If you like our product, tell your friends about it, write about it on social networks or send to your friends their logos phone numbers, or just put a Like."
+    like-full: "Create your logophone and logos of their friends. <br/>If you like our product, tell your friends about it, write about it on social networks or send to your friends their logos phone numbers, or just put a Like."
+    like-fun: "It's easy, it's fun, it's useful."
+    like-thanks: "We thank all those who helped to inform the world about this product!"
+  elements:
+    title: "Elements"
+    header: "Groups of elements"
+    short: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information."
+    full: "There are five groups of elements. Thus, each element of the group always has only one digit (from 0 to 9).
+          Groups of elements: characters, clothes, colors, geometric figures and patterns.<br>
+          The first group - the characters. Characters (animals) are chosen so that each subsequent larger or stronger the previous one: the mouse is the smallest, so it holds the number 1. Cat bigger than a mouse, so is the numeral 2, dog (3), gorilla (4) bull (5), lion (6), crocodile (7), bear (8), hippo (9), duck (0).<br>
+          The second group - colors: red (1), orange (2), yellow (3) green (4), light blue (5), blue (6), violet (7), brown (8) black (9) white (0).<br>
+          The third group - the clothing of characters. Trunks (1), sleeveless shirt (2), shorts (3), T-shirt (4), pants (5), shirt (6), blazer (7), jacket (8), coat (9), tie (0).<br>
+          The fourth group - geometric figures. Vertical rectangle (1), the horizontal rectangle (2), triangle (3), square (4), five-pointed star (5), hexagon (6),  parallelepiped (7), octagon (8), diamond (9), circle (0).<br>
+          The fifth group - patterns. Vertical stripes (1), horizontal lines (2), triangles (3), squares (4), five-pointed stars (5), hexagons (6), oblique stripes (7), the flowers (8), diamonds (9), circles (0).<br>"
+    characters: "Персонажи"
+    colors: "Цвета"
+    patterns: "Узоры"
+    clothes: "Одежда"
+    figures: "Фигуры"
+  decoding:
+    title: "Decoding logo"
+    background: "Background"
+    background-short: "The first three digits of the phone number always mean operator code or area code and encrypted in the background logo. There are three types of background logo: flag, monochrome background with monochrome figure, neutral background with two-color figure"
+    background-full: "The first three digits of the phone number always mean operator code or area code and encrypted in the background logo. There are three types of background logo: flag, monochrome background with monochrome figure, neutral background with two-color figure.<br>
+                      If the background of the logo consists of a flag, the first digit indicates the color of the top band, the second digit indicates the color of the middle zone, and the third digit indicates the color of the bottom band.<br>
+                      If the background of the logo consists of a one-color background and one-color figures, the logo will decrypt the way: the first digit is the background color, the second digit indicates the color of the figures and the third digit indicates the shape of the figure.<br>
+                      If the background is composed of neutral background color and two-color figure, the logo will decrypt the way: the first digit indicates the color of the shape's center, the second digit denotes the color of the border of a shape and the third digit refers to the shape of the figure."
+    flag: "Flag"
+    figures: "Figures"
+    col_patterns: "Color patterns"
+    character: "Character"
+    character-short: "Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order."
+    character-full: "Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order.<br>
+                    The first digit is the <b>character</b>, the second - the <b>color of clothes with a pattern</b>, the third digit indicates the </b>type of clothes with a pattern</b>, the fourth - the color of the pattern, the fifth – the kind of a pattern, the sixth - the color of clothes without a pattern (or the color of glasses), the seventh - the kind of clothes without a pattern (or the shape of glasses)."
+    characters: "Characters"
+    sunglasses: "Sunglasses"
+    glasses: "Glasses"
+    glasses_text: "Glasses are deciphered as follows: the first digit indicates the color of glasses, the second digit means the form of glasses."
+  cabinet:
+    index: "Сохраненные контакты"
+  download:
+    title: "Скачать Logophone"
+    coming: "Ожидайте скоро"
   create:
     title: "Create new logo"
     header: "Enter the phone number and create a logo. You can also sign it and save"
@@ -189,6 +247,7 @@ en:
     delete: "Delete logo"
     check: "Check answer"
     next: "Next"
+    read_full: "Read full story"
   results:
     success: "Correct!"
     error: "Incorrect!"

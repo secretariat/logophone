@@ -5,10 +5,10 @@
   <div class="content-bottom content-bottom-alt reveal-bg-three">
     <div class="thumb pad pad-bottom-minus">
     </div>
-    <h2 class="pad pad-top-minus pad-bottom-minus" style="height:80px;"><%= "#{t 'index.about'}"%></h2>
-    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= "#{t 'index.about_text'}"%></p>
+    <h2 class="pad pad-top-minus pad-bottom-minus" style="height:80px;"><%= "#{t 'index.aboutlogo-header'}"%></h2>
+    <p class="pad pad-top-minus" style="height: 100px;overflow:hidden;"><%= "#{t 'index.aboutlogo-short'}"%></p>
     <div class="pad pad-top-minus">
-      <%= link_to "#{t 'index.more_btn'}", "#filter=.index%3Anot(.index3),+.post3", :class => "btn btn-reveal" %>
+      <%= link_to "#{t 'buttons.read_full'}", "#filter=.index%3Anot(.index3),+.post3", :class => "btn btn-reveal" %>
     </div>
   </div>
 </article>
@@ -17,7 +17,7 @@
   <div class="images"><%= image_tag("#{@theme}/index/index3.jpg") %>
   </div>
   <div class="content-bottom reveal-bg-three">
-    <h2 class="pad pad-bottom-minus"><%= "#{t 'index.about'}"%></h2>
-    <p class="pad pad-top-minus pad-bottom-minus"><%= "#{t 'index.about_text_full'}"%></p>
-   </div>  
+    <h2 class="pad pad-bottom-minus"><%= "#{t 'index.aboutlogo-header'}"%></h2>
+    <p class="pad pad-top-minus pad-bottom-minus"><%= "#{t 'index.aboutlogo-full'}"%></p>
+   </div>
 </article>

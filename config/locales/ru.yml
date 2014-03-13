@@ -21,23 +21,41 @@ ru:
     logout: "Выход"
   index:
     welcome: "Добро пожаловать!"
-    wel_text: "Logophone - это программа которая генерирует уникальный логотип для любого телефонного номера. Используя Logophone, вы сможете запомнить любой телефонный номер менее чем за полсекунды (это в 8 раз быстрее чем прочитать его)."
-    how: "Как это работает"
-    how_text: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information."
-    how_text_full: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information. This information does not contain any specific meaning. To remember a set of numbers including the phone number, you will need to visualize - give digits optical image (picture), consisting of several elements.<br>The human eye is able to capture an image for 0.1 seconds plus the brain should be 0.2 seconds to understand the visual image — that is, to understand what is shown in the picture.<br>The first feature of the human brain is the inability to remember more than 7 unconnected elements.  An adult is easy to remember 4-5 items, but it is very difficult to remember more than 7-8 of unrelated items.<br>The second feature is to memorize and then remembering the information the brain needs association: all information should be associated with the activity inside, place and other things.  So, in our case, to remember the telephone number, you must memorize the picture, rather than a set of numbers, and associate this image with the person. The basic condition for the formation of images (the logo of telephone number) should be in the picture no more than 7 logical elements. We have developed methodology, where only 4 groups of elements, each set consists of 10 elements to create a visual image (logo) of any phone number that consists of 7 or 10 digits. Thus, each element of the group always corresponds to only one digit (from 0 to 9).  Groups of elements: characters, clothes, colors and geometric shapes (or patterns)."
-    aboutl: "Про логотип"
-    aboutl_text: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application."
-    about: "Про Logophone"
-    about_text: "Each logo consists of a background and character. Background always encodes a mobile communication operator code or region code. The character and his clothes always encoded number."
-    about_text_full: "By using our product, you can create and store logos phone numbers of your friends. You can also train your memory using different modes of application. Very soon you will be able to memorize any phone number in less than half a second. You can download our app for your smartphone absolutely free. By downloading our application or by registering on our website, you can take the test on memorization. All functionality is available directly on our website for registered users."
-    like: "Понравилось?"
-    like_text: "If you like our product, tell your friends about it, write about it on social networks or send to your friends their logos phone numbers, or just put a Like."
-    like_text_full: "Create your logophone and logos of their friends. If you like our product, tell your friends about it, write about it on social networks or send to your friends their logos phone numbers, or just put a Like.<br>It's easy, it's fun, it's useful.<br>We thank all those who helped to inform the world about this product!"
-    more_btn: "Дальше"
+    wel_text: "Логофон – это программа, которая генерирует уникальный логотип для любого номера телефона. Используя логофон, вы сможете запомнить любой номер телефона менее чем за полсекунды. Кроме того, вы всегда сможете вспомнить нужный вам номер телефона."
+    howto-header: "Как это работает"
+    howto-short: "Запоминание телефонного номера для многих людей является сложной задачей, так как телефонный номер это набор цифр, который для восприятия человека ... является абстрактной информацией."
+    howto-full: "Запоминание телефонного номера практически для всех людей является сложной задачей, так как телефонный номер это набор цифр, который для восприятия человека является абстрактной информацией. Эта информация не содержит никакого конкретного смысла.<br/>
+                Для того, чтобы запомнить любой набор цифр, в том числе и номер телефона, необходимо его визуализировать – то есть придать набору цифр зрительный образ (картинку), состоящую из нескольких элементов.<br/>
+                Человеческий глаз способен запечатлеть картинку за 0,1 секунды плюс к этому мозгу необходимо еще 0,2 секунды для осознания зрительного образа – т.е. для того, чтобы понять, что именно изображено на картинке.<br/>
+                Первая особенность человеческого мозга заключается в неспособности запоминать более 7 несвязанных между собой элементов. Взрослый человек легко запоминает 4-5 элементов, но очень сложно запоминает более 7-8 несвязанных элементов.<br/>
+                Вторая особенность – для запоминания и последующего вспоминания информации мозгу необходима ассоциация: любая информация должна ассоциироваться с действием, зрительным образом, местом и прочим.<br/>
+                Поэтому, в нашем случае, для запоминания телефонного номера необходимо запомнить картинку, а не набор цифр, и связать эту картинку с тем или иным человеком.<br/>
+                Основным условием для формирования картинки (логотипа телефонного номера) должно быть наличие в картинке не более 7 логических элементов.<br/>
+                Нами разработана методика, при которой достаточно всего 4 группы элементов, каждая группа состоит только из 10 элементов, чтобы создать зрительный образ (логотип) любого телефонного номера, состоящего из 7 или 10 цифр. При этом, каждому элементу группы всегда соответствует только одна цифра (от 0 до 9).
+                Группы элементов: персонажи, одежда персонажей, цвета и геометрические фигуры (или узоры)."
+    about-header: "Про Лого"
+    about-short: "Каждый логотип состоит из заднего плана и персонажа в одежде. Задний план всегда кодирует код оператора мобильной связи или код региона."
+    about-full: "Каждый логотип состоит из заднего плана и персонажа в одежде. Задний план всегда кодирует код оператора мобильной связи или код региона. В персонаже и его одежде всегда закодирован номер абонента."
+    aboutlogo-header: "Про Logophone"
+    aboutlogo-short: "Используя наш продукт, вы можете создавать и сохранять логотипы телефонных номеров друзей. Вы также можете тренировать память, используя различные режимы приложения."
+    aboutlogo-full: "Используя наш продукт, вы можете создавать и сохранять логотипы телефонных номеров своих друзей. Вы также можете тренировать свою память, используя различные режимы приложения. Очень скоро вы сможете запоминать любой телефонный номер менее чем за полсекунды. Вы можете бесплатно загрузить наше приложение на ваш смартфон. Скачав наше приложение или зарегистрировавшись на нашем сайте, Вы можете пройти тест на запоминание. Весь функционал доступен непосредственно на нашем сайте для зарегистрированных пользователей."
+    like-header: "Понравилось?"
+    like-short: "Если вам понравился наш продукт, расскажите о нем своим друзьям, напишите в социальных сетях или просто поставьте лайк."
+    like-full: "Создайте свой логофон и логотипы своих друзей.<br/>Если вам понравился наш продукт, расскажите о нем своим друзьям, напишите о нем в социальных сетях или отправьте своим друзьям логотипы их телефонных номеров, или просто поставьте лайк."
+    like-fun: "Это просто, это весело, это полезно."
+    like-thanks: "Мы благодарим всех, кто помог сообщить миру о нашем продукте!"
   elements:
     title: "Элементы логотипа"
-    groups: "Группы"
-    groups_text: "Remembering a phone number for almost all people is a difficult task, because the phone number is the set of numbers for the human perception is abstract information."
+    header: "Группы элементов"
+    short: "Запоминание телефонного номера для многих людей является сложной задачей, так как телефонный номер это набор цифр, который для человека является абстрактной информацией."
+    full: "Запоминание телефонного номера для многих людей является сложной задачей, так как телефонный номер это набор цифр, который для человека является абстрактной информацией.<br/>
+          Существует пять групп элементов. При этом каждому элементу группы всегда соответствует только одна цифра (от 0 до 9).<br/>
+          Группы элементов: персонажи, одежда персонажей, цвета, геометрические фигуры и узоры.<br/>
+          Первая группа – персонажи. Персонажи (животные) подобраны так, что каждый последующий больше или сильнее предыдущего: мышь самая маленькая, поэтому ей принадлежит цифра 1. Кот больше мыши, поэтому обозначается цифрой 2, пес  (3), горилла (4), бык (5), лев (6), крокодил (7), медведь (8), бегемот (9), утка (0).<br/>
+          Вторая группа – цвет. Красный (1), оранжевый (2), желтый (3), зеленый (4), голубой (5), синий (6), фиолетовый (7), коричневый (8), черный (9), белый (0).<br/>
+          Третья группа – одежда персонажей. Трусы (1), майка (2), шорты (3), футболка (4), штаны (5), рубашка (6), пиджак (7), куртка (8), пальто (9), галстук (0).<br/>
+          Четвертая группа – геометрические фигуры. Вертикальный прямоугольник (1), горизонтальный прямоугольник (2), треугольник (3), квадрат (4), пятиконечная звезда (5), шестиугольник (6), параллелепипед (7), восьмиугольник (8), ромб (9), круг (0).<br/>
+          Пятая группа – узоры. Вертикальные полосы (1), горизонтальные полосы (2), треугольники (3), квадраты (4), пятиконечные звезды (5), шестиугольники (6), косые полосы (7), цветы (8), ромбы (9), круги (0).<br/>"
     characters: "Персонажи"
     colors: "Цвета"
     patterns: "Узоры"
@@ -46,16 +64,21 @@ ru:
   decoding:
     title: "Декодирование логотипа"
     background: "Фон"
-    background_text: "The first three digits of the phone number always mean operator code or area code and encrypted in the background logo. There are three types of background logo: flag, monochrome background with monochrome figure, neutral background with two-color figure"
+    background-short: "Первые три цифры телефонного номера всегда означают код мобильного оператора или код региона и зашифрованы на заднем плане логотипа."
+    background-full: "Первые три цифры телефонного номера всегда означают код мобильного оператора или код региона и зашифрованы на заднем плане логотипа. Существует три вида заднего плана логотипа: флаг, одноцветный фон с одноцветной фигурой, нейтральный фон с двуцветной фигурой.<br/>
+                      Если задний план логотипа состоит из флага, то первая цифра обозначает цвет верхней полосы, вторая цифра означает цвет средней полосы, третья цифра означает цвет нижней полосы.<br/>
+                      Если задний план логотипа состоит из одноцветного фона и одноцветной фигуры, то логотип расшифруется так: первая цифра обозначает цвет фона, вторая цифра обозначает цвет фигур и третья цифра обозначает форму фигуры.<br/>
+                      Если задний план состоит из нейтрального цвета и двуцветной фигуры, то логотип расшифруется так: первая цифра обозначает цвет центра фигуры, вторая цифра обозначает цвет каймы фигуры и третья цифра означает форму фигуры.<br/>"
     flag: "Флаги"
     figures: "Фигуры"
     col_patterns: "Цветные узоры"
     character: "Персонаж"
-    character_text: "Once you have deciphered the first three digits of the phone number (mobile operator code or area code) to decrypt the remaining seven digits in the following order."
+    character-short: "После того как вы расшифровали первые три цифры телефонного номера (код мобильного оператора или код региона) необходимо расшифровать оставшиеся семь цифр в следующем порядке."
+    character-full: "После того как вы расшифровали первые три цифры телефонного номера (код мобильного оператора или код региона) необходимо расшифровать оставшиеся семь цифр в следующем порядке.<br/>Первая цифра обозначает персонаж, вторая – цвет одежды с узором, третья цифра обозначает вид одежды с узором, четвертая – цвет узора, пятая – вид узора, шестая – цвет одежды без узора (или цвет очков), седьмая – вид одежды без узора (или форму очков)."
     characters: "Персонажи"
     sunglasses: "Очки"
     glasses: "Очки"
-    glasses_text: "Glasses are deciphered as follows: the first digit indicates the color of glasses, the second digit means the form of glasses."
+    glasses_text: "Очки расшифровываются следующим образом - первая цифра означает цвет очков, вторая цифра означает форму очков."
   cabinet:
     index: "Сохраненные контакты"
   download:
@@ -249,6 +272,7 @@ ru:
     delete: "Удалить"
     check: "Проверить"
     next: "Далее"
+    read_full: "Читать далее"
   results:
     success: "Правильно"
     error: "Ошибка"
