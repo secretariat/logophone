@@ -80,6 +80,16 @@ en:
   download:
     title: "Скачать Logophone"
     coming: "Ожидайте скоро"
+  registration:
+    title: "Registration"
+    pass: "Password"
+    confirm: "Confirm"
+    reg_button: "Register"
+  login:
+    title: "Login"
+    remember: "Remember me"
+    pass: "Password"
+    confirm: "Confirm"
   create:
     title: "Create new logo"
     header: "Enter the phone number and create a logo. You can also sign it and save"
@@ -248,6 +258,7 @@ en:
     check: "Check answer"
     next: "Next"
     read_full: "Read full story"
+    login: "Login"
   results:
     success: "Correct!"
     error: "Incorrect!"

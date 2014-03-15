@@ -94,7 +94,6 @@ ru:
     remember: "Запомнить меня"
     pass: "Пароль"
     confirm: "Подтвердить"
-    login_button: "Войти"
   contacts:
     title: "Контакты"
     send: "Связаться с нами"
@@ -273,6 +272,7 @@ ru:
     check: "Проверить"
     next: "Далее"
     read_full: "Читать далее"
+    login: "Войти"
   results:
     success: "Правильно"
     error: "Ошибка"

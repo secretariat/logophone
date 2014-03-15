@@ -2,7 +2,7 @@ require "creator.rb"
 class PageController < ApplicationController
 
   def index
-    session[:lang] = "en" if session[:lang].nil?
+    session[:lang] = "ru" if session[:lang].nil?
   end
 
   def download
