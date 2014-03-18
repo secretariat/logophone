@@ -12,9 +12,9 @@
 		<h3 style="text-align:center;padding-bottom:0px;"><%= t 'create.phrase' %></h3>
 	<% end %>
 	<center>
-		<%= form_tag( creator_show_path, :method => "get", :style =>"width:40%;") do %>
+		<%= form_tag( creator_show_path, :method => "get", :style =>"width:45%;") do %>
 				<%= text_field_tag :phone, params[:phone], :class => "minput10", :maxlength => "10", :id => 'numbers_only'%>
-				<%= submit_tag("#{t 'buttons.create'}", :class => "msubmit", :style =>"bottom:0px !important;margin-right:0 !important;") %>
+				<%= submit_tag("#{t 'buttons.create'}", :class => "msubmit", :style =>"bottom:0px !important;float:right;margin-right:0 !important;") %>
 		<% end %>
 	</center>
 </article>
