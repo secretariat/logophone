@@ -262,3 +262,10 @@ en:
   results:
     success: "Correct!"
     error: "Incorrect!"
+  show:
+    error: "Can't create logo. Check number!"
+  createres:
+    success: "Logo saved"
+    error: "Can't create logo! Try again"
+  destroy:
+    notice: "Logo was deleted;"
