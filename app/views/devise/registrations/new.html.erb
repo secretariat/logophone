@@ -14,17 +14,15 @@
     <div class="thumb pad pad-bottom-minus">
       <%= image_tag ("login.png") %>
     </div>
-    <br>
-    <br>
-    <div class="pad pad-top-minus">
-      	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	 		<%= devise_error_messages! %>
+    <div class="pad pad-top-minus">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	        <div class="row-fluid">
 	          <article>
-				<%= f.email_field :email, :autofocus => true, :size=>"30", :placeholder => "Email"%><br>
-				<%= f.password_field :password, :size=>"30", :placeholder => "#{t 'registration.pass'}"%><br>
-				<%= f.password_field :password_confirmation, :size=>"30", :placeholder => "#{t 'registration.confirm'}"%><br>
-				<%= submit_tag "#{t 'registration.reg_button'}", :class => "signup"%>
+      				<%= f.email_field :email, :autofocus => true, :size=>"30", :placeholder => "Email"%><br>
+      				<%= f.password_field :password, :size=>"30", :placeholder => "#{t 'registration.pass'}"%><br>
+      				<%= f.password_field :password_confirmation, :size=>"30", :placeholder => "#{t 'registration.confirm'}"%><br>
+      				<%= submit_tag "#{t 'registration.reg_button'}", :class => "signup"%>
 	          </article>
 	        </div>
   		<% end %>

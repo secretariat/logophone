@@ -1868,3 +1868,22 @@ form {
 {
     color: #fff;
 }
+
+#error_explanation h2
+{
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0px 20px;
+}
+/*#error_explanation ul
+{
+    padding: 5px 5px 5px 20px;
+
+}*/
+#error_explanation ul li
+{
+    width: 250px;
+    font-size: 14px;
+    line-height: 14px;
+    color: red;
+}
