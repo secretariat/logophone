@@ -1871,9 +1871,10 @@ form {
 
 #error_explanation h2
 {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 20px;
     padding: 0px 20px;
+    margin: 5px 0px;
 }
 /*#error_explanation ul
 {
