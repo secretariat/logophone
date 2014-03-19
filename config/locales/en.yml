@@ -11,6 +11,8 @@ en:
     contacts: "Contact us"
     light: "Light theme"
     dark: "Dark theme"
+    signedas: "User: "
+    logout: "Log out"
   cmenu:
     mycontacts: "My contacts"
     info: "Information"
@@ -51,11 +53,11 @@ en:
           The third group - the clothing of characters. Trunks (1), sleeveless shirt (2), shorts (3), T-shirt (4), pants (5), shirt (6), blazer (7), jacket (8), coat (9), tie (0).<br>
           The fourth group - geometric figures. Vertical rectangle (1), the horizontal rectangle (2), triangle (3), square (4), five-pointed star (5), hexagon (6),  parallelepiped (7), octagon (8), diamond (9), circle (0).<br>
           The fifth group - patterns. Vertical stripes (1), horizontal lines (2), triangles (3), squares (4), five-pointed stars (5), hexagons (6), oblique stripes (7), the flowers (8), diamonds (9), circles (0).<br>"
-    characters: "Персонажи"
-    colors: "Цвета"
-    patterns: "Узоры"
-    clothes: "Одежда"
-    figures: "Фигуры"
+    characters: "Characters"
+    colors: "Colors"
+    patterns: "Patterns"
+    clothes: "Cloth"
+    figures: "Figures"
   decoding:
     title: "Decoding logo"
     background: "Background"
@@ -76,10 +78,10 @@ en:
     glasses: "Glasses"
     glasses_text: "Glasses are deciphered as follows: the first digit indicates the color of glasses, the second digit means the form of glasses."
   cabinet:
-    index: "Сохраненные контакты"
+    index: "Saved contacts"
   download:
-    title: "Скачать Logophone"
-    coming: "Ожидайте скоро"
+    title: "Download Logophone"
+    coming: "Coming soon"
   registration:
     title: "Registration"
     pass: "Password"
@@ -90,6 +92,18 @@ en:
     remember: "Remember me"
     pass: "Password"
     confirm: "Confirm"
+  contacts:
+    title: "Contact with us"
+    send: "Send message"
+    name: "Name"
+    msg: "Message"
+    msg_button: "Send message"
+  feedback:
+    danger: "You nedd to fill all fields"
+    success: "Message was send!"
+  footer:
+    slogan: "Create logo for any phone number"
+    created: "Created © 2013 by CitrusDev"
   create:
     title: "Create new logo"
     header: "Enter the phone number and create a logo. You can also sign it and save"
@@ -100,6 +114,8 @@ en:
     pers: "CHARACTER"
     placefn: "First name"
     placename: "Last name"
+    login: "Login"
+    save: " to save the logo"
   ccontacts:
     title: "Saved contacts"
   train:
@@ -268,4 +284,13 @@ en:
     success: "Logo saved"
     error: "Can't create logo! Try again"
   destroy:
-    notice: "Logo was deleted;"
+    notice: "Logo was deleted"
+  btn:
+    back: "Back"
+    update: "Update"
+    cancel: "Cancel"
+    sure: "Are you sure?"
+  mail:
+    welcome: "Hi, "
+    content: "You can confirm your account email through the link below:"
+    confirm: "Confirm"
