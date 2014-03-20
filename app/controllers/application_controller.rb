@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_user_theme
-        @theme = session[:theme].present? ? session[:theme] : "light"
+        @theme = session[:theme].present? ? session[:theme] : "dark"
     end
 
     def set_user_language

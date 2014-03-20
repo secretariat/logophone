@@ -3,6 +3,7 @@ class PageController < ApplicationController
 
   def index
     session[:lang] = "ru" if session[:lang].nil?
+    session[:theme] = "dark" if session[:theme].nil?
   end
 
   def download
