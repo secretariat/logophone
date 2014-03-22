@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
     before_filter :set_user_theme
     before_filter :set_user_language
+    before_filter :set_lang
     after_filter :flash_to_headers
 
     def after_sign_in_path_for(resource)
@@ -33,6 +34,10 @@ class ApplicationController < ActionController::Base
 
     def set_user_theme
         @theme = session[:theme].present? ? session[:theme] : "dark"
+    end
+
+    def set_lang
+        @lang = session[:lang].present? ? session[:lang] : "dark"
     end
 
     def set_user_language
