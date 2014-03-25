@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_lang
-        @lang = session[:lang].present? ? session[:lang] : "dark"
+        @lang = session[:lang].present? ? session[:lang] : "ru"
     end
 
     def set_user_language

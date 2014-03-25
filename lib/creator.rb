@@ -254,7 +254,7 @@ class Creator
 		flag
 		mono_figure
 		color_figure
-		@current_block = @@block_array[1]
+		@current_block = @@block_array[0]
 	end
 
 
