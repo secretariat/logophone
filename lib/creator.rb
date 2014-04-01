@@ -164,6 +164,7 @@ class Creator
 		@@ar.reverse!
 		@current_block.reverse!
 		@@ar.concat(@current_block).reverse!
+		@current_block.reverse!
 	end
 
 	def character
@@ -231,7 +232,6 @@ class Creator
 		@current_block = @@block_array[@@cur_index].dup
 		@@ar.reverse!
 		@current_block.reverse!
-		@@block_array[@@cur_index]
 		@@ar.concat(@current_block).reverse!
 		# puts "++++++++++++++#{@@cur_index}"
 	end
@@ -242,17 +242,21 @@ class Creator
 			@@cur_index = 2
 		end
 		@@ar = @@ar.drop(3)
+		# puts "========AR DROPPED========"
 		@current_block = @@block_array[@@cur_index].dup
+		# puts "====CUR BLOCK WAS SET====="
 		@@ar.reverse!
+		# puts "=======AR REVERSED========"
 		@current_block.reverse!
-		@@block_array[@@cur_index]
-		@@ar.concat(@current_block).reverse!
+		# puts "=======CB REVERSED========"
+		(@@ar.concat(@current_block)).reverse!
+		# puts "=======check========"
 	end
 
 
 	def get_first_block
-		flag
 		mono_figure
+		flag
 		color_figure
 		@current_block = @@block_array[0]
 	end
