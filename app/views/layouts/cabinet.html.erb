@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-  <% if @theme.present? && @theme == "dark" %>
-    <html style="background-color:#000;">
-  <% else %>
-    <html style="background: #fefefe url('/assets/bg.png') repeat;">
-  <% end %>
+<% if @theme.present? && @theme == "dark" %>
+  <html style="background-color:#000;">
+<% else %>
+  <html style="background: #fefefe url('/assets/bg.png') repeat;">
+<% end %>
 <head>
   <title>Logophone</title>
   <%= include_gon %>
@@ -30,6 +30,7 @@
   <%= javascript_include_tag "/javascripts/jquery.ba-bbq.min.js" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content= <%= t 'keywords' %> >
 </head>
 <body>
   <div id="preloader">
