@@ -1,16 +1,17 @@
-role :web, "185.16.40.109"
-role :app, "185.16.40.109"
-role :db,  "185.16.40.109", :primary => true
-role :db,  "185.16.40.109"
+role :web, "54.187.99.148"
+role :app, "54.187.99.148"
+role :db,  "54.187.99.148", :primary => true
+role :db,  "54.187.99.148"
 
-set :user, "user"
+set :user, "ubuntu"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:auth_methods] = ["publickey"]
-ssh_options[:port] = 2200
-ssh_options[:keys] = ["#{ENV['HOME']}/install/ruby/amazon/vps.pem"]
+ssh_options[:port] = 22
+ssh_options[:keys] = ["#{ENV['HOME']}/install/ruby/amazon/vps_backup.pem"]
 
-set :deploy_to, "/home/user/www/sites/logophone"
+
+set :deploy_to, "/home/ubuntu/www/sites/logophone"
 
 namespace :deploy do
 
