@@ -24,6 +24,7 @@ Logophone::Application.routes.draw do
   get "page/login"
   get "page/register"
   get "page/download"
+  get "page/download_android"
   get "page/decoder"
   get "page/contacts"
   get "page/feedback"

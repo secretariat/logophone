@@ -51,4 +51,10 @@ class PageController < ApplicationController
     session[:lang] = "ru"
     redirect_to(request.env["HTTP_REFERER"])
   end
+
+  def download_android
+    send_file File.join(Rails.root, "/public/output/downloads/logophone.apk"),
+              :type => "application/vnd.android.package-archive",
+              :filename => "logophone.apk"
+  end
 end

@@ -8,11 +8,10 @@
     <br>
     <center><h2 class="pad pad-top-minus pad-bottom-minus">Android</h2>
     <br>
-    <%= image_tag ("download/gplay.png"), :class => "downloadimg"%>
-       <br>
-       <br>
-       <br>
-      <h3><%= "#{t 'download.coming'}"%></h3>
+     <br>
+     <br>
+     <br>
+    <%= link_to (image_tag ("download/gplay.png"), :class => "downloadimg"), page_download_android_path %>
     </center>
 </article>
 <article class="element clearfix one-third home isotope-item">
@@ -20,12 +19,12 @@
     <br>
     <center>
       <h2 class="pad pad-top-minus pad-bottom-minus">iPhone</h2>
-       <br>
-      <%= image_tag ("download/appstore.png"), :class => "downloadimg"%>
-       <br>
-       <br>
-  	   <br>
-      <h3><%= "#{t 'download.coming'}"%></h3>
+        <br>
+        <br>
+        <br>
+        <%= image_tag ("download/appstore.png"), :class => "downloadimg" %>
+        <br>
+        <h3><%= "#{t 'download.coming'}"%></h3>
   		<!-- <div class="pad pad-top-minus">
   			<a class="btn btn-reveal add-top-half">Download</a>
       </div> -->
