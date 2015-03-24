@@ -9,7 +9,7 @@ set :scm_verbose, true
 set :default_shell, '/bin/bash -l'
 
 set :repository,  "git@github.com:secretariat/logophone.git"
-set :branch, 'master'
+set :branch, 'develop'
 
 set :deploy_via, :copy
 set :use_sudo, false
